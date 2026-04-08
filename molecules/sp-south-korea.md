@@ -1,0 +1,254 @@
+---
+date-created: "202602251400"
+aliases:
+  - "South Korea surveillance pricing profile"
+tags:
+  - "#molecules"
+  - "#jurisdiction-profile"
+topic:
+  - "[[surveillance pricing]]"
+  - "[[South Korea]]"
+---
+
+# South Korea — Surveillance Pricing Regulatory Profile
+
+*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
+
+South Korea occupies a distinctive position on the topology: it is the only APAC jurisdiction to have enacted binding dark pattern regulation that reaches pricing transparency (the E-Commerce Act amendments, operative February 2025), and the only jurisdiction surveyed to have enacted both an automated decision-making right in data protection law (PIPA Art. 37-2, operative September 2024) and a comprehensive AI governance framework (AI Basic Act, operative January 2026). The instrument set is dense but indirect — none of these instruments specifically targets surveillance pricing or algorithmic personalized pricing. Instead, South Korea has assembled a constellation of general-purpose instruments across data protection, consumer protection, competition, and AI governance that could theoretically reach personalized pricing but have not been deployed for that purpose. The regulatory architecture is institutionally fragmented: the KFTC (consumer protection and competition), the PIPC (data protection), the FSC/FSS (financial services), and the MSIT (AI governance) each hold pieces of the regulatory puzzle, but no coordinated enforcement strategy on algorithmic pricing has emerged.
+
+## Instruments
+
+| Instrument | Strategy | Sector | Status | Enforcement |
+|-----------|----------|--------|--------|-------------|
+| E-Commerce Act Art. 21-2 (dark patterns, eff. Feb 14, 2025; drip pricing grace period ended Aug 13, 2025) | Disclosure ([[disclosure-regulation]]) | General (e-commerce B2C) | Operative | KFTC; corrective orders and administrative fines; ex-officio investigations |
+| PIPA Art. 37-2 (automated decision-making rights, eff. Sept 15, 2024) | Rights & liabilities ([[rights-and-liabilities-regulation]]) | General | Operative | PIPC; fines up to 3% of revenue (up to 10% for aggravated violations under Feb 2026 amendment); corrective orders |
+| MRFTA Art. 19 (unfair collaborative acts / cartels, as amended 2021) | Competition ([[competition-over-regulation]]) | General | Operative | KFTC; administrative surcharges up to 20% of relevant turnover; criminal referral |
+| MRFTA Art. 3-2 (abuse of market dominance) | Competition ([[competition-over-regulation]]) | General | Operative | KFTC; corrective orders; administrative surcharges up to 6% of relevant turnover |
+| MRFTA Art. 23/45 (unfair trade practices, including price discrimination) | Competition ([[competition-over-regulation]]) | General | Operative | KFTC; administrative fines up to 2% of annual turnover; corrective orders |
+| AI Basic Act (eff. Jan 22, 2026) | Disclosure / rights & liabilities (hybrid) | General (high-impact AI in designated sectors) | Enacted (not yet operative) | MSIT; administrative fines up to KRW 30M for violations of corrective orders; National AI Committee oversight |
+| Online Platform Fairness Act (proposed; seven bills submitted in 22nd National Assembly) | Disclosure / competition (hybrid) | Digital platforms (platforms exceeding KRW 10B revenue / KRW 100B GTV) | Proposed (deadlocked; U.S. trade pressure) | KFTC (proposed); administrative fines up to 10% of total revenue (proposed) |
+| KFTC Platform Regulation Roadmap (Sept 2024) | Competition (structural) | Digital platforms | Proposed (MRFTA amendments pending) | KFTC |
+| FSC Guidelines on AI in Financial Services (Dec 2024 onwards) | Self-regulation ([[self-regulation]]) | Financial services | Operative (voluntary / sandbox) | FSC/FSS (supervisory oversight) |
+
+## Detail
+
+### E-Commerce Act Art. 21-2 — Dark Pattern Regulation (eff. Feb 14, 2025)
+
+The amendment to the Act on the Consumer Protection in Electronic Commerce, Etc. added Article 21-2, which prohibits six categories of dark patterns in e-commerce: (1) hidden renewals (failing to obtain consent at least 30 days before a free-to-paid conversion or fee increase); (2) drip pricing (displaying only a partial price without justifiable grounds when the total payable amount could have been shown); (3) pre-selected purchase options (presenting pre-checked add-ons or subscriptions); (4) misleading hierarchies (visual imbalance between purchasing and cancellation options); (5) obstruction of cancellation or withdrawal (making cancellation more difficult than sign-up); and (6) repeated interference (repeatedly requesting consumers to change their decisions through pop-up windows).
+
+**Drip pricing provisions.** The drip pricing prohibition directly addresses pricing transparency, though not personalized pricing. E-commerce providers may not display a lower price on search results pages without justifiable grounds if the full price, including all costs consumers must pay, could have been shown. If a lower price is displayed because the final price depends on consumer-selected options, the provider must inform consumers that the final price may change. The KFTC provided a six-month grace period for drip pricing compliance through August 13, 2025, after which full enforcement applies.
+
+**Enforcement timeline.** The KFTC published a Q&A document on February 13, 2025, clarifying the regulations. Between February and July 2025, the KFTC and Korea Consumer Agency monitored major online platforms in OTT, music streaming, online shopping, e-book, rental, and travel sectors. On September 30, 2025, the KFTC announced corrective actions against 36 firms, requiring corrections for practices including blocking cancellations, hidden renewals, misleading layouts, and partial price disclosures. At a July 29, 2025 roundtable, the KFTC adopted a "zero-tolerance" stance: "Following the transitional grace period, we will take strict and resolute action against not only deliberate violations but also violations arising from ignorance of the law."
+
+**What it does NOT cover.** The dark pattern provisions address pricing transparency (showing the full price upfront) but not personalized pricing (setting different prices for different consumers based on personal data). There is no disclosure requirement for algorithmic price personalization, no prohibition on personalized pricing, and no obligation to inform consumers that prices are set using their data. The instrument targets the disclosure end of the pricing transparency spectrum — drip pricing, hidden fees — not the algorithmic personalization end.
+
+**Primary**: [E-Commerce Act (Korea Legislation Research Institute)](https://elaw.klri.re.kr/eng_service/lawView.do?hseq=38513&lang=ENG); [KFTC Q&A on Dark Pattern Regulations (Feb 2025)](https://www.ftc.go.kr)
+
+**Secondary**: [Kim & Chang, "Amendment to E-Commerce Act Strengthening Regulations on Dark Patterns Took Effect" (2025)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=32297); [Kim & Chang, "Regulations on Dark Patterns Take Effect and KFTC Publishes a Q&A" (Feb 2025)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=31410); [Yulchon, "Dark Pattern Crackdown Looms as Drip Pricing Grace Period Ends" (Aug 2025)](https://yulchon.com/en/resources/publications/newsletter-view/41347/page.do); [Yoon & Yang, "KFTC Hosts Roundtable on Dark Patterns" (July 2025)](https://www.yoonyang.com/eng/insights/newsletter/2594); [Legal 500, "KFTC Hosts Roundtable on Dark Patterns, Signaling Intensive Enforcement from August" (2025)](https://www.legal500.com/developments/thought-leadership/kftc-hosts-roundtable-on-dark-patterns-signaling-intensive-enforcement-from-august/)
+
+### PIPA Art. 37-2 — Automated Decision-Making Rights (eff. Sept 15, 2024)
+
+The 2023 amendment to the Personal Information Protection Act (enacted March 14, 2023; provisions on automated decisions effective September 15, 2024) introduced Article 37-2, modeled on GDPR Article 22. Data subjects have the right to demand explanations or reviews of decisions made through a "fully automated process" that occurs without human intervention. Where these automated decisions "significantly affect the rights and obligations" of data subjects, they have the right to refuse such decisions.
+
+**Three-tiered rights structure.** (1) If the data subject has been clearly informed in advance (through consent, contract, or explicit legal provisions) that automated decisions will be made, they retain only the right to request explanations and reviews — not the right to refuse. (2) If the data subject has not been so informed, they can exercise the right to refuse the automated decision entirely. (3) If a data subject refuses an automated decision on the ground that it significantly affects their rights or obligations (e.g., regarding life, body, or property), the data controller must either take measures not to apply the decision, or, if the data subject requests re-processing with human intervention, comply and notify the data subject of the result — unless there are "legitimate grounds" (defined as cases where there is a risk of unduly infringing on the life, body, property, or other interests of others).
+
+**Enforcement Decree provisions (eff. March 15, 2024).** The Enforcement Decree requires personal information controllers to: (1) disclose procedures for processing personal information in automated decisions in advance; and (2) provide a concise and comprehensible explanation upon request, including details on decision outcomes and the use and impact of key personal information. For automated decisions that do not significantly affect data subjects' rights or obligations, the explanation requirement can be satisfied by fulfilling the disclosure obligation (lower threshold).
+
+**Application to personalized pricing.** Whether algorithmic personalized pricing constitutes a decision that "significantly affects" a data subject's rights or obligations under Art. 37-2 is untested. A critical academic review (Park, 2024, in *Humanities and Social Sciences Communications*) notes that the PIPA provision was influenced by GDPR Article 22 but raises concerns about its scope and effectiveness. The review observes that the provision's protection is weakened by the prior-informed-consent exception: if a consumer agrees to terms of service that mention automated pricing, the right to refuse is extinguished — leaving only the right to request explanations. This structural weakness parallels the GDPR Article 22 debate but with an additional constraint: Korean law explicitly links the refusal right to whether the consumer was informed in advance, creating an incentive for firms to include automated decision-making disclosures in their terms of service, thereby preemptively neutralizing the refusal right.
+
+**PIPC enforcement on data use for advertising.** In September 2022, the PIPC imposed record fines totaling KRW 100 billion (approximately USD 72 million) on Google (KRW 69.2 billion) and Meta (KRW 30.8 billion) for collecting and using behavioral data for targeted advertising without obtaining proper consent. These fines demonstrate enforcement capacity on data use for personalization, though they targeted behavioral advertising data collection, not pricing. The enforcement action is the closest precedent: if firms collected behavioral data for personalized pricing without consent, the PIPC could invoke similar authority.
+
+**February 2026 amendment.** On February 12, 2026, the National Assembly passed further amendments to PIPA authorizing fines of up to 10% of total revenue for certain high-severity violations, including intentional or grossly negligent repeated violations within three years, violations affecting 10 million or more individuals, or failure to comply with corrective orders resulting in breaches. This significantly increases the penalty ceiling.
+
+**Primary**: [PIPA (Korea Legislation Research Institute)](https://elaw.klri.re.kr/eng_service/lawView.do?hseq=53044&lang=ENG); [PIPC, "Guide for New PIPA Amendment" (2023)](https://www.pipc.go.kr/eng/index.do)
+
+**Secondary**: [Park (2024), "Automated decision-making in South Korea: a critical review of the revised Personal Information Protection Act," *Humanities and Social Sciences Communications*](https://www.nature.com/articles/s41599-024-03470-y); [Kim & Chang, "Amendment to the PIPA Passed by the National Assembly" (2023)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=26837); [Chambers, "Amended Enforcement Decree of the PIPA" (2024)](https://chambers.com/articles/amended-enforcement-decree-of-the-personal-information-protection-act-of-korea-2); [AsiaLaw, "Concretizing Rights of Data Subjects in the AI Era" (2024)](https://www.asialaw.com/NewsAndAnalysis/concretizing-rights-of-data-subjects-in-the-ai-era-implementation-of-the-second/Index/1982); [Hunton, "South Korea Amends Privacy Law to Authorize Fines of Up to 10% of Total Revenue" (Feb 2026)](https://www.hunton.com/privacy-and-cybersecurity-law-blog/south-korea-amends-privacy-law-to-authorize-fines-of-up-to-10-of-total-revenue)
+
+### MRFTA — Competition Law Provisions
+
+The Monopoly Regulation and Fair Trade Act provides three pathways potentially relevant to algorithmic pricing.
+
+**Art. 19 — Unfair collaborative acts (cartels).** Prohibits agreements between enterprises that restrict competition, including agreements on price, output, or market division. The 2021 amendment explicitly defined an agreement to exchange competitively sensitive information (such as price or output) among competitors as a type of cartel conduct that substantially restrains competition — a finding of such information exchange is now sufficient to establish cartel conduct even without an underlying price-fixing agreement. This provision is relevant to algorithmic collusion scenarios where shared pricing algorithms facilitate information exchange (the hub-and-spoke scenario identified by the CMA's 2018 working paper). The KFTC has announced its intention to develop enforcement strategies for AI-based cartels, including algorithmic collusion, as part of its 2025 work plan.
+
+**Art. 3-2 — Abuse of market dominance.** Prohibits dominant enterprises from engaging in conduct that "hinders operations of other businesses by providing conditions deemed unreasonable compared with normal business practices or providing discriminating price or transactional conditions." This could reach algorithmic personalized pricing by a dominant firm — but only if the pricing constitutes exploitative or exclusionary abuse. No enforcement action has applied Art. 3-2 to personalized pricing. The KFTC has, however, applied it to algorithmic manipulation: Coupang (KRW 162.8 billion fine, June 2024, for search algorithm manipulation and fake reviews — the highest self-preferencing penalty in KFTC history) and Kakao Mobility (KRW 15.1 billion fine, December 2024, for manipulating dispatch algorithms to favor franchise taxis).
+
+**Art. 23/45 — Unfair trade practices.** Prohibits unfair discrimination in transactions. Unlike abuse of dominance, Art. 23 does not require the infringing enterprise to have market dominance. However, fines are capped at 2% of annual turnover — significantly lower than Art. 3-2 or Art. 19. Discriminatory pricing under Art. 23 requires showing that the discrimination is "unfair" and distorts fair trade, not merely that different consumers receive different prices.
+
+**KFTC 2025 work plan — algorithmic enforcement.** The KFTC announced in January 2025 that it would conduct in-depth analyses and develop countermeasures for emerging cartel types, including AI-based cartels. In March 2025, the KFTC launched a fact-finding survey targeting major firms (Naver, Google, Kakao, Meta) to investigate competitive restrictions in the AI data market. In May 2024, the KFTC co-hosted a joint conference with the OECD on generative AI and competition policy. A KFTC cartel bureau official (Moon Jae-ho) acknowledged that "AI and algorithms continue developing, and it's difficult to predict exactly when, how or how intelligently they will evolve" and that "creating proactive institutional frameworks under such uncertainty is extremely difficult." As of February 2026, no domestic case of an algorithm-based cartel has been addressed.
+
+**Primary**: [MRFTA (Korea Legislation Research Institute)](https://elaw.klri.re.kr/eng_service/lawView.do?lang=ENG&hseq=61424); [KFTC, Unfair Trade Practices](https://www.ftc.go.kr/eng/contents.do?key=547)
+
+**Secondary**: [Kim & Chang, "Promulgation and Implementation of the Amended MRFTA" (2024)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=29314); [Kluwer Competition Law Blog, "Main Developments in Competition Law and Policy 2024 — Korea" (Jan 2025)](https://competitionlawblog.kluwercompetitionlaw.com/2025/01/31/main-developments-in-competition-law-and-policy-2024-korea/); [Norton Rose Fulbright, "Korea: Competition Law Fact Sheet"](https://www.nortonrosefulbright.com/en/knowledge/publications/8f18c445/competition-law-fact-sheet-korea); [Korea Times, "Korea's e-commerce giant Coupang fined $102 million" (June 2024)](https://www.koreatimes.co.kr/www/tech/2024/10/129_376537.html); [TechCrunch, "Kakao Mobility hit with $10.5M antitrust fine" (Dec 2024)](https://techcrunch.com/2024/12/17/kakao-mobility-hit-with-10-5m-antitrust-fine-for-limiting-rivals-access/); [OECD, "Algorithmic Competition — Note by Korea" (2023)](https://one.oecd.org/document/DAF/COMP/WD(2023)12/en/pdf); [Chambers, "Cartels 2025 — South Korea"](https://practiceguides.chambers.com/practice-guides/cartels-2025/south-korea/trends-and-developments)
+
+### AI Basic Act (eff. Jan 22, 2026)
+
+The Framework Act on the Development of Artificial Intelligence and Establishment of Trust, passed by the National Assembly on December 25, 2024, and effective January 22, 2026, is South Korea's comprehensive AI governance framework. It introduces a risk-based classification system distinguishing between general AI, high-impact AI, and high-performance AI.
+
+**High-impact AI definition.** "High-impact AI" refers to AI systems "that may have a significant impact on or pose a risk to human life, physical safety, and basic rights," utilized in critical sectors including healthcare, energy, nuclear operations, transportation, biometric data analysis, public decision-making, employment, education, and "other areas that have a significant impact on the safety of human life and body and the protection of basic rights as prescribed by Presidential Decree." The reference to employment and the open-ended delegation to Presidential Decree create the possibility — but not the certainty — that algorithmic pricing in finance, insurance, or credit scoring could be designated as high-impact AI.
+
+**Obligations for high-impact AI operators.** Risk management plans; explanation methods for AI outputs and criteria; user protection plans; human oversight mechanisms; documentation of safety and reliability measures. Operators must provide a "meaningful explanation" of high-impact AI outcomes.
+
+**High-performance AI.** Systems trained with cumulative compute of at least 10^26 FLOPs are designated as high-performance AI with additional safety obligations.
+
+**Transparency for all AI.** Operators of both generative and high-impact AI must notify users in advance that their product or service is developed using AI. AI must be designed to avoid unjust bias, particularly in employment, finance, public administration, and access-to-services contexts.
+
+**Penalties.** Administrative fines of up to KRW 30 million for violations of corrective orders related to transparency or high-impact AI obligations. This is relatively modest compared to the PIPC's data protection fines (up to 10% of revenue) or the KFTC's competition penalties (up to 20% of relevant turnover for cartels).
+
+**What it does NOT cover.** The AI Basic Act does not specifically address algorithmic pricing. No provision prohibits, restricts, or requires disclosure of personalized pricing. The high-impact AI designation could theoretically reach pricing algorithms in finance or insurance — but this depends entirely on the forthcoming Presidential Decrees, which are being drafted by the Ministry of Science and ICT. The Act's general anti-bias and transparency obligations are aspirational for pricing: they require that AI avoid "unjust bias" in finance and access-to-services contexts, but do not define what constitutes unjust bias in pricing or create actionable enforcement mechanisms specific to pricing.
+
+**Primary**: [AI Basic Act (CSET Georgetown translation)](https://cset.georgetown.edu/publication/south-korea-ai-law-2025/); [AI Basic Act Explorer](https://aibasicact.kr/explorer/); [MSIT Press Release (Dec 2024)](https://www.msit.go.kr/eng/bbs/view.do?sCode=eng&mId=4&mPid=2&pageIndex=&bbsSeqNo=42&nttSeqNo=1071&searchOpt=ALL&searchTxt=)
+
+**Secondary**: [Cooley, "South Korea's AI Basic Act: Overview and Key Takeaways" (Jan 2026)](https://www.cooley.com/news/insight/2026/2026-01-27-south-koreas-ai-basic-act-overview-and-key-takeaways); [FPF, "South Korea's New AI Framework Act: A Balancing Act Between Innovation and Regulation" (2025)](https://fpf.org/blog/south-koreas-new-ai-framework-act-a-balancing-act-between-innovation-and-regulation/); [U.S. Commercial Service, "South Korea AI Basic Act" (2025)](https://www.trade.gov/market-intelligence/south-korea-artificial-intelligence-ai-basic-act); [IAPP, "Analyzing South Korea's Framework Act on the Development of AI" (2025)](https://iapp.org/news/a/analyzing-south-korea-s-framework-act-on-the-development-of-ai); [Littler, "Understanding South Korea's New AI Law" (2025)](https://www.littler.com/news-analysis/asap/understanding-south-koreas-new-ai-law-key-considerations-multinational-employers)
+
+### Online Platform Fairness Act (Proposed)
+
+Since the beginning of the 22nd National Assembly, seven legislative proposals titled "Act on Fairness in Online Platform Intermediated Transactions" have been submitted. The proposals target platform-to-merchant relationships rather than consumer-facing pricing, but several provisions have algorithmic pricing implications.
+
+**Key proposed provisions.** (1) Contract transparency: platforms must provide sellers with written contracts specifying exclusivity provisions, pricing terms, payment methods, and information-sharing arrangements. (2) Algorithm transparency: platforms would be required to disclose core criteria of search and exposure algorithms to prevent opaque ranking manipulation. (3) Commission rate regulation: proposals include tiered commission rates by sales size (particularly in food delivery), disclosure of pricing criteria, and prohibition of discriminatory treatment. (4) Anti-MFN provisions: ban on most-favored-nation demands (prohibiting platforms from requiring merchants not to price higher on other platforms). (5) Settlement protections: statutory payment deadlines for merchant payouts. (6) Enforcement: administrative fines up to 10% of total revenue.
+
+**Legislative status — deadlocked.** In July 2025, the Legislation Subcommittee of the National Policy Committee postponed review of 18 bills related to the Online Platform Act. In November 2025, the U.S. and South Korea publicly committed to ensuring that U.S. companies are not discriminated against in laws and policies affecting digital services. This agreement — driven by U.S. trade pressure, particularly from USTR and the Information Technology and Innovation Foundation (ITIF) — effectively shifted the legislative trajectory. The KFTC's parallel track of MRFTA amendments targeting dominant platforms (the Platform Regulation Roadmap, announced September 2024) faces similar U.S. opposition. The platform regulation landscape is split between the Fairness Act (platform-merchant transactions, KFTC-led) and stalled MRFTA amendments (market dominance, competition-focused).
+
+**Relevance to surveillance pricing.** The proposed Act addresses the platform infrastructure that enables personalized pricing — algorithm transparency, data-sharing requirements, anti-MFN provisions — but does not directly regulate consumer-facing personalized pricing. The anti-MFN provision is notably relevant: if platforms cannot require merchants to maintain price parity across channels, this facilitates rather than constrains price differentiation. The instrument's indirect relevance positions it as infrastructure regulation adjacent to but not targeting surveillance pricing.
+
+**Primary**: [KFTC, "Proposal for the Fair Online Platform Intermediary Transactions Act"](https://www.ftc.go.kr)
+
+**Secondary**: [ITIF, "Korea's Online Platform Fairness Bill Risks Becoming a Digital Non-Tariff Barrier" (Dec 2025)](https://itif.org/publications/2025/12/22/koreas-online-platform-fairness-bill-risks-becoming-digital-non-tariff-barrier/); [ProMarket, "The Future of the Online Platform Regulation Act in South Korea" (Sept 2025)](https://www.promarket.org/2025/09/02/the-future-of-the-online-platform-regulation-act-in-south-korea/); [CODIT, "Online Platform Act in Deadlock" (2025)](https://thecodit.com/blog/online-platform-act-deadlock-south-korea); [Cleary Gottlieb, "Digital Markets Regulation Handbook — South Korea"](https://content.clearygottlieb.com/antitrust/digital-markets-regulation-handbook/south-korea/index.html); [Kim & Chang, "KFTC Issues Public Notice on Proposed Enactment" (2022)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=22155)
+
+### FSC/FSS — Financial Services AI Governance
+
+**Regulatory sandbox for generative AI (Dec 2024).** The FSC introduced a regulatory sandbox programme allowing financial institutions to utilize generative AI within controlled conditions. Institutions may process pseudonymized personal credit information through generative AI systems subject to specific safeguards. This represents a facilitative rather than restrictive approach to AI in financial services.
+
+**No specific rules on algorithmic pricing.** As of February 2026, the FSC has not issued rules specifically addressing algorithmic pricing in insurance, credit, or financial services. There is no equivalent to the UK's FCA price walking ban, no prohibition on tenure-based price discrimination in insurance, and no disclosure requirement for AI-driven financial product pricing. The FSC's approach to AI in financial services is focused on enabling innovation through sandboxes and guidelines, not constraining pricing practices.
+
+**Primary**: [FSC Press Releases](https://www.fsc.go.kr/eng/pr010101)
+
+**Secondary**: [Chambers, "Financial Services Regulation 2025 — South Korea"](https://practiceguides.chambers.com/practice-guides/financial-services-regulation-2025/south-korea); [Chambers, "Fintech 2025 — South Korea"](https://practiceguides.chambers.com/practice-guides/fintech-2025/south-korea)
+
+## Analysis
+
+**Hierarchy.** No single strategy dominates. South Korea has assembled instruments across multiple strategies — disclosure (E-Commerce Act dark patterns), rights and liabilities (PIPA Art. 37-2), competition (MRFTA Arts. 3-2, 19, 23), and emerging AI governance (AI Basic Act) — but none of these instruments is the primary instrument for surveillance pricing because none targets surveillance pricing directly. The E-Commerce Act is operative and enforced but addresses drip pricing, not personalized pricing. PIPA Art. 37-2 is operative but untested for pricing. The MRFTA has produced significant enforcement on algorithmic manipulation (Coupang, Kakao Mobility) but not on consumer-facing pricing. The AI Basic Act is enacted but not yet operative and delegates critical definitions to Presidential Decree. The hierarchy is therefore indeterminate: multiple instruments coexist without any being primary for the specific practice of algorithmic personalized pricing.
+
+**Design logic.** Accumulated. South Korea's instrument set did not emerge from a unified policy design for algorithmic pricing — it accumulated from different regulatory eras and different policy logics. The E-Commerce Act amendments (2025) responded to international dark pattern trends. PIPA Art. 37-2 (2023) responded to GDPR influence and automated decision-making concerns. The MRFTA (amended 2021, 2024) responded to platform dominance and algorithmic manipulation. The AI Basic Act (2024) responded to the global wave of AI governance legislation. Each instrument was designed for a different problem — dark patterns, data protection, anti-competitive conduct, AI safety — and their collective coverage of surveillance pricing is incidental rather than intentional. This accumulated design logic contrasts with Singapore's unified voluntarism and resembles the EU's accumulated model (where the CRD, GDPR, DMA, and AI Act were enacted in different eras with different logics but collectively address personalized pricing).
+
+**Institution relied on — divergence.** Two notable features:
+
+First, the KFTC functions simultaneously as competition authority and consumer protection enforcement body — a dual mandate that concentrates both strategies in a single institution. This is structurally similar to the UK's CMA post-DMCCA but different from the EU's distributed enforcement architecture. The KFTC's enforcement record on algorithm manipulation (Coupang, Kakao Mobility) demonstrates willingness to address algorithmic conduct through competition law, but this has not extended to consumer-facing pricing. The KFTC's consumer protection enforcement (dark patterns) targets transparency at the point of sale, not the algorithmic logic behind the price. The institution has the mandate to address both but has used only one channel.
+
+Second, PIPA Art. 37-2's rights-based approach theoretically empowers individuals to challenge automated pricing decisions, but the prior-informed-consent exception creates a structural weakness. If firms include automated decision-making disclosures in their terms of service — as they routinely do — consumers lose the right to refuse and retain only the right to request explanations. This transforms a rights instrument into something closer to a disclosure instrument in practice: the right to know why, not the right to say no. The PIPC administers this provision, but its enforcement attention has focused on data collection for advertising (Google/Meta fines) rather than automated decision-making in pricing.
+
+## Evidence
+
+**KFTC algorithm manipulation enforcement — Coupang and Kakao Mobility.** The KFTC has demonstrated both willingness and capacity to enforce against algorithmic manipulation by platforms. The Coupang fine (KRW 162.8 billion / approximately USD 102 million, June 2024) for search algorithm manipulation and fake reviews, and the Kakao Mobility fine (KRW 15.1 billion / approximately USD 10.5 million, December 2024) for dispatch algorithm manipulation, represent two of the largest competition enforcement actions targeting algorithmic conduct in any APAC jurisdiction. Both cases involved self-preferencing — platforms manipulating algorithms to favor their own products or affiliated services — not consumer-facing personalized pricing. But they establish enforcement precedent: the KFTC can and does sanction algorithmic manipulation, the MRFTA framework is adequate for addressing algorithmic conduct, and penalties are substantial. The gap between algorithm enforcement (self-preferencing: yes) and pricing enforcement (personalized pricing: no) is itself significant. [Korea Times, "Coupang fined $102 million" (June 2024)](https://www.koreatimes.co.kr/www/tech/2024/10/129_376537.html); [TechCrunch, "Kakao Mobility hit with $10.5M antitrust fine" (Dec 2024)](https://techcrunch.com/2024/12/17/kakao-mobility-hit-with-10-5m-antitrust-fine-for-limiting-rivals-access/)
+
+**KFTC dark pattern enforcement — September 2025 corrective actions.** The KFTC's corrective actions against 36 firms in OTT, music streaming, online shopping, e-book, rental, and travel sectors (announced September 30, 2025) demonstrate that the E-Commerce Act amendments are being actively enforced. The monitored practices included blocking cancellations, hidden renewals, misleading layouts, and partial price disclosures. This is pricing-adjacent enforcement — targeting how prices are displayed, not how they are set. No action targeted personalized or algorithmic pricing. [Lexology, "KFTC Corrects Suspected Dark Pattern Cases" (2025)](https://www.lexology.com/library/detail.aspx?g=3ce4c933-3514-4aab-a2aa-c4a02549d216)
+
+**PIPC enforcement on behavioral data — Google and Meta (September 2022).** The PIPC's KRW 100 billion fines on Google and Meta for collecting behavioral data for targeted advertising without proper consent demonstrate significant enforcement capacity on data-driven personalization. The fines were the largest for data privacy violations in Korea at the time. While the enforcement targeted advertising personalization, not pricing personalization, the legal theory — that collecting behavioral data for personalization requires explicit consent — is directly applicable to surveillance pricing. If firms collected browsing behavior, purchase history, or location data to set personalized prices without obtaining consent specifically for that purpose, the PIPC could invoke similar authority. [TechCrunch, "Google, Meta fined $71.8M for violating privacy law in South Korea" (Sept 2022)](https://techcrunch.com/2022/09/14/google-meta-fined-71-8m-for-violating-privacy-law-in-south-korea/)
+
+**No enforcement on personalized pricing.** As of February 2026, no Korean regulator has brought any enforcement action, investigation, or inquiry specifically targeting algorithmic personalized pricing. The KFTC has not applied dark pattern regulations or competition law to personalized pricing. The PIPC has not enforced PIPA Art. 37-2 against pricing decisions. The FSC has not taken supervisory action against algorithmic pricing in insurance or financial services. The enforcement record on personalized pricing specifically is entirely blank.
+
+**No algorithmic collusion enforcement.** Despite the MRFTA's strengthened information exchange provisions and the KFTC's stated intention to address AI-based cartels, no domestic case of algorithm-based collusion has been investigated or sanctioned as of February 2026. The KFTC official (Moon Jae-ho) acknowledged the difficulty of creating proactive frameworks under technological uncertainty. The gap between institutional rhetoric (preparing for algorithmic collusion) and enforcement action (zero cases) mirrors the pattern observed in the UK (CMA 2018 working paper, seven years without enforcement) and Singapore (revised competition guidelines, no enforcement).
+
+## Movement
+
+South Korea's trajectory shows rapid legislative accumulation across multiple domains (2023-2026), with enforcement concentrated on algorithmic manipulation and dark patterns but not yet reaching personalized pricing.
+
+1. **September 2022**: PIPC fines Google and Meta KRW 100 billion for behavioral data collection for targeted advertising without consent — largest Korean data privacy fines
+2. **February 2023**: KFTC imposes corrective order and KRW 25.7 billion fine on Kakao Mobility for dispatch algorithm manipulation (later revised to KRW 15.1 billion in December 2024)
+3. **March 2023**: PIPA amendment enacted, introducing Art. 37-2 on automated decision-making rights
+4. **September 2023**: Amended PIPA takes effect (automated decision provisions deferred to September 2024)
+5. **2024 (throughout)**: MRFTA amendments take effect (June 2024); KFTC announces platform regulation roadmap (September 2024)
+6. **June 2024**: KFTC fines Coupang KRW 162.8 billion for search algorithm manipulation and fake reviews — highest self-preferencing penalty in KFTC history
+7. **September 2024**: PIPA Art. 37-2 provisions on automated decision-making rights take effect
+8. **December 2024**: AI Basic Act passed by National Assembly; FSC introduces generative AI regulatory sandbox for financial services
+9. **February 2025**: E-Commerce Act dark pattern amendments take effect (six-month drip pricing grace period begins)
+10. **March 2025**: KFTC launches fact-finding survey on AI data market targeting major platforms
+11. **July-August 2025**: Drip pricing grace period ends (August 13); KFTC signals zero-tolerance enforcement; Online Platform Fairness Act review postponed under U.S. trade pressure
+12. **September 2025**: KFTC announces corrective actions against 36 firms for dark patterns
+13. **November 2025**: U.S.-Korea agreement on non-discrimination in digital services; Online Platform Fairness Act deadlocked
+14. **January 2026**: AI Basic Act takes effect (January 22)
+15. **February 2026**: PIPA amendment authorizing fines up to 10% of revenue passed
+
+The trajectory is notable for its pace and breadth. In three years (2023-2026), South Korea enacted an automated decision-making right (PIPA Art. 37-2), a dark pattern prohibition (E-Commerce Act), and a comprehensive AI governance framework (AI Basic Act). No other APAC jurisdiction has moved on all three fronts in such a compressed period. Singapore, by contrast, maintained its voluntary-only approach throughout the same period. The contrast with [[sp-singapore|Singapore's]] steady-state voluntarism is the most analytically significant APAC comparison for Paper 1.
+
+But the pace of legislative accumulation has not produced convergence on surveillance pricing. Each instrument addresses a different aspect of the problem — data collection consent, pricing display transparency, algorithmic fairness, platform conduct — without any instrument targeting the core practice: setting different prices for different consumers based on their personal data. The movement is rapid but diffuse.
+
+The U.S. trade pressure on the Online Platform Fairness Act introduces a geopolitical dimension absent from other jurisdictions in the survey. South Korea's platform regulation is constrained not only by domestic policy choices but by the bilateral trade relationship with the United States, which treats platform regulation targeting U.S. firms (Google, Apple, Meta) as a potential non-tariff barrier. This external constraint on regulatory movement is distinctive.
+
+## Open Questions
+
+1. **Will the AI Basic Act's Presidential Decrees designate pricing algorithms as high-impact AI?** The Act delegates the definition of high-impact AI sectors to Presidential Decree. If algorithmic pricing in finance, insurance, or credit scoring is designated, this would create binding obligations (risk management, human oversight, explanations) for pricing algorithms. If pricing is not designated, the AI Basic Act has no direct relevance to surveillance pricing. The forthcoming decrees from the Ministry of Science and ICT are critical.
+2. **Will the PIPC enforce Art. 37-2 against pricing decisions?** The automated decision-making right has been operative since September 2024, but no enforcement has targeted pricing. Will a consumer challenge an algorithmic pricing decision and invoke Art. 37-2? Will the PIPC pursue enforcement, or will the prior-informed-consent exception render the provision inoperative for pricing?
+3. **Will the KFTC extend enforcement from algorithm manipulation to algorithmic pricing?** The KFTC has sanctioned Coupang and Kakao Mobility for algorithm manipulation (self-preferencing) but not for consumer-facing personalized pricing. Will the KFTC apply MRFTA Art. 3-2 (abuse of dominance) or Art. 23 (unfair trade practices) to algorithmic price discrimination? The enforcement pattern suggests capacity but not yet intent.
+4. **Will the Online Platform Fairness Act pass, and in what form?** The Act is deadlocked under U.S. trade pressure. If enacted, its algorithm transparency and anti-MFN provisions would restructure the platform infrastructure that enables personalized pricing. If stalled indefinitely, the KFTC may pursue the same objectives through MRFTA amendments — a different legislative vehicle with different political dynamics.
+5. **Will the KFTC bring an algorithmic collusion case?** Despite the strengthened information exchange provisions (2021 MRFTA amendment) and stated intention to address AI-based cartels, no case has materialized. The KFTC co-hosted an OECD conference on AI and competition (May 2024) and announced analytical work on algorithmic collusion (January 2025 work plan). Will this institutional preparation translate into enforcement?
+6. **Does the financial sector have an insurance pricing fairness gap?** No FSC instrument specifically addresses algorithmic pricing discrimination in insurance. Unlike the UK's FCA price walking ban, South Korea has no prohibition or even disclosure requirement for insurance pricing algorithms. Is there evidence of price walking or algorithmic discrimination in Korea's insurance market? The AI Basic Act's anti-bias provisions could theoretically reach insurance pricing if the Presidential Decrees designate finance as a high-impact sector, but this is uncertain.
+7. **How does the PIPC's behavioral advertising enforcement precedent apply to pricing?** The Google/Meta fines (2022) established that collecting behavioral data for personalization without explicit consent violates PIPA. If firms collect the same types of data (browsing behavior, purchase history, location) for pricing rather than advertising, does the same legal theory apply? The PIPC has not clarified.
+8. **Will the KFTC's dark pattern enforcement expand beyond drip pricing to personalized pricing transparency?** The current enforcement targets pricing display (showing the full price upfront). Will the KFTC develop interpretive guidance or enforcement precedent extending dark pattern concepts to encompass algorithmic price personalization — for example, treating the failure to disclose personalized pricing as a form of misleading practice?
+
+## Sources
+
+**Primary**:
+- [E-Commerce Act (Korea Legislation Research Institute)](https://elaw.klri.re.kr/eng_service/lawView.do?hseq=38513&lang=ENG)
+- [PIPA (Korea Legislation Research Institute)](https://elaw.klri.re.kr/eng_service/lawView.do?hseq=53044&lang=ENG)
+- [MRFTA (Korea Legislation Research Institute)](https://elaw.klri.re.kr/eng_service/lawView.do?lang=ENG&hseq=61424)
+- [AI Basic Act (CSET Georgetown translation)](https://cset.georgetown.edu/publication/south-korea-ai-law-2025/)
+- [AI Basic Act Explorer](https://aibasicact.kr/explorer/)
+- [AI Basic Act (CSET Georgetown PDF)](https://cset.georgetown.edu/wp-content/uploads/t0625_south_korea_ai_law_EN.pdf)
+- [MSIT, "Basic Act on AI Passed at the National Assembly's Plenary Session" (Dec 2024)](https://www.msit.go.kr/eng/bbs/view.do?sCode=eng&mId=4&mPid=2&pageIndex=&bbsSeqNo=42&nttSeqNo=1071&searchOpt=ALL&searchTxt=)
+- [KFTC, Unfair Trade Practices](https://www.ftc.go.kr/eng/contents.do?key=547)
+- [FSC Press Releases](https://www.fsc.go.kr/eng/pr010101)
+- [PIPC](https://www.pipc.go.kr/eng/index.do)
+- [OECD, "Algorithmic Competition — Note by Korea" (2023)](https://one.oecd.org/document/DAF/COMP/WD(2023)12/en/pdf)
+
+**Secondary**:
+- [Park (2024), "Automated decision-making in South Korea: a critical review of the revised Personal Information Protection Act," *Humanities and Social Sciences Communications*](https://www.nature.com/articles/s41599-024-03470-y)
+- [Kim & Chang, "Amendment to E-Commerce Act Strengthening Regulations on Dark Patterns Took Effect" (2025)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=32297)
+- [Kim & Chang, "Regulations on Dark Patterns Take Effect and KFTC Publishes a Q&A" (Feb 2025)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=31410)
+- [Kim & Chang, "Amendment to the PIPA Passed by the National Assembly" (2023)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=26837)
+- [Kim & Chang, "Promulgation and Implementation of the Amended MRFTA" (2024)](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=29314)
+- [Kim & Chang, "KFTC Announces Key Initiatives for 2025"](https://www.kimchang.com/en/insights/detail.kc?sch_section=4&idx=31091)
+- [Yulchon, "Dark Pattern Crackdown Looms as Drip Pricing Grace Period Ends" (Aug 2025)](https://yulchon.com/en/resources/publications/newsletter-view/41347/page.do)
+- [Yoon & Yang, "KFTC Hosts Roundtable on Dark Patterns" (July 2025)](https://www.yoonyang.com/eng/insights/newsletter/2594)
+- [Legal 500, "KFTC Hosts Roundtable on Dark Patterns, Signaling Intensive Enforcement from August" (2025)](https://www.legal500.com/developments/thought-leadership/kftc-hosts-roundtable-on-dark-patterns-signaling-intensive-enforcement-from-august/)
+- [Legal 500, "KFTC 2025 Annual Work Plan" (2025)](https://www.legal500.com/developments/thought-leadership/kftc-2025-annual-work-plan/)
+- [Cooley, "South Korea's AI Basic Act: Overview and Key Takeaways" (Jan 2026)](https://www.cooley.com/news/insight/2026/2026-01-27-south-koreas-ai-basic-act-overview-and-key-takeaways)
+- [FPF, "South Korea's New AI Framework Act: A Balancing Act" (2025)](https://fpf.org/blog/south-koreas-new-ai-framework-act-a-balancing-act-between-innovation-and-regulation/)
+- [IAPP, "Analyzing South Korea's Framework Act on the Development of AI" (2025)](https://iapp.org/news/a/analyzing-south-korea-s-framework-act-on-the-development-of-ai)
+- [Kluwer Competition Law Blog, "Main Developments in Competition Law and Policy 2024 — Korea" (Jan 2025)](https://competitionlawblog.kluwercompetitionlaw.com/2025/01/31/main-developments-in-competition-law-and-policy-2024-korea/)
+- [Norton Rose Fulbright, "Korea: Competition Law Fact Sheet"](https://www.nortonrosefulbright.com/en/knowledge/publications/8f18c445/competition-law-fact-sheet-korea)
+- [Chambers, "Cartels 2025 — South Korea"](https://practiceguides.chambers.com/practice-guides/cartels-2025/south-korea/trends-and-developments)
+- [Chambers, "Artificial Intelligence 2025 — South Korea"](https://practiceguides.chambers.com/practice-guides/artificial-intelligence-2025/south-korea/trends-and-developments)
+- [Chambers, "Data Protection & Privacy 2025 — South Korea"](https://practiceguides.chambers.com/practice-guides/data-protection-privacy-2025/south-korea)
+- [Chambers, "Financial Services Regulation 2025 — South Korea"](https://practiceguides.chambers.com/practice-guides/financial-services-regulation-2025/south-korea)
+- [Chambers, "Amended Enforcement Decree of the PIPA" (2024)](https://chambers.com/articles/amended-enforcement-decree-of-the-personal-information-protection-act-of-korea-2)
+- [ITIF, "Korea's Online Platform Fairness Bill Risks Becoming a Digital Non-Tariff Barrier" (Dec 2025)](https://itif.org/publications/2025/12/22/koreas-online-platform-fairness-bill-risks-becoming-digital-non-tariff-barrier/)
+- [ProMarket, "The Future of the Online Platform Regulation Act in South Korea" (Sept 2025)](https://www.promarket.org/2025/09/02/the-future-of-the-online-platform-regulation-act-in-south-korea/)
+- [CODIT, "Online Platform Act in Deadlock" (2025)](https://thecodit.com/blog/online-platform-act-deadlock-south-korea)
+- [Cleary Gottlieb, "Digital Markets Regulation Handbook — South Korea"](https://content.clearygottlieb.com/antitrust/digital-markets-regulation-handbook/south-korea/index.html)
+- [AsiaLaw, "Concretizing Rights of Data Subjects in the AI Era" (2024)](https://www.asialaw.com/NewsAndAnalysis/concretizing-rights-of-data-subjects-in-the-ai-era-implementation-of-the-second/Index/1982)
+- [KCMI, "Dark Pattern Regulation: Global Trends and Financial Sector Needs" (2025)](https://www.kcmi.re.kr/en/publications/pub_detail_view?syear=2025&zcd=002001017&zno=1857&cno=6572)
+- [TechCrunch, "Google, Meta fined $71.8M for violating privacy law in South Korea" (Sept 2022)](https://techcrunch.com/2022/09/14/google-meta-fined-71-8m-for-violating-privacy-law-in-south-korea/)
+- [Korea Times, "Coupang fined $102 million" (June 2024)](https://www.koreatimes.co.kr/www/tech/2024/10/129_376537.html)
+- [TechCrunch, "Kakao Mobility hit with $10.5M antitrust fine" (Dec 2024)](https://techcrunch.com/2024/12/17/kakao-mobility-hit-with-10-5m-antitrust-fine-for-limiting-rivals-access/)
+- [ICLG, "Consumer Protection Laws and Regulations 2025 — Korea"](https://iclg.com/practice-areas/consumer-protection-laws-and-regulations/korea)
+- [ICLG, "Digital Business Laws and Regulations 2024-2025 — Korea"](https://iclg.com/practice-areas/digital-business-laws-and-regulations/korea)
+- [IAPP, "Global AI Governance Law and Policy: South Korea"](https://iapp.org/resources/article/global-ai-governance-south-korea)
+- [Hunton, "South Korea Amends Privacy Law to Authorize Fines of Up to 10% of Total Revenue" (Feb 2026)](https://www.hunton.com/privacy-and-cybersecurity-law-blog/south-korea-amends-privacy-law-to-authorize-fines-of-up-to-10-of-total-revenue)
+
+**Library**:
+- [[intel-comparative-regulation]]
+- [[surveillance-pricing-comparative-regulation]]
+- [[baldwin-regulatory-strategies]]
+- [[disclosure-regulation]]
+- [[rights-and-liabilities-regulation]]
+- [[competition-over-regulation]]
+- [[self-regulation]]
+- [[command-and-control]]
+- [[regulatory-topology-not-ladder]]
+- [[government-capacities-regulation]]
+- [[sp-uk]]
+- [[sp-eu]]
+- [[sp-china]]
+- [[sp-singapore]]
+- [[sp-new-york]]
+- [[sp-california]]

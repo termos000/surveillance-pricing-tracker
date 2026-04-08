@@ -1,0 +1,300 @@
+---
+date-created: "202602251800"
+aliases:
+  - "Germany surveillance pricing profile"
+tags:
+  - "#molecules"
+  - "#jurisdiction-profile"
+topic:
+  - "[[surveillance pricing]]"
+  - "[[Germany]]"
+---
+
+# Germany — Surveillance Pricing Regulatory Profile
+
+*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
+
+Germany layers a distinctive national regulatory architecture on top of the [[sp-eu|EU baseline]]. Where the EU provides the general framework (GDPR, CRD, UCPD, AI Act, DMA), Germany adds three things the EU alone does not: a pioneering digital competition instrument (GWB Section 19a) that has already produced the first enforcement order and monetary disgorgement against algorithmic pricing mechanisms in the EU; a consumer protection transposition (Section 312d BGB and Article 246a EGBGB) that implements the Omnibus Directive's personalized pricing disclosure with German-specific procedural obligations; and a sustained institutional investment in algorithmic pricing research by the Bundeskartellamt, including the 2019 joint study with the Autorite de la concurrence and the 2017-2019 comparison websites sector inquiry. The design logic is accumulated but competition-dominated: the Bundeskartellamt is the active institution, and the instruments it wields (Sections 19, 19a, and 20 GWB) have produced more enforcement activity relevant to algorithmic pricing than any other national competition authority in the EU.
+
+## Instruments
+
+| Instrument | Strategy | Sector | Status | Enforcement |
+|-----------|----------|--------|--------|-------------|
+| GWB Section 19a (10th Amendment, eff. Jan 2021) — paramount cross-market significance | Competition ([[competition-over-regulation]]) | Digital markets (designated firms: Meta, Google/Alphabet, Amazon, Apple) | Operative (Amazon enforcement order Feb 2026) | Bundeskartellamt; prohibition orders; disgorgement; fines up to 10% of global turnover; appeal to Federal Court of Justice |
+| GWB Sections 19/20 — abuse of dominance / relative market power | Competition | General | Operative | Bundeskartellamt; fines up to 10% of global turnover |
+| Section 312d BGB / Article 246a EGBGB (Omnibus Directive transposition, eff. May 28, 2022) | Disclosure ([[disclosure-regulation]]) | General (distance and off-premises contracts) | Operative | State consumer protection authorities; UWG enforcement (Sec. 5a); fines up to EUR 25,000 under PAngV |
+| UWG Sections 5a and 5b (amended May 28, 2022) — misleading omissions and ranking transparency | Disclosure | General (B2C) | Operative | State consumer protection authorities; competitor actions (Abmahnungen); qualified entities; injunctions and damages |
+| PAngV (Preisangabenverordnung, amended May 28, 2022) — price indication regulation | Disclosure | General (B2C retail) | Operative | State authorities; fines up to EUR 25,000 |
+| BDSG Section 37 — automated individual decision-making (GDPR Art. 22 supplement) | Rights & liabilities ([[rights-and-liabilities-regulation]]) | General | Operative (but contested after SCHUFA ruling) | BfDI (federal); state DPAs (Landesdatenschutzbeauftragte); fines per GDPR schedule |
+| BDSG Section 31 (proposed deletion) — scoring in commercial transactions | Rights & liabilities | Credit and scoring | Operative (CJEU compatibility questioned) | BfDI; state DPAs |
+| KI-MIG (AI Market Surveillance and Innovation Promotion Act, Cabinet approved 2025) | Code-as-regulation ([[code-as-regulation]]) | AI systems (implementing EU AI Act) | Proposed (not yet enacted as of Feb 2026) | Federal Network Agency (BNetzA) as central authority; sectoral authorities retain jurisdiction for regulated products |
+| Datenethikkommission Report (Oct 2019) — five-tier risk framework for algorithmic systems | Self-regulation / advisory ([[self-regulation]]) | General (advisory, non-binding) | Published (advisory only; influenced EU AI Act design) | N/A (recommendations only) |
+
+## Detail
+
+### GWB Section 19a — Paramount Cross-Market Significance (10th Amendment, eff. Jan 19, 2021)
+
+The 10th Amendment to the Gesetz gegen Wettbewerbsbeschrankungen (GWB), known as the GWB Digitalisierungsgesetz, introduced Section 19a, empowering the Bundeskartellamt to designate undertakings of "paramount significance for competition across markets" (uberragende marktuebergreifende Bedeutung fuer den Wettbewerb) and to impose specific behavioral prohibitions without first proving dominance in any particular market. This is Germany's most innovative regulatory contribution relevant to surveillance pricing, predating the EU's Digital Markets Act by two years and operating in parallel with the DMA since March 2024.
+
+**Designation criteria.** Section 19a(1) identifies qualitative factors: dominant position on at least one market, financial strength, access to competitively relevant data, importance for third-party access to supply and sales markets, and the undertaking's influence on third-party business activities. Four firms have been designated: Meta (May 2022), Google/Alphabet (January 2022), Amazon (July 2022, confirmed by Federal Court of Justice April 2024), and Apple (April 2023, confirmed by Federal Court of Justice March 2025).
+
+**Behavioral prohibitions.** Section 19a(2) enumerates specific prohibited conduct for designated firms, including self-preferencing, impeding competitors, creating barriers to multi-homing, making use of services conditional on unreasonable data processing, and refusing interoperability or data portability. Critically for surveillance pricing, the provision reaches algorithmic pricing mechanisms used by designated platforms that affect third-party sellers' pricing freedom.
+
+**Amazon enforcement — the landmark case.** The Bundeskartellamt's proceeding against Amazon under Section 19a(2) is the most directly relevant enforcement action to algorithmic pricing in the EU. The case addresses Amazon's "price control mechanisms" — algorithms and statistical models that calculate dynamic, changing price caps for sellers' offers. Offers categorized as "pricing errors" are removed from the marketplace; those classified as "significantly high prices" or "uncompetitive prices" are excluded from the Buy Box and have their search result visibility restricted.
+
+On June 2, 2025, the Bundeskartellamt issued its preliminary assessment finding that Amazon's price control mechanisms likely violate Section 19a(2) by restricting the visibility of sellers' offers and interfering with their freedom to set prices — restrictions the authority considered unreasonable and not objectively justified. On February 5, 2026, the Bundeskartellamt issued its enforcement order: it prohibited Amazon from applying the price control mechanisms and ordered disgorgement of EUR 59 million in economic benefits — the first use of the reformed disgorgement provision (Section 34 GWB, as amended by the 11th Amendment in November 2023) since its simplification. Amazon was given one month to appeal to the Federal Court of Justice.
+
+**What this is and is not.** The Amazon case targets a platform's algorithmic control of third-party seller pricing, not consumer-facing personalized pricing. Amazon's algorithms set price caps for sellers, not personalized prices for consumers. However, the case establishes that algorithmic pricing mechanisms are within the reach of Section 19a and that the Bundeskartellamt will use disgorgement as a remedy for algorithmic pricing violations. The enforcement infrastructure and institutional willingness are now proven; whether this extends to consumer-facing personalized pricing by designated firms remains untested.
+
+**Primary**: [GWB (English text)](https://www.gesetze-im-internet.de/englisch_gwb/englisch_gwb.html); [Bundeskartellamt, Amazon proceedings page](https://www.bundeskartellamt.de/EN/Digital_economy/proceedings_against_large_digital_companies/Amazon/Amazon_node.html); [Bundeskartellamt, "Amazon Price Control Mechanisms — Preliminary Assessment" press release (June 2, 2025)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2025/2025_06_02_Amazon.html); [Bundeskartellamt, "Amazon — Prohibition and Disgorgement Order" press release (Feb 5, 2026)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2026/26_02_05_Amazon.html)
+
+**Secondary**: [CMS, "The 10th Amendment to the GWB" (Jan 2021)](https://cms.law/en/deu/publication/the-10th-amendment-to-the-german-act-against-restraints-of-competition-gwb-digitalisation-act-came-into-force-today); [Franck & Peitz, "Section 19a of the Reformed German Competition Act," CPI (2021)](https://www.competitionpolicyinternational.com/wp-content/uploads/2021/03/6-Section-19a-of-the-Reformed-German-Competition-Act-A-Too-Powerful-Weapon-to-Tame-Big-Tech-By-Jens-Uwe-Franck-Martin-Peitz.pdf); [Library of Congress, "Germany: New Digital Competition Act" (Feb 2021)](https://www.loc.gov/item/global-legal-monitor/2021-02-23/germany-new-digital-competition-act-expands-abilities-of-competition-authorities-to-regulate-abuse-of-dominant-market-positions/); [Jones Day, "German Competition Authority Fines Amazon" (Feb 2026)](https://www.jonesday.com/en/insights/2026/02/german-competition-authority-fines-amazon-for-allegedly-influencing-prices-of-thirdparty-sellers-on-amazon-marketplace); [Louven Rechtsanwalte, "Bundeskartellamt Issues Preliminary Assessment of Amazon's Price Control Mechanisms" (2025)](https://louven.legal/en/bundeskartellamt-issues-preliminary-assessment-of-amazons-price-control-mechanisms/); [IBA, "Digital Platform Regulation: Developments in Germany" (2025)](https://www.ibanet.org/digital-platform-regulation-germany-dma)
+
+### GWB Sections 19 and 20 — Abuse of Dominance and Relative Market Power
+
+Section 19 GWB prohibits the abuse of a dominant position, including both exploitative abuse (unreasonable prices or conditions) and exclusionary abuse. Section 20 GWB extends abuse control to undertakings with "relative market power" — those on which other undertakings are economically dependent even if they are not dominant in the market as a whole.
+
+**Exploitative abuse — Section 19(2) No. 2.** A dominant undertaking abuses its position if it demands prices or conditions that differ from those that would very likely arise under effective competition. This provision reaches exploitative pricing by dominant firms, including algorithmically generated prices. The Bundeskartellamt's 2018 Lufthansa investigation examined whether algorithmic price increases of 25-30% on domestic routes following Air Berlin's insolvency constituted exploitative abuse. The Bundeskartellamt ultimately decided not to initiate formal proceedings, finding that the price increases did not meet the threshold for abuse and noting rapid market entry by competitors such as easyJet. However, the investigation confirmed that the authority considers algorithmic pricing mechanisms within the scope of Section 19 analysis.
+
+**Data as a factor in dominance — Section 18(3a).** The 10th Amendment added Section 18(3a), specifying that access to competitively relevant data is a factor in assessing market power. This provision, combined with the data-related behavioral prohibitions in Section 19a, creates a framework where the data infrastructure enabling surveillance pricing is itself a factor in competition analysis.
+
+**Relative market power and platform dependence — Section 20(1) and (1a).** The 10th Amendment expanded Section 20 to include digital-specific criteria for assessing economic dependence: intermediation power (dependence on access to data controlled by another undertaking) and the absence of "sufficient and reasonable alternatives" on multi-sided markets. Undertakings acting as intermediaries on multi-sided markets are now presumed to have relative market power when other businesses depend on their intermediary services for market access. This lowers the threshold below dominance: a platform that is not dominant in the traditional sense may still be subject to abuse control if its sellers depend on it for access to consumers.
+
+**Facebook/Meta data exploitation (2019-2024).** The Bundeskartellamt's landmark Facebook decision (February 2019) found that Facebook's collection and combination of user data from third-party sources constituted an exploitative abuse of its dominant position under Section 19. The Federal Court of Justice upheld the authority's approach in June 2020, and the CJEU endorsed it in its July 2023 preliminary ruling (Case C-252/21). The case was resolved in October 2024 when Meta implemented measures deemed sufficiently effective. While the Facebook case concerned data collection rather than pricing, it established the principle that data exploitation by a dominant platform is actionable under German competition law — a principle directly applicable to data-driven personalized pricing.
+
+**Primary**: [GWB Sections 18, 19, 20 (English text)](https://www.gesetze-im-internet.de/englisch_gwb/englisch_gwb.html); [Bundeskartellamt, "Lufthansa — Price Increase After Air Berlin Insolvency" press release (May 29, 2018)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2018/29_05_2018_Lufthansa.html); [Bundeskartellamt, Meta/Facebook proceedings page](https://www.bundeskartellamt.de/EN/Digital_economy/proceedings_against_large_digital_companies/Meta_Facebook/Meta_Facebook.html); [Bundeskartellamt, "Facebook Proceeding Concluded" press release (Oct 10, 2024)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2024/10_10_2024_Facebook.html)
+
+**Secondary**: [Hausfeld, "Data Exploiting as an Abuse of Dominance: The German Facebook Decision"](https://www.hausfeld.com/what-we-think/competition-bulletin/data-exploiting-as-an-abuse-of-dominance-the-german-facebook-decision); [Bundeskartellamt, "Algorithms and Competition in a Digitalized World," by Andreas Mundt, CPI](https://www.bundeskartellamt.de/SharedDocs/Publikation/EN/Fachartikel/CPI_Algorithms.pdf?__blob=publicationFile&v=2)
+
+### Section 312d BGB / Article 246a EGBGB — Personalized Pricing Disclosure (eff. May 28, 2022)
+
+Germany transposed the Omnibus Directive's personalized pricing disclosure obligation (CRD Art. 6(1)(ea)) through Section 312d BGB in conjunction with Article 246a Section 1(1) Sentence 1 No. 6 EGBGB (Einfuehrungsgesetz zum Buergerlichen Gesetzbuche). Before concluding a distance or off-premises contract, traders must inform consumers when the price of the specific product or service has been "personalised on the basis of automated decision-making."
+
+**Scope and limitations.** The obligation mirrors the Omnibus Directive: it applies only to distance and off-premises contracts, not to in-store retail. Traders must disclose the fact of personalization, not the mechanism, the data used, or the magnitude of the price difference. Dynamic pricing that responds to general market demand or supply conditions without using personal data is not covered. Germany did not exercise the member state option to impose stricter transparency requirements beyond the Directive minimum.
+
+**Procedural specificity.** Unlike the CRD's general direction to provide information "in a clear and comprehensible manner," German commentary emphasizes that the personalized pricing disclosure cannot be satisfied by a general notice in terms and conditions. The information must be provided to the specific consumer in relation to the specific transaction before the contract is concluded — a procedural constraint that, while not adding substantive content, narrows the compliance pathway.
+
+**Enforcement architecture.** Violations of Section 312d BGB can be enforced through multiple channels: (1) competitors and qualified entities may seek injunctions under UWG Section 5a (misleading omissions); (2) consumer protection associations (Verbraucherverbande) may bring representative actions; (3) state authorities may impose fines under the PAngV. However, the maximum fine under the PAngV for price indication violations is EUR 25,000, which is low relative to the potential commercial value of personalized pricing and may be insufficient to deter non-compliance by large retailers.
+
+**No enforcement actions.** As of February 2026, no enforcement action specifically targeting failure to disclose personalized pricing under Section 312d BGB / Article 246a EGBGB has been identified. The provision has been operative for nearly four years.
+
+**Primary**: [BGB (English text)](https://www.gesetze-im-internet.de/englisch_bgb/englisch_bgb.html); [EGBGB Article 246a (German text)](https://dejure.org/gesetze/EGBGB/246a.html); [Section 312d BGB (German text, dejure.org)](https://dejure.org/gesetze/BGB/312d.html)
+
+**Secondary**: [Bird & Bird, "Consumer Protection Laws in Germany: Major Updates" (2022)](https://www.twobirds.com/en/insights/2022/germany/verbraucherschutzgesetze-in-deutschland-wichtige-neuerungen); [Bird & Bird, "Germany — Omnibus Directive" country page](https://www.twobirds.com/en/trending-topics/omnibus-directive/omnibus-directive-countries/germany); [Oppenhoff, "Omnibus Directive: Further Notification Obligations" (2022)](https://www.oppenhoff.eu/en/news/detail/omnibus-directive-further-notification-obligations-and-easier-termination-options-strengthen-consumer-protection/); [Harting Rechtsanwalte, "New Information Obligations for Retailers: Badly Thought Out, Badly Done"](https://haerting.de/en/insights/neue-informationspflichten-fuer-den-handel-schlecht-gedacht-schlecht-gemacht/); [Greenberg Traurig, "New Rules of the Game in Consumer Law" (June 2022)](https://www.gtlaw.com/en/insights/2022/6/new-rules-of-the-game-in-consumer-law)
+
+### UWG Sections 5a and 5b — Misleading Omissions and Ranking Transparency (amended May 28, 2022)
+
+The Gesetz gegen den unlauteren Wettbewerb (UWG), Germany's Unfair Competition Act, was amended on May 28, 2022 to transpose the Omnibus Directive's unfair commercial practices provisions. Two provisions are relevant to surveillance pricing.
+
+**Section 5a — misleading omissions.** A commercial practice is misleading if it omits material information that the average consumer needs to make an informed transactional decision. Non-disclosure of personalized pricing could constitute a misleading omission under this provision, providing a UWG enforcement pathway parallel to the BGB disclosure obligation. The significance of the UWG channel is its private enforcement architecture: competitors can bring Abmahnungen (cease-and-desist letters) and seek injunctions, creating a decentralized enforcement mechanism that does not depend on state action.
+
+**Section 5b(2) — ranking transparency.** Traders operating search functions must clearly disclose the main parameters used to determine product rankings and their relative importance. This applies to online marketplaces and comparison platforms. Non-disclosure of ranking parameters constitutes a misleading omission under Section 5a. While this provision addresses ranking rather than pricing, it is relevant to surveillance pricing insofar as algorithmic ranking determines which prices consumers see and thus shapes the pricing environment.
+
+**Annex to Section 3(3) — always-prohibited practices.** The Omnibus Directive amendments added No. 11a to the blacklist: providing search results without clearly disclosing any paid advertisement or payment specifically for achieving higher ranking is per se prohibited. Personalized pricing was not added to the blacklist.
+
+**Primary**: [UWG (English text)](https://www.gesetze-im-internet.de/englisch_uwg/englisch_uwg.html); [UWG (German text)](https://www.gesetze-im-internet.de/uwg_2004/BJNR141400004.html)
+
+**Secondary**: [Dentons, "Digitalisation and the New German Act against Unfair Competition" (May 2022)](https://www.dentons.com/en/insights/articles/2022/may/16/revised-law-against-unfair-competition-in-germany); [Taylor Wessing, "Further Changes to Unfair Competition Laws in Germany" (May 2022)](https://www.taylorwessing.com/en/insights-and-events/insights/2022/05/bu-further-changes-to-unfair-competition-laws-in-germany); [Goldberg, "Changes in German Law as of 28.05.2022" (2022)](https://www.goldberg.de/en/gesetzesaenderungen-ab-28-05-2022-was-ist-zu-beachten)
+
+### PAngV — Preisangabenverordnung (Price Indication Ordinance, amended May 28, 2022)
+
+The Preisangabenverordnung, Germany's Price Indication Ordinance, establishes the framework for price transparency in consumer-facing commerce. The May 2022 amendment transposed elements of the Omnibus Directive relating to price indications.
+
+**30-day prior price rule.** When a price reduction is advertised, traders must indicate the lowest price charged in the preceding 30 days as the reference point. This targets misleading "before and after" price comparisons and is relevant to dynamic pricing that raises prices before sales events to create the impression of discounts (a practice documented in e-commerce).
+
+**Personalized pricing disclosure.** The PAngV reinforces the Section 312d BGB / Article 246a EGBGB disclosure obligation within the price indication framework. Traders must inform consumers if prices are personalized on the basis of automated decision-making.
+
+**Fines.** Violations of PAngV price indication requirements may be sanctioned with fines up to EUR 25,000.
+
+**Primary**: [PAngV (German text)](https://www.gesetze-im-internet.de/pangv_2022/BJNR492110021.html)
+
+**Secondary**: [Gleiss Lutz, "New Price Indication Ordinance on 28 May 2022"](https://www.gleisslutz.com/en/news-events/know-how/new-price-indication-ordinance-28-may-2022); [Taylor Wessing, "New Price Indication Ordinance as from 28 May 2022"](https://www.taylorwessing.com/en/interface/2022/foodtech/new-price-indication-ordinance-as-from-28-may-2022); [ITMediaLaw, "Price Indication Ordinance (PAngV)"](https://itmedialaw.com/en/wissensdatenbank/price-indication-ordinance-pangv/)
+
+### BDSG Section 37 / Section 31 — Automated Decision-Making and Scoring
+
+The Bundesdatenschutzgesetz (Federal Data Protection Act) supplements GDPR Article 22 on automated individual decision-making.
+
+**Section 37 BDSG.** Provides the German implementation of the exceptions to the prohibition on automated individual decision-making under GDPR Article 22(2). The data subject's right not to be subject to a solely automated decision is restricted where the decision is necessary for entering into or performing a contract, is authorized by EU or member state law, or is based on explicit consent. Germany's strict interpretive posture — German regulators do not tolerate "black-box" AI systems — means that any AI system producing automated decisions must be explainable, justified, documented, and subject to human oversight.
+
+**Section 31 BDSG — scoring in commercial transactions (contested).** Section 31 established conditions for the use of probability values (scores) in decisions about the creditworthiness of natural persons, including in consumer and commercial transactions. The CJEU's December 2023 SCHUFA ruling (Case C-634/21) found that creating a credit score constitutes automated decision-making under GDPR Article 22, and the Court expressed serious doubts about Section 31 BDSG's compatibility with EU law. The German government has proposed a draft amendment to delete Section 31 and introduce a new Section 37a, which would create a GDPR Article 22(2)(b)-compliant exception for automated credit scoring subject to specified safeguards. This amendment has not yet been enacted as of February 2026.
+
+**Relevance to surveillance pricing.** Section 31 BDSG governs credit scoring specifically, not consumer pricing generally. However, the SCHUFA litigation and the resulting legal uncertainty demonstrate that German data protection law constrains algorithmic scoring systems that produce outputs relied upon by downstream decision-makers, and that the compatibility of national law with GDPR Article 22 is under active judicial scrutiny. If algorithmic pricing systems produce outputs (personalized prices) that "similarly significantly affect" consumers within the meaning of GDPR Article 22, the same logic could apply — but this extension has not been tested.
+
+**Primary**: [BDSG (English text)](https://www.gesetze-im-internet.de/englisch_bdsg/englisch_bdsg.html); *SCHUFA Holding (Scoring)*, Case C-634/21, ECLI:EU:C:2023:957 (CJEU, Dec 7, 2023)
+
+**Secondary**: [ICLG, "Data Protection Laws and Regulations 2025-2026: Germany"](https://iclg.com/practice-areas/data-protection-laws-and-regulations/germany); [Noerr, "ECJ Judgment on SCHUFA Score — What Companies Now Need to Consider" (2024)](https://www.noerr.com/en/insights/ecj-judgment-on-schufa-score-what-companies-now-need-to-consider); [Heuking, "ECJ Rules on SCHUFA Scoring — Current Practices Not GDPR-Compliant"](https://www.heuking.de/en/news-events/newsletter-articles/detail/ecj-rules-on-schufa-scoring-current-practices-not-gdpr-compliant.html); [Inside Privacy, "German Government Proposes to Amend Federal Data Protection Act" (2024)](https://www.insideprivacy.com/eu-data-protection/german-government-proposes-to-amend-federal-data-protection-act/)
+
+### KI-MIG — AI Market Surveillance and Innovation Promotion Act (Cabinet approved 2025)
+
+The KI-Marktaufsichts- und Innovationsfoerderungsgesetz (KI-MIG) is Germany's draft legislation to implement the EU AI Act domestically. The Federal Cabinet approved the draft in September 2025.
+
+**Institutional architecture.** The Federal Network Agency (Bundesnetzagentur, BNetzA) is designated as the central AI market surveillance authority. A coordination and competence center (KoKIVO) within BNetzA will coordinate between authorities. Existing sectoral supervisory authorities retain jurisdiction for AI systems related to products they already regulate (medical devices, motor vehicles, machinery). An Independent Market Surveillance Chamber (UKIM) within BNetzA will monitor sensitive high-risk AI systems in law enforcement, migration, asylum, border control, justice, and democracy.
+
+**Relevance to surveillance pricing.** The KI-MIG implements the EU AI Act's risk classification framework. As noted in the [[sp-eu|EU molecule]], the AI Act classifies credit scoring and insurance pricing algorithms as high-risk under Annex III, but general algorithmic pricing for consumer goods and services is not classified. The KI-MIG does not add algorithmic pricing to the high-risk category. Its significance is therefore structural — it establishes the German supervisory infrastructure for AI systems — rather than substantive for general surveillance pricing.
+
+**Status.** The KI-MIG has not been enacted as of February 2026. Germany's complex political landscape (coalition dynamics following the February 2025 federal election) creates uncertainty about the timeline.
+
+**Primary**: [German Government, KI-MIG draft (referenced in press coverage)](https://dsv-europa.de/en/news/2025/09/ai-act-umsetzung.html)
+
+**Secondary**: [CMS, "AI Act: Transition Periods and AI Market Surveillance in Germany" (2026)](https://cms.law/en/deu/publication/2026-themen-die-sie-bewegen-werden/ai-act-new-transition-periods-and-german-market-surveillance); [Heuking, "AI Act: An Overview of the German Draft Implementation Law"](https://www.heuking.de/en/news-events/newsletter-articles/detail/ai-act-an-overview-of-the-german-draft-implementation-law.html); [White & Case, "AI Watch: Global Regulatory Tracker — Germany"](https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-germany); [The Legal Wire, "Germany Approves AI Market Surveillance and Innovation Promotion Act"](https://thelegalwire.ai/germany-approves-ai-market-surveillance-and-innovation-promotion-act/)
+
+### Datenethikkommission Report (October 2019) — Five-Tier Risk Framework
+
+The Data Ethics Commission (Datenethikkommission, DEK), established by the German government in July 2018, published its report on October 23, 2019, containing 75 recommendations for data handling and algorithmic systems regulation. The report proposed a five-tier criticality pyramid for risk-adapted regulation of algorithmic systems, which significantly influenced the EU AI Act's risk classification approach.
+
+**Five-tier criticality pyramid.** Level 1 (no or low potential for harm): no specific regulation. Level 2 (some potential for harm): light regulation, post-hoc controls. Level 3 (regular or obvious potential for harm): approval procedure with regular controls. Level 4 (considerable potential for harm): mandatory disclosure of algorithmic details including factors, weights, data, and logic. Level 5 (unacceptable potential for harm): full or partial prohibition.
+
+**Personalized pricing classification.** The DEK explicitly classified personalized pricing as Level 3 — "regular or obvious potential for harm" — recommending that systems using personalized pricing undergo an approval procedure associated with regular controls. Dynamic pricing in e-commerce was classified at Level 2, requiring lighter regulation with post-hoc review. This distinction between personalized pricing (Level 3, requiring ex ante approval) and dynamic pricing (Level 2, requiring only post-hoc review) is analytically significant: it suggests that the DEK viewed data-driven individualization as a qualitatively different risk than market-responsive price adjustment.
+
+**Institutional recommendations.** The DEK recommended mandatory labeling for algorithmic systems posing any potential threat to rights, meaningful information for individuals affected by algorithmic decisions, and nomination of algorithmic accountability officers modeled on GDPR data protection officers. The commission proposed these measures be implemented through a new EU Regulation on Algorithmic Systems.
+
+**Influence.** The DEK's risk-tiered approach directly influenced the EU AI Act's risk classification framework. However, the EU AI Act ultimately classified general algorithmic pricing as minimal risk (unregulated), diverging from the DEK's recommendation that personalized pricing receive Level 3 (approval) treatment.
+
+**Primary**: [Data Ethics Commission Report (English full text, BMI)](https://www.bmi.bund.de/SharedDocs/downloads/EN/themen/it-digital-policy/datenethikkommission-abschlussgutachten-lang.pdf?__blob=publicationFile&v=4)
+
+**Secondary**: [AlgorithmWatch, "Germany's Data Ethics Commission Releases 75 Recommendations" (2019)](https://algorithmwatch.org/en/germanys-data-ethics-commission-releases-75-recommendations-with-eu-wide-application-in-mind/); [Clifford Chance, "Report by the German Data Ethics Commission" (Nov 2019)](https://www.cliffordchance.com/insights/resources/blogs/talking-tech/en/articles/2019/11/report-by-the-german-data-ethics-commission-on-data-handling-and.html); [Fortune, "Germany's Data Ethics Commission Provides Glimpse of Future EU Rules" (Oct 2019)](https://fortune.com/2019/10/24/german-eu-data-ethics-ai-regulation/); [Simmons & Simmons, "German Data Ethics Commission's Report" (2020)](https://www.simmons-simmons.com/en/publications/ck7c1j0rr11cb0916xk8vm8kl/german-data-ethics-commission-s-report-on-data-and-algorithmic-systems)
+
+## Analysis
+
+**Hierarchy.** Competition dominates. The Bundeskartellamt is the active institution, and the GWB instruments (Sections 19, 19a, 20) have produced enforcement activity, disgorgement orders, and judicially validated findings. Disclosure instruments (Section 312d BGB, UWG, PAngV) are operative but unenforced for personalized pricing specifically. Rights instruments (BDSG Sections 31 and 37) are in flux following the CJEU SCHUFA ruling. Code-as-regulation (KI-MIG) is not yet enacted. The advisory instrument (DEK report) influenced EU policy but has no domestic binding force. The hierarchy is therefore: competition (operative, enforced) > disclosure (operative, unenforced) > rights (operative, contested) > code-as-regulation (proposed) > advisory (published, non-binding).
+
+The competition dominance is distinctive within the EU. While other member states transposed the Omnibus Directive without adding significant national instruments, Germany built Section 19a as a preemptive tool against digital platform market power and has wielded it aggressively. The Amazon disgorgement order (February 2026) represents the most significant national-level enforcement action against algorithmic pricing mechanisms in any EU member state.
+
+**Design logic.** Accumulated but with a competition center of gravity. The instruments come from different eras, legal bases, and institutional mandates: GWB competition provisions (1958/2021/2023), BGB/EGBGB consumer protection (2022 transposition), BDSG data protection (2018/ongoing), KI-MIG AI governance (proposed 2025), DEK advisory (2019). No single legislative moment designed these instruments as a set for surveillance pricing. However, unlike the EU level (where accumulation is relatively undirected), Germany's accumulation has a discernible center: the Bundeskartellamt has been the intellectual and enforcement leader on algorithmic pricing since the 2019 joint study with the Autorite de la concurrence, and the GWB amendments (10th in 2021, 11th in 2023) progressively expanded its toolkit. The accumulation is not fully coordinated, but the competition instruments are more developed than the alternatives.
+
+**Institutional divergence.** The Bundeskartellamt operates as both intellectual leader and enforcement actor, combining research output (joint studies, sector inquiries, OECD contributions) with enforcement actions (Amazon, Meta, Google). This dual role is unusual: most EU national competition authorities produce either analytical work or enforcement, rarely both at this level.
+
+The consumer protection enforcement channel is structurally weaker. Enforcement of Section 312d BGB / Article 246a EGBGB depends on state consumer protection authorities (Landesverwaltungen), competitor Abmahnungen under UWG, or consumer association representative actions. The maximum PAngV fine (EUR 25,000) is trivial for major retailers. The Bundeskartellamt has called for expanded consumer enforcement competences — notably after the 2019 comparison websites sector inquiry — but has not received them for general consumer pricing. The German consumer protection enforcement architecture for personalized pricing disclosure relies on decentralized, low-penalty mechanisms rather than the centralized, high-penalty approach the Bundeskartellamt applies to competition violations.
+
+The data protection channel (BfDI and state DPAs) has not been activated for algorithmic pricing. The SCHUFA litigation reached the CJEU but originated from a credit denial context, not consumer pricing. No German DPA has taken a position on whether personalized pricing constitutes automated decision-making under GDPR Article 22.
+
+## Evidence
+
+**Bundeskartellamt v. Amazon — algorithmic price control mechanisms (Nov 2022 - Feb 2026).** The most significant enforcement action. The Bundeskartellamt prohibited Amazon's three-tier algorithmic price control system (pricing errors, significantly high prices, uncompetitive prices) and ordered EUR 59 million in disgorgement. The case was brought under Section 19a(2) GWB following Amazon's 2022 designation as a firm of paramount significance. The Federal Court of Justice confirmed Amazon's designation in April 2024. The February 2026 enforcement order marks the first use of the simplified disgorgement mechanism introduced by the 11th GWB Amendment (November 2023). [Bundeskartellamt press releases cited above; Jones Day analysis (Feb 2026)]
+
+**Bundeskartellamt v. Meta/Facebook — data exploitation (Feb 2019 - Oct 2024).** The Bundeskartellamt prohibited Facebook from combining user data from different sources without voluntary consent, finding exploitative abuse under Section 19. The Federal Court of Justice upheld the approach (June 2020); the CJEU endorsed it (July 2023, Case C-252/21). Meta resolved the case in October 2024 by implementing consent-based data processing measures. This case established data exploitation as an independent category of abuse under German competition law. While not a pricing case, it demonstrates the Bundeskartellamt's willingness to use abuse of dominance provisions to reach data practices that enable surveillance pricing. [Bundeskartellamt Meta/Facebook proceedings page cited above]
+
+**Bundeskartellamt v. Google/Alphabet — data processing terms (May 2021 - Oct 2023).** Following Google's designation under Section 19a in January 2022, the Bundeskartellamt investigated whether Google's data processing terms gave users sufficient control over how their data was used. The authority issued a statement of objections in January 2023 and finalized the proceeding in October 2023 after Google offered commitments to give users better control. This case, like the Meta case, targets the data infrastructure underlying personalized services rather than pricing specifically. [Bundeskartellamt Google proceedings page]
+
+**Bundeskartellamt / Autorite de la concurrence — "Algorithms and Competition" joint study (Nov 2019).** The most comprehensive competition authority analysis of algorithmic pricing at the time of publication. The study examined pricing algorithms, collusion risks, and personalized pricing, finding that while pricing algorithms and dynamic pricing were relatively common in online markets, personalized pricing was not yet widespread. The study concluded that existing competition tools were likely sufficient but that continued monitoring was needed. [Bundeskartellamt and Autorite de la concurrence, "Algorithms and Competition" (Nov 2019)](https://www.bundeskartellamt.de/SharedDocs/Publikation/EN/Berichte/Algorithms_and_Competition_Working-Paper.pdf?__blob=publicationFile&v=5)
+
+**Bundeskartellamt — Comparison Websites Sector Inquiry (Oct 2017 - April 2019).** Investigated approximately 150 comparison websites in travel, insurance, financial services, telecommunications, and energy. Found that hotel rankings were influenced by commission levels (creating opacity about whether rankings reflected quality or payments), that comparison websites often compared less than 50% of all offers in a given market while suggesting broader coverage, and that consumers received insufficient information about market coverage and ranking criteria. The Bundeskartellamt called for expanded consumer enforcement competences following the inquiry. [Bundeskartellamt, "Sector Inquiry on Comparison Websites — Final Report" press release (April 2019)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2019/11_04_2019_Vergleichsportale.html)
+
+**Bundeskartellamt — Lufthansa algorithmic pricing investigation (2018).** Following Air Berlin's insolvency, the Bundeskartellamt investigated Lufthansa's algorithmic price increases of 25-30% on domestic routes where Lufthansa held a temporary monopoly. The investigation examined 412 flights on 13 routes, covering 56,064 single tickets. The Bundeskartellamt found that the airlines specified parameters for algorithmic price adjustment separately for each flight and manually entered events unaccounted for by the system. The authority decided not to initiate formal abuse proceedings, finding the price increases did not justify intervention, partly due to rapid entry by easyJet. [Bundeskartellamt, "Lufthansa" press release (May 29, 2018)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2018/29_05_2018_Lufthansa.html)
+
+**Bundeskartellamt — Booking.com best price clauses (2015 - 2021).** The Bundeskartellamt prohibited Booking.com's best price clauses (both wide and narrow) in December 2015. The Federal Court of Justice confirmed in May 2021 that narrow best-price clauses violate antitrust law for platforms exceeding a 30% market share. While this case concerns price parity rather than personalized pricing, it demonstrates the Bundeskartellamt's enforcement of pricing freedom against algorithmically enforced platform constraints. [Bundeskartellamt Booking.com decision; BGH, KVR 54/20 (May 18, 2021); Norton Rose Fulbright analysis (2021)](https://www.nortonrosefulbright.com/en/knowledge/publications/a3556d82/german-federal-supreme-court-narrow-best-price-clauses-applied-by-booking-dot-com)
+
+**Verbraucherzentrale Brandenburg — personalized pricing study (Marktwachter, 2018).** The Market Watchdog team investigated prices of 1,554 articles from 16 online retailers, Amazon, and over 2,000 Amazon marketplace sellers across five devices and three locations from January to September 2018. The finding: the vast majority of German online retailers did not employ individualized price differentiation. Device-based price differences were observed (61% of toy products showed different prices across devices within a 20-minute window), but these could not be definitively attributed to personalization rather than high-frequency dynamic pricing. The study concluded that German online retail showed highly dynamic but rarely individualized pricing. [Verbraucherzentrale, "Summary: Personalised Pricing in German E-Commerce" (2018)](https://www.verbraucherzentrale.de/sites/default/files/2019-09/summary_personalised_pricing.pdf); [VZBV, "Online-Preise: Hochdynamisch, aber selten individualisiert" press release (2019)](https://www.vzbv.de/pressemitteilungen/online-preise-hochdynamisch-aber-selten-individualisiert)
+
+**CJEU — SCHUFA Scoring, Case C-634/21 (Dec 7, 2023).** Originating from a German case (referred by the Administrative Court of Wiesbaden), the CJEU held that credit scoring by a reference agency constitutes automated individual decision-making under GDPR Article 22 when a third party "draws strongly" on the score. The Court expressed serious doubts about the compatibility of BDSG Section 31 with EU law. The ruling expands Article 22's scope to preparatory algorithmic outputs relied upon downstream, with implications for any algorithmic system that produces outputs (such as personalized prices) on which contract decisions depend. [Case C-634/21, ECLI:EU:C:2023:957]
+
+## Movement
+
+Germany's trajectory shows a competition-led development arc, with consumer protection and data protection instruments arriving as EU transposition requirements rather than domestic initiative.
+
+1. **2015**: Bundeskartellamt prohibits Booking.com's best price clauses — first enforcement of pricing freedom against platform algorithmic constraints
+2. **2018 (May)**: Bundeskartellamt investigates Lufthansa's algorithmic pricing on monopoly routes — declines to pursue formal proceedings but confirms algorithmic pricing is within Section 19 scope
+3. **2018 (June)**: Bundeskartellamt and Autorite de la concurrence launch joint project on algorithms and competition
+4. **2018 (July)**: German government establishes Data Ethics Commission (DEK)
+5. **2018-2019**: Verbraucherzentrale Brandenburg publishes personalized pricing study — finds dynamic but rarely individualized pricing
+6. **2019 (Feb)**: Bundeskartellamt issues Facebook data exploitation decision — establishes data exploitation as abuse of dominance under Section 19
+7. **2019 (April)**: Bundeskartellamt publishes comparison websites sector inquiry final report — calls for expanded consumer enforcement competences
+8. **2019 (Oct)**: DEK publishes report — classifies personalized pricing as Level 3 risk requiring approval with regular controls; proposes five-tier framework that later influences EU AI Act
+9. **2019 (Nov)**: Bundeskartellamt and Autorite de la concurrence publish "Algorithms and Competition" joint study
+10. **2021 (Jan)**: 10th GWB Amendment (Digitalisierungsgesetz) enters into force — Section 19a introduced; data as a factor in dominance assessment (Section 18(3a)); expanded relative market power (Section 20(1a))
+11. **2021 (May)**: BGH confirms prohibition of Booking.com's narrow best-price clauses
+12. **2022 (Jan-May)**: Bundeskartellamt designates Meta, Google, and Amazon under Section 19a
+13. **2022 (May)**: Section 312d BGB / Article 246a EGBGB, UWG Sections 5a/5b, and PAngV amendments enter into force — Omnibus Directive transposition
+14. **2022 (Nov)**: Bundeskartellamt initiates proceedings against Amazon under Section 19a(2) re price control mechanisms
+15. **2023 (April)**: Bundeskartellamt designates Apple under Section 19a
+16. **2023 (Oct)**: Bundeskartellamt resolves Google data processing terms proceeding after commitments
+17. **2023 (Nov)**: 11th GWB Amendment enters into force — simplified disgorgement, new Section 32f sector inquiry powers, DMA enforcement support
+18. **2023 (Dec)**: CJEU SCHUFA ruling — credit scoring is automated decision-making under GDPR Article 22; BDSG Section 31 compatibility questioned
+19. **2024 (April)**: Federal Court of Justice confirms Amazon's Section 19a designation
+20. **2024 (Oct)**: Bundeskartellamt resolves Meta/Facebook proceeding after implemented measures
+21. **2025 (March)**: Federal Court of Justice confirms Apple's Section 19a designation
+22. **2025 (June)**: Bundeskartellamt issues preliminary assessment on Amazon's price control mechanisms
+23. **2025 (Sept)**: Federal Cabinet approves KI-MIG (AI Market Surveillance Act)
+24. **2026 (Feb)**: Bundeskartellamt prohibits Amazon's price control mechanisms and orders EUR 59M disgorgement — first use of simplified disgorgement under 11th Amendment
+
+The trajectory reveals a consistent pattern: the Bundeskartellamt has been the driving force, expanding its toolkit (10th Amendment, 11th Amendment) and applying it to digital platform pricing practices with increasing aggression. Consumer protection and data protection instruments arrived as EU-mandated transpositions (Omnibus Directive, GDPR) without significant domestic initiative or enforcement. The DEK report represents an independent German contribution to algorithmic governance policy, but its recommendations were implemented at the EU level (AI Act risk framework) rather than in German national law.
+
+The movement is from analysis (joint study, sector inquiry, DEK report) through designation (Section 19a determinations 2022-2023) to enforcement (preliminary assessment 2025, prohibition order 2026). The escalation is clearly visible: each step builds on the previous one, and the 11th GWB Amendment's disgorgement simplification appears to have been designed with enforcement actions like the Amazon case in mind.
+
+## Open Questions
+
+1. **Will the Amazon enforcement order survive appeal?** Amazon has one month to appeal to the Federal Court of Justice. The Court has upheld the Bundeskartellamt's Section 19a designations for Amazon and Apple, but the behavioral prohibition and disgorgement order raise different legal questions. If upheld, the order establishes a strong precedent for competition enforcement against algorithmic pricing mechanisms.
+2. **Will the Bundeskartellamt extend Section 19a enforcement to consumer-facing personalized pricing?** The Amazon case targets platform-to-seller price control, not consumer-facing personalized pricing. Could the Bundeskartellamt bring a case against a designated firm's use of personal data to set individualized consumer prices? The legal basis exists (Section 19a(2) prohibitions on making services conditional on unreasonable data processing), but no proceeding has been initiated.
+3. **Will a German DPA take a position on personalized pricing under GDPR Article 22?** No German DPA has addressed whether algorithmic personalized pricing constitutes automated decision-making under GDPR Article 22. The SCHUFA ruling makes this more plausible but no action has followed.
+4. **Will Section 312d BGB disclosure be enforced?** Nearly four years after taking effect, no enforcement action has targeted personalized pricing disclosure. Is this because personalized pricing is rare in German e-commerce (consistent with the 2018 Verbraucherzentrale findings), because non-compliance is undetected, or because enforcement resources are directed elsewhere?
+5. **What becomes of BDSG Section 31?** The German government proposed deleting Section 31 and introducing Section 37a following the SCHUFA ruling. The amendment has not been enacted. The legal status of credit scoring under German law remains uncertain until this legislative gap is resolved.
+6. **Will the KI-MIG be enacted and in what form?** Political uncertainty following the February 2025 federal election creates questions about the KI-MIG's timeline and final content. The AI Act's high-risk obligations become applicable in August 2026, creating a hard deadline for national implementation.
+7. **Is the Verbraucherzentrale's 2018 finding still accurate?** The study found little individualized pricing in German e-commerce. Seven years later, algorithmic pricing capabilities have advanced significantly. Has personalized pricing become more prevalent in the German market? No updated empirical study has been identified.
+8. **Germany's relationship to the EU Digital Fairness Act.** The DFA (draft expected Q3 2026) may impose additional personalized pricing obligations at EU level. Will Germany advocate for stricter requirements (consistent with the Bundeskartellamt's enforcement posture) or lighter ones (consistent with the German government's innovation-oriented approach in the KI-MIG)?
+
+## Sources
+
+**Primary**:
+- [GWB — Act against Restraints of Competition (English text)](https://www.gesetze-im-internet.de/englisch_gwb/englisch_gwb.html)
+- [BGB — German Civil Code (English text)](https://www.gesetze-im-internet.de/englisch_bgb/englisch_bgb.html)
+- [EGBGB Article 246a (German text, dejure.org)](https://dejure.org/gesetze/EGBGB/246a.html)
+- [UWG — Act against Unfair Competition (English text)](https://www.gesetze-im-internet.de/englisch_uwg/englisch_uwg.html)
+- [PAngV — Price Indication Ordinance (German text)](https://www.gesetze-im-internet.de/pangv_2022/BJNR492110021.html)
+- [BDSG — Federal Data Protection Act (English text)](https://www.gesetze-im-internet.de/englisch_bdsg/englisch_bdsg.html)
+- [Bundeskartellamt, Amazon proceedings page](https://www.bundeskartellamt.de/EN/Digital_economy/proceedings_against_large_digital_companies/Amazon/Amazon_node.html)
+- [Bundeskartellamt, "Amazon — Preliminary Assessment" (June 2, 2025)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2025/2025_06_02_Amazon.html)
+- [Bundeskartellamt, "Amazon — Prohibition and Disgorgement" (Feb 5, 2026)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2026/26_02_05_Amazon.html)
+- [Bundeskartellamt, Meta/Facebook proceedings page](https://www.bundeskartellamt.de/EN/Digital_economy/proceedings_against_large_digital_companies/Meta_Facebook/Meta_Facebook.html)
+- [Bundeskartellamt, "Facebook Proceeding Concluded" (Oct 10, 2024)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2024/10_10_2024_Facebook.html)
+- [Bundeskartellamt, "Lufthansa — Price Increase" (May 29, 2018)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2018/29_05_2018_Lufthansa.html)
+- [Bundeskartellamt, "Comparison Websites Sector Inquiry — Final Report" (April 2019)](https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2019/11_04_2019_Vergleichsportale.html)
+- [Bundeskartellamt and Autorite de la concurrence, "Algorithms and Competition" (Nov 2019)](https://www.bundeskartellamt.de/SharedDocs/Publikation/EN/Berichte/Algorithms_and_Competition_Working-Paper.pdf?__blob=publicationFile&v=5)
+- [Data Ethics Commission Report (English full text, BMI)](https://www.bmi.bund.de/SharedDocs/downloads/EN/themen/it-digital-policy/datenethikkommission-abschlussgutachten-lang.pdf?__blob=publicationFile&v=4)
+- *SCHUFA Holding (Scoring)*, Case C-634/21, ECLI:EU:C:2023:957 (CJEU, Dec 7, 2023)
+- BGH, KVR 54/20 (May 18, 2021) (Booking.com narrow best-price clauses)
+- [Verbraucherzentrale, "Summary: Personalised Pricing in German E-Commerce" (2018)](https://www.verbraucherzentrale.de/sites/default/files/2019-09/summary_personalised_pricing.pdf)
+
+**Secondary**:
+- [CMS, "The 10th Amendment to the GWB" (Jan 2021)](https://cms.law/en/deu/publication/the-10th-amendment-to-the-german-act-against-restraints-of-competition-gwb-digitalisation-act-came-into-force-today)
+- [Franck & Peitz, "Section 19a of the Reformed German Competition Act," CPI (2021)](https://www.competitionpolicyinternational.com/wp-content/uploads/2021/03/6-Section-19a-of-the-Reformed-German-Competition-Act-A-Too-Powerful-Weapon-to-Tame-Big-Tech-By-Jens-Uwe-Franck-Martin-Peitz.pdf)
+- [Library of Congress, "Germany: New Digital Competition Act" (Feb 2021)](https://www.loc.gov/item/global-legal-monitor/2021-02-23/germany-new-digital-competition-act-expands-abilities-of-competition-authorities-to-regulate-abuse-of-dominant-market-positions/)
+- [Library of Congress, "Germany: Amendment of Competition Act" (Nov 2023)](https://www.loc.gov/item/global-legal-monitor/2023-11-29/germany-amendment-of-competition-act-gives-more-power-to-federal-cartel-office/)
+- [Jones Day, "German Competition Authority Fines Amazon" (Feb 2026)](https://www.jonesday.com/en/insights/2026/02/german-competition-authority-fines-amazon-for-allegedly-influencing-prices-of-thirdparty-sellers-on-amazon-marketplace)
+- [Louven Rechtsanwalte, "Bundeskartellamt Issues Preliminary Assessment of Amazon's Price Control Mechanisms" (2025)](https://louven.legal/en/bundeskartellamt-issues-preliminary-assessment-of-amazons-price-control-mechanisms/)
+- [IBA, "Digital Platform Regulation: Developments in Germany" (2025)](https://www.ibanet.org/digital-platform-regulation-germany-dma)
+- [Hausfeld, "Data Exploiting as an Abuse of Dominance: The German Facebook Decision"](https://www.hausfeld.com/what-we-think/competition-bulletin/data-exploiting-as-an-abuse-of-dominance-the-german-facebook-decision)
+- [Bundeskartellamt, "Algorithms and Competition in a Digitalized World," by Andreas Mundt, CPI](https://www.bundeskartellamt.de/SharedDocs/Publikation/EN/Fachartikel/CPI_Algorithms.pdf?__blob=publicationFile&v=2)
+- [Norton Rose Fulbright, "German Federal Supreme Court: Narrow Best-Price Clauses by Booking.com" (2021)](https://www.nortonrosefulbright.com/en/knowledge/publications/a3556d82/german-federal-supreme-court-narrow-best-price-clauses-applied-by-booking-dot-com)
+- [Bird & Bird, "Consumer Protection Laws in Germany: Major Updates" (2022)](https://www.twobirds.com/en/insights/2022/germany/verbraucherschutzgesetze-in-deutschland-wichtige-neuerungen)
+- [Bird & Bird, "Germany — Omnibus Directive"](https://www.twobirds.com/en/trending-topics/omnibus-directive/omnibus-directive-countries/germany)
+- [Oppenhoff, "Omnibus Directive: Further Notification Obligations" (2022)](https://www.oppenhoff.eu/en/news/detail/omnibus-directive-further-notification-obligations-and-easier-termination-options-strengthen-consumer-protection/)
+- [Dentons, "Digitalisation and the New German Act against Unfair Competition" (May 2022)](https://www.dentons.com/en/insights/articles/2022/may/16/revised-law-against-unfair-competition-in-germany)
+- [Gleiss Lutz, "New Price Indication Ordinance on 28 May 2022"](https://www.gleisslutz.com/en/news-events/know-how/new-price-indication-ordinance-28-may-2022)
+- [Noerr, "ECJ Judgment on SCHUFA Score" (2024)](https://www.noerr.com/en/insights/ecj-judgment-on-schufa-score-what-companies-now-need-to-consider)
+- [Inside Privacy, "German Government Proposes to Amend Federal Data Protection Act" (2024)](https://www.insideprivacy.com/eu-data-protection/german-government-proposes-to-amend-federal-data-protection-act/)
+- [AlgorithmWatch, "Germany's Data Ethics Commission" (2019)](https://algorithmwatch.org/en/germanys-data-ethics-commission-releases-75-recommendations-with-eu-wide-application-in-mind/)
+- [Clifford Chance, "Report by the German Data Ethics Commission" (Nov 2019)](https://www.cliffordchance.com/insights/resources/blogs/talking-tech/en/articles/2019/11/report-by-the-german-data-ethics-commission-on-data-handling-and.html)
+- [CMS, "AI Act: Transition Periods and AI Market Surveillance in Germany" (2026)](https://cms.law/en/deu/publication/2026-themen-die-sie-bewegen-werden/ai-act-new-transition-periods-and-german-market-surveillance)
+- [VZBV, "Online-Preise: Hochdynamisch, aber selten individualisiert" (2019)](https://www.vzbv.de/pressemitteilungen/online-preise-hochdynamisch-aber-selten-individualisiert)
+- [ICLG, "Data Protection 2025-2026: Germany"](https://iclg.com/practice-areas/data-protection-laws-and-regulations/germany)
+- [ICLG, "Consumer Protection 2025-2026: Germany"](https://iclg.com/practice-areas/consumer-protection-laws-and-regulations/germany)
+- [OECD, "Algorithmic Competition — Note by Germany" (2023)](https://one.oecd.org/document/DAF/COMP/WD(2023)61/en/pdf)
+- [Harting Rechtsanwalte, "New Information Obligations for Retailers"](https://haerting.de/en/insights/neue-informationspflichten-fuer-den-handel-schlecht-gedacht-schlecht-gemacht/)
+- [K&L Gates, "11th Amendment to the German Competition Act" (Nov 2023)](https://www.klgates.com/11th-Amendment-to-the-German-Competition-Act-GWB-New-Powers-of-Intervention-for-the-Bundeskartellamt-Creating-New-Challenges-for-Companies-11-7-2023)
+- [Global Competition Review, "Germany: Enforcement Authority Sets Big Tech in Its Sights" (2026)](https://globalcompetitionreview.com/market-review/market-review-antimonopoly/2026/article/germany-enforcement-authority-sets-big-tech-in-its-sights)
+- [SCiDA, "Sec. 19a of the German Act against Competition Restraints"](https://scidaproject.com/sec-19a-of-the-german-act-against-competition-restraints-gwb/)
+
+**Library**:
+- [[intel-comparative-regulation]]
+- [[surveillance-pricing-comparative-regulation]]
+- [[baldwin-regulatory-strategies]]
+- [[disclosure-regulation]]
+- [[competition-over-regulation]]
+- [[rights-and-liabilities-regulation]]
+- [[code-as-regulation]]
+- [[self-regulation]]
+- [[regulatory-topology-not-ladder]]
+- [[government-capacities-regulation]]
+- [[creative-compliance]]
+- [[sp-eu]]
+- [[sp-uk]]

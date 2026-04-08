@@ -1,0 +1,3625 @@
+{
+  "jurisdictions": [
+    {
+      "id": "new-york",
+      "name": "US - New York",
+      "design_logic": "Differentiated",
+      "design_logic_detail": "Legislative: same session, different strategies for different sectors",
+      "key_finding": "Deployed disclosure and prohibition simultaneously for different sectors, not sequentially",
+      "instrument_count": 3,
+      "molecule_file": "sp-new-york.md",
+      "instruments": [
+        {
+          "name": "A6765/S7033 — Algorithmic Pricing Disclosure Act (Nov 2025)",
+          "strategy": "Disclosure",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Requires disclosure 'THIS PRICE WAS SET BY AN ALGORITHM USING YOUR PERSONAL DATA' for personalized algorithmically-set prices",
+          "enforcement_mechanism": "NY AG; civil penalties up to $1,000/violation",
+          "timeline": [
+            {
+              "date": "2025-05",
+              "event": "Signed into law (part of FY 2026 Budget)"
+            },
+            {
+              "date": "2025-10",
+              "event": "First Amendment challenge dismissed (NRF v. James)"
+            },
+            {
+              "date": "2025-11",
+              "event": "Took effect (Nov 10, 2025)"
+            },
+            {
+              "date": "2026-01",
+              "event": "AG James sends formal inquiry to Instacart"
+            }
+          ],
+          "formal_institution": "Market discipline (disclosure to consumers)",
+          "operative_institution": "NY AG (state enforcement; cure period before action)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "S7882 — Algorithmic Rent Pricing Prohibition (Dec 2025)",
+          "strategy": "Prohibition",
+          "sector": "Residential rental housing",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Prohibits algorithmic pricing tools performing coordinating function in residential rent-setting",
+          "enforcement_mechanism": "NY AG (civil and criminal); private right of action under Donnelly Act with treble damages",
+          "timeline": [
+            {
+              "date": "2025-10",
+              "event": "Signed by Governor Hochul (Oct 16, 2025)"
+            },
+            {
+              "date": "2025-12",
+              "event": "Took effect (Dec 15, 2025)"
+            }
+          ],
+          "formal_institution": "State prohibition (antitrust: Donnelly Act)",
+          "operative_institution": "NY AG (civil and criminal) + private right of action (treble damages)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "S8623 — Algorithmic Pricing Prohibition (proposed Dec 2025)",
+          "strategy": "Prohibition",
+          "sector": "General",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Would ban personalized algorithmic pricing broadly; referred to Rules Committee",
+          "enforcement_mechanism": "Would include private right of action",
+          "timeline": [
+            {
+              "date": "2025-12",
+              "event": "Introduced (Dec 19, 2025); referred to Rules Committee"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "N/A (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Referred to Rules Committee; no hearing or vote scheduled",
+          "private_right_of_action": true
+        }
+      ],
+      "region": "North America"
+    },
+    {
+      "id": "california",
+      "name": "US - California",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Competition enacted, prohibition defeated, AG pivoted to privacy. Not designed as a set",
+      "key_finding": "Legislature permits antitrust intervention against coordination but resists direct prohibition of personalization",
+      "instrument_count": 7,
+      "molecule_file": "sp-california.md",
+      "instruments": [
+        {
+          "name": "AB 325 — Common Pricing Algorithms Act (Jan 2026)",
+          "strategy": "Competition",
+          "sector": "General (shared algorithms only)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Amends Cartwright Act to create liability for sharing competitively sensitive data through common pricing algorithms",
+          "enforcement_mechanism": "AG (enhanced criminal/civil penalties); private action under Cartwright Act with treble damages",
+          "timeline": [
+            {
+              "date": "2025-10",
+              "event": "Signed into law"
+            },
+            {
+              "date": "2026-01",
+              "event": "Took effect (Jan 1, 2026)"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust: Cartwright Act)",
+          "operative_institution": "AG + private action under Cartwright Act (treble damages)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "SB 763 — Antitrust Pleading Standard Reform (Jan 2026)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Lowers antitrust pleading standard, making it easier for private plaintiffs in algorithmic pricing cases",
+          "enforcement_mechanism": "Private action (lowered pleading burden); AG",
+          "timeline": [
+            {
+              "date": "2025-10",
+              "event": "Signed into law"
+            },
+            {
+              "date": "2026-01",
+              "event": "Took effect (Jan 1, 2026)"
+            }
+          ],
+          "formal_institution": "Market structure (private litigation facilitation)",
+          "operative_institution": "Private litigants (lowered pleading standard) + AG",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "AG v. RealPage / Greystar (Jan 2025-Nov 2025)",
+          "strategy": "Competition",
+          "sector": "Residential rental",
+          "status": "Active Investigation",
+          "reaches_proprietary_pricing": false,
+          "summary": "Greystar settled for $7M; RealPage litigation pending",
+          "enforcement_mechanism": "AG under UCL; nine-state coalition",
+          "timeline": [
+            {
+              "date": "2025-01",
+              "event": "AG files complaint (nine-state coalition)"
+            },
+            {
+              "date": "2025-11",
+              "event": "Greystar settlement ($7M)"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust: UCL)",
+          "operative_institution": "AG + nine-state coalition",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AG CCPA Surveillance Pricing Sweep (Jan 2026)",
+          "strategy": "Rights & Liabilities",
+          "sector": "Retail, grocery, hotel",
+          "status": "Active Investigation",
+          "reaches_proprietary_pricing": true,
+          "summary": "First enforcement action reaching proprietary personalized pricing via CCPA purpose limitation theory",
+          "enforcement_mechanism": "AG investigative authority under CCPA",
+          "timeline": [
+            {
+              "date": "2026-01",
+              "event": "Investigative sweep announced (Data Privacy Day, Jan 28, 2026)"
+            }
+          ],
+          "formal_institution": "Individual rights (CCPA purpose limitation)",
+          "operative_institution": "AG (state investigative authority)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AB 446 — Surveillance Pricing Protection Act (Feb 2025)",
+          "strategy": "Prohibition",
+          "sector": "General (narrowed to grocery; withdrawn)",
+          "status": "Failed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Broad prohibition withdrawn after being gutted to grocery-only by Senate Appropriations",
+          "enforcement_mechanism": "Would have included private right of action",
+          "timeline": [
+            {
+              "date": "2025-02",
+              "event": "Introduced"
+            },
+            {
+              "date": "2025-05",
+              "event": "Passed Assembly"
+            },
+            {
+              "date": "2025-08",
+              "event": "Senate Appropriations narrowed to grocery only"
+            },
+            {
+              "date": "2025-09",
+              "event": "Withdrawn by sponsor"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "N/A (failed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Withdrawn",
+          "political_economy_detail": "Senate Appropriations gutted to grocery-only; sponsor withdrew; industry opposition ($11.7M to legislators)",
+          "private_right_of_action": true
+        },
+        {
+          "name": "SB 259 — Fair Online Pricing Act (2025)",
+          "strategy": "Prohibition",
+          "sector": "Online pricing",
+          "status": "Failed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Would have prohibited setting online prices based on device data and geolocation",
+          "enforcement_mechanism": "Would have included private right of action",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Introduced"
+            },
+            {
+              "date": "2025",
+              "event": "Passed Senate 30-9"
+            },
+            {
+              "date": "2025-09",
+              "event": "Ordered to inactive file"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "N/A (failed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Ordered to inactive file Sept 2025",
+          "private_right_of_action": true
+        },
+        {
+          "name": "SB 295 — Preventing Algorithmic Collusion Act (2025)",
+          "strategy": "Competition",
+          "sector": "Algorithm distributors",
+          "status": "Paused",
+          "reaches_proprietary_pricing": false,
+          "summary": "Failed third reading but carries over to 2026 session",
+          "enforcement_mechanism": "Would have included affirmative defense for due diligence",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Introduced"
+            },
+            {
+              "date": "2025",
+              "event": "Failed third reading; reconsideration granted"
+            }
+          ],
+          "formal_institution": "Market structure (algorithm distributor liability)",
+          "operative_institution": "N/A (paused)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Failed third reading; carries over to 2026 session",
+          "private_right_of_action": false
+        }
+      ],
+      "region": "North America"
+    },
+    {
+      "id": "us-federal",
+      "name": "US - Federal",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Enforcement-driven: different institutional actors (DOJ, FTC, Congress, White House) with partisan discontinuity",
+      "key_finding": "Only operative instruments are antitrust enforcement actions inherited from prior administration; consumer protection track stalled",
+      "instrument_count": 9,
+      "molecule_file": "sp-us-federal.md",
+      "instruments": [
+        {
+          "name": "FTC 6(b) Surveillance Pricing Study (July 2024)",
+          "strategy": "Disclosure",
+          "sector": "General (intermediary companies)",
+          "status": "Paused",
+          "reaches_proprietary_pricing": true,
+          "summary": "Found 250+ retailers use surveillance pricing; public comment withdrawn by new FTC Chair",
+          "enforcement_mechanism": "FTC 6(b) compulsory orders; informational only",
+          "timeline": [
+            {
+              "date": "2024-07",
+              "event": "FTC issues 6(b) orders to eight intermediary companies"
+            },
+            {
+              "date": "2025-01-17",
+              "event": "FTC releases study findings (3-2 vote)"
+            },
+            {
+              "date": "2025-01-24",
+              "event": "New FTC Chair closes public comment period"
+            },
+            {
+              "date": "2025-12",
+              "event": "Bipartisan Senate group urges FTC to reopen investigation"
+            }
+          ],
+          "formal_institution": "Regulatory transparency (FTC informational study)",
+          "operative_institution": "FTC Commission (politically contingent: paused by new Chair)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Public comment closed by new FTC Chair Ferguson (Jan 2025); partisan discontinuity",
+          "private_right_of_action": false
+        },
+        {
+          "name": "DOJ v. RealPage (filed Aug 2024)",
+          "strategy": "Competition",
+          "sector": "Rental housing (multifamily)",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Settlement: RealPage must stop using nonpublic competitor data. Seven-year decree",
+          "enforcement_mechanism": "DOJ Antitrust Division; Sherman Act; court-appointed monitor for 3 years",
+          "timeline": [
+            {
+              "date": "2024-08",
+              "event": "DOJ files suit (with 8 state AGs)"
+            },
+            {
+              "date": "2025-11",
+              "event": "Proposed consent decree announced"
+            }
+          ],
+          "formal_institution": "Market structure (Sherman Act antitrust)",
+          "operative_institution": "DOJ Antitrust Division + court-appointed monitor",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "FTC v. Amazon.com (filed Sept 2023)",
+          "strategy": "Competition",
+          "sector": "E-commerce",
+          "status": "Active Investigation",
+          "reaches_proprietary_pricing": false,
+          "summary": "Project Nessie generated $1.4B in excess revenue; standalone Section 5 claim upheld; trial Feb 2027",
+          "enforcement_mechanism": "FTC + 19 state AGs; Sherman Act s.2; FTC Act s.5",
+          "timeline": [
+            {
+              "date": "2023-09",
+              "event": "FTC files suit (with 17 state AGs)"
+            },
+            {
+              "date": "2024-10",
+              "event": "Court denies Amazon's motion to dismiss; standalone Section 5 upheld"
+            },
+            {
+              "date": "2027-02",
+              "event": "Trial set (Feb 9, 2027)"
+            }
+          ],
+          "formal_institution": "Market structure (Sherman Act s.2 + FTC Act s.5)",
+          "operative_institution": "FTC + 19 state AGs",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Preventing Algorithmic Collusion Act, S. 232 (Jan 2025)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Would codify RealPage enforcement theory; does not reach unilateral personalized pricing",
+          "enforcement_mechanism": "DOJ + FTC joint enforcement; civil penalties min $10,000/day",
+          "timeline": [
+            {
+              "date": "2024-01",
+              "event": "First introduced as S. 3686 (118th Congress)"
+            },
+            {
+              "date": "2025-01",
+              "event": "Reintroduced as S. 232 (119th Congress)"
+            }
+          ],
+          "formal_institution": "State prohibition (legislative codification of antitrust)",
+          "operative_institution": "DOJ + FTC (proposed joint enforcement)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Referred to Senate Judiciary Committee; no Republican co-sponsors; hostile environment",
+          "private_right_of_action": false
+        },
+        {
+          "name": "Stop AI Price Gouging and Wage Fixing Act, H.R. 4640 (July 2025)",
+          "strategy": "Prohibition",
+          "sector": "General (pricing and wages)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "First federal proposal to ban AI-based personalized pricing; near-zero passage prospect",
+          "enforcement_mechanism": "FTC + state AGs + private right of action",
+          "timeline": [
+            {
+              "date": "2025-07",
+              "event": "Introduced by Rep. Casar (D-TX)"
+            }
+          ],
+          "formal_institution": "State prohibition (direct ban)",
+          "operative_institution": "FTC + state AGs (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Progressive Democrat sponsors only; near-zero passage prospect in 119th Congress",
+          "private_right_of_action": true
+        },
+        {
+          "name": "EO 14110 — Safe, Secure, and Trustworthy AI (Oct 2023)",
+          "strategy": "Code-as-Regulation",
+          "sector": "General (cross-sector)",
+          "status": "Failed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Revoked by Trump administration on Jan 20, 2025",
+          "enforcement_mechanism": "Federal agencies under existing authority",
+          "timeline": [
+            {
+              "date": "2023-10",
+              "event": "Signed by President Biden (Oct 30, 2023)"
+            },
+            {
+              "date": "2025-01",
+              "event": "Revoked by President Trump (Jan 20, 2025)"
+            }
+          ],
+          "formal_institution": "Federal agency authority (executive direction)",
+          "operative_institution": "Revoked: no operative institution",
+          "institution_divergence": true,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": "Blocked",
+          "political_economy_detail": "Revoked by incoming administration; replaced by pro-innovation EO 14179",
+          "private_right_of_action": false
+        },
+        {
+          "name": "CEA Issue Brief — Cost of Anticompetitive Pricing Algorithms (Dec 2024)",
+          "strategy": "Direct Action",
+          "sector": "Rental housing",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Quantified $3.8B annual cost to renters; $70/month average increase in algorithm-utilizing buildings",
+          "enforcement_mechanism": "No enforcement mechanism; evidentiary basis for DOJ prosecution",
+          "timeline": [
+            {
+              "date": "2024-12",
+              "event": "Published (Dec 17, 2024)"
+            }
+          ],
+          "formal_institution": "Government research (informational)",
+          "operative_institution": "CEA/White House (evidentiary basis for DOJ)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "CEA/OSTP — Big Data and Differential Pricing (Feb 2015)",
+          "strategy": "Disclosure",
+          "sector": "General",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "First federal acknowledgment of algorithmic pricing as policy concern",
+          "enforcement_mechanism": "No enforcement mechanism; recommended enforcement of existing laws",
+          "timeline": [
+            {
+              "date": "2015-02",
+              "event": "Published (Feb 2015)"
+            }
+          ],
+          "formal_institution": "Government research (informational)",
+          "operative_institution": "CEA/OSTP (recommended existing law enforcement)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "FTC Section 5 Authority (15 U.S.C. s. 45)",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "General-purpose enforcement authority; scope under active contestation",
+          "enforcement_mechanism": "FTC administrative enforcement; consent orders; federal court injunctions",
+          "timeline": [
+            {
+              "date": "1914",
+              "event": "FTC Act enacted"
+            },
+            {
+              "date": "2022-11",
+              "event": "Expanded UMC Policy Statement issued"
+            },
+            {
+              "date": "2024-09",
+              "event": "Operation AI Comply launched"
+            }
+          ],
+          "formal_institution": "Federal administrative enforcement",
+          "operative_institution": "FTC (scope under active contestation; 2022 Policy Statement politically threatened)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        }
+      ],
+      "region": "North America"
+    },
+    {
+      "id": "us-states",
+      "name": "US - State Bills (Composite)",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Decentralized, uncoordinated: 51 bills across 24 states with no model bill",
+      "key_finding": "Prohibition dominates proposals but fails >90%; only disclosure (NY) and sector-specific grocery bans pass",
+      "instrument_count": 16,
+      "molecule_file": "sp-us-states.md",
+      "instruments": [
+        {
+          "name": "CO HB 1264 — Surveillance Pricing Prohibition (2025)",
+          "strategy": "Prohibition",
+          "sector": "General (pricing + wages)",
+          "status": "Failed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Broadest general prohibition in 2025. Postponed indefinitely in committee",
+          "enforcement_mechanism": "Would have included AG + DA + private right of action",
+          "timeline": [
+            {
+              "date": "2025-02",
+              "event": "Introduced"
+            },
+            {
+              "date": "2025-04",
+              "event": "Postponed indefinitely in House Judiciary Committee"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "N/A (failed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Blocked",
+          "political_economy_detail": "Postponed indefinitely in committee despite consumer group support",
+          "private_right_of_action": true
+        },
+        {
+          "name": "NM HB 285 — Dynamic Pricing in Grocery (2026)",
+          "strategy": "Prohibition",
+          "sector": "Grocery and retail",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": true,
+          "summary": "Passed both chambers unanimously (67-0, 40-0); prohibits dynamic pricing in grocery based on personal data",
+          "enforcement_mechanism": "AG enforcement under Unfair Practices Act",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Introduced"
+            },
+            {
+              "date": "2026-02",
+              "event": "Passed House 67-0"
+            },
+            {
+              "date": "2026-02",
+              "event": "Passed Senate 40-0"
+            }
+          ],
+          "formal_institution": "State prohibition (sector-specific grocery)",
+          "operative_institution": "AG under Unfair Practices Act",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": "Passed",
+          "political_economy_detail": "Bipartisan unanimous passage; grocery necessity framing neutralized industry opposition",
+          "private_right_of_action": false
+        },
+        {
+          "name": "IL HB 4248 — Algorithmic Pricing Transparency Act (2025)",
+          "strategy": "Disclosure",
+          "sector": "General (online commerce)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Disclosure + opt-out right + partial prohibition; hybrid design",
+          "enforcement_mechanism": "AG enforcement",
+          "timeline": [
+            {
+              "date": "2025-12",
+              "event": "Introduced"
+            }
+          ],
+          "formal_institution": "Market discipline (disclosure + opt-out)",
+          "operative_institution": "AG enforcement (proposed)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pending in House Rules Committee",
+          "private_right_of_action": false
+        },
+        {
+          "name": "PA HB 1942 — Surveillance Pricing Prohibition (2025)",
+          "strategy": "Prohibition",
+          "sector": "General",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "15 House Democrat sponsors; committee hearing November 2025",
+          "enforcement_mechanism": "Civil penalties up to $12,500/violation",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Introduced (15 House Democrat sponsors)"
+            },
+            {
+              "date": "2025-11",
+              "event": "Committee hearing"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "AG enforcement (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Committee hearing held; no vote",
+          "private_right_of_action": false
+        },
+        {
+          "name": "WA HB 2481 — Fair Pricing and Transparency Act (2026)",
+          "strategy": "Prohibition",
+          "sector": "Retail + ESL moratorium",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Combines surveillance pricing prohibition with 4-year electronic shelf label moratorium",
+          "enforcement_mechanism": "Consumer Protection Act; DOC study mandated",
+          "timeline": [
+            {
+              "date": "2026-01",
+              "event": "Passed committee (Jan 28, 2026)"
+            }
+          ],
+          "formal_institution": "State prohibition + code-as-regulation (ESL moratorium)",
+          "operative_institution": "Consumer Protection Act + DOC study",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Cleared committee; combines pricing prohibition with ESL moratorium",
+          "private_right_of_action": false
+        },
+        {
+          "name": "MD SB 387 — Protection from Predatory Pricing Act (2026)",
+          "strategy": "Prohibition",
+          "sector": "Grocery",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Governor-priority bill; bars grocery stores from real-time ESL price adjustments and surveillance pricing",
+          "enforcement_mechanism": "AG enforcement; civil penalties up to $10,000/$25,000",
+          "timeline": [
+            {
+              "date": "2026",
+              "event": "Introduced (governor priority bill)"
+            }
+          ],
+          "formal_institution": "State prohibition (grocery sector)",
+          "operative_institution": "AG enforcement (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Governor-priority bill; pending in 2026 session",
+          "private_right_of_action": false
+        },
+        {
+          "name": "TX SB 2567 — AI/Algorithmic Pricing Disclosure (2025)",
+          "strategy": "Disclosure",
+          "sector": "General",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Lightest-touch approach: disclosure at point of sale, enforced through existing consumer protection",
+          "enforcement_mechanism": "Deceptive trade practice under DTPA",
+          "timeline": [
+            {
+              "date": "2025-03",
+              "event": "Introduced"
+            }
+          ],
+          "formal_institution": "Market discipline (disclosure at point of sale)",
+          "operative_institution": "DTPA enforcement (proposed)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pending in Business & Commerce Committee",
+          "private_right_of_action": false
+        },
+        {
+          "name": "OH SB 79 — Pricing Algorithm Disclosure (2025)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Targets nonpublic competitor data in pricing algorithms; competition-adjacent disclosure",
+          "enforcement_mechanism": "AG enforcement",
+          "timeline": [
+            {
+              "date": "2025-02",
+              "event": "Introduced"
+            }
+          ],
+          "formal_institution": "Market discipline (disclosure of algorithm use)",
+          "operative_institution": "AG enforcement (proposed)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pending in Financial Institutions Committee",
+          "private_right_of_action": false
+        },
+        {
+          "name": "GA SB 164 — Surveillance Pricing Prohibition (2025)",
+          "strategy": "Prohibition",
+          "sector": "General (pricing + wages)",
+          "status": "Failed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Replicated prohibition-plus-wage structure; did not advance from committee",
+          "enforcement_mechanism": "Would have included AG + private right of action",
+          "timeline": [
+            {
+              "date": "2025-02",
+              "event": "Introduced (Feb 12, 2025)"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "N/A (failed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Blocked",
+          "political_economy_detail": "Did not advance from committee",
+          "private_right_of_action": true
+        },
+        {
+          "name": "MN HF 2452/SF 3098 — Dynamic Pricing Prohibition (2025)",
+          "strategy": "Prohibition",
+          "sector": "General (AI-driven dynamic pricing)",
+          "status": "Failed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Did not advance from committee",
+          "enforcement_mechanism": "Would have included AG enforcement",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Introduced"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "N/A (failed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Blocked",
+          "political_economy_detail": "Did not advance from committee",
+          "private_right_of_action": false
+        },
+        {
+          "name": "KY HB 33 — Kentucky Price Fairness Act (2026)",
+          "strategy": "Prohibition",
+          "sector": "General (amends KCDPA)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Embeds surveillance pricing prohibition within existing privacy framework",
+          "enforcement_mechanism": "AG enforcement under KCDPA",
+          "timeline": [
+            {
+              "date": "2026-01",
+              "event": "Introduced (amends KCDPA)"
+            }
+          ],
+          "formal_institution": "State prohibition (privacy law integration)",
+          "operative_institution": "AG under KCDPA (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pending in committee",
+          "private_right_of_action": false
+        },
+        {
+          "name": "VA HB 121 — Surveillance Pricing Prohibition (2026)",
+          "strategy": "Prohibition",
+          "sector": "General (consumer transactions)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Introduced January 2026",
+          "enforcement_mechanism": "AG enforcement",
+          "timeline": [
+            {
+              "date": "2026-01",
+              "event": "Introduced"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "AG enforcement (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Introduced Jan 2026; pending",
+          "private_right_of_action": false
+        },
+        {
+          "name": "FL SB 1746 — Surveillance Pricing (2026)",
+          "strategy": "Prohibition",
+          "sector": "General",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Prohibition + disclosure hybrid",
+          "enforcement_mechanism": "AG enforcement",
+          "timeline": [
+            {
+              "date": "2026",
+              "event": "Introduced"
+            }
+          ],
+          "formal_institution": "State prohibition + disclosure",
+          "operative_institution": "AG enforcement (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Introduced 2026; pending",
+          "private_right_of_action": false
+        },
+        {
+          "name": "NJ S 3612 — Biometric/Personal Data Pricing (2025)",
+          "strategy": "Prohibition",
+          "sector": "General (biometric and personal data)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Targets use of biometric and personal data in pricing",
+          "enforcement_mechanism": "Division of Consumer Affairs enforcement",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Introduced"
+            }
+          ],
+          "formal_institution": "State prohibition (biometric focus)",
+          "operative_institution": "Division of Consumer Affairs (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pending",
+          "private_right_of_action": null
+        },
+        {
+          "name": "MA HB 99 — Grocery Biometric Pricing (2025)",
+          "strategy": "Prohibition",
+          "sector": "Grocery (biometric data pricing)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Targets biometric data use in grocery pricing",
+          "enforcement_mechanism": "AG enforcement",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Introduced"
+            }
+          ],
+          "formal_institution": "State prohibition (grocery biometric)",
+          "operative_institution": "AG enforcement (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pending",
+          "private_right_of_action": false
+        },
+        {
+          "name": "TN HB 1468/SB 1807 — Surveillance Pricing (2026)",
+          "strategy": "Prohibition",
+          "sector": "General (financial and insurance exempted)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Proposed effective date July 1, 2026",
+          "enforcement_mechanism": "AG enforcement",
+          "timeline": [
+            {
+              "date": "2026",
+              "event": "Introduced (proposed eff. July 1, 2026)"
+            }
+          ],
+          "formal_institution": "State prohibition",
+          "operative_institution": "AG enforcement (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pending",
+          "private_right_of_action": false
+        }
+      ],
+      "region": "North America"
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "design_logic": "Unified",
+      "design_logic_detail": "Unified state prohibition. Every instrument tightens the constraint in the same direction",
+      "key_finding": "Densest instrument set globally. Deploys all strategies but operationally trusts only the state",
+      "instrument_count": 7,
+      "molecule_file": "sp-china.md",
+      "instruments": [
+        {
+          "name": "Rules for Price Behavior on Internet Platforms (Dec 2025, eff. Apr 2026)",
+          "strategy": "Prohibition",
+          "sector": "General (internet platforms)",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": true,
+          "summary": "Direct prohibition on algorithmic price discrimination (Article 15); targets 'big data backstabbing'",
+          "enforcement_mechanism": "NDRC, SAMR, CAC jointly; penalties per existing Price Law framework",
+          "timeline": [
+            {
+              "date": "2025-12",
+              "event": "Published by NDRC/SAMR/CAC (Dec 9, 2025)"
+            },
+            {
+              "date": "2026-04",
+              "event": "Takes effect (April 10, 2026)"
+            }
+          ],
+          "formal_institution": "State prohibition (joint regulatory)",
+          "operative_institution": "NDRC + SAMR + CAC (joint supervision)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "PIPL Article 24 — Automated Decision-Making (Nov 2021)",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Prohibits 'unreasonable differential treatment' in transaction prices; right to refuse automated decisions",
+          "enforcement_mechanism": "CAC primary; fines up to CNY 50M or 5% of prior year revenue",
+          "timeline": [
+            {
+              "date": "2021-11",
+              "event": "PIPL takes effect (Nov 1, 2021)"
+            }
+          ],
+          "formal_institution": "Individual rights (right to refuse automated decisions)",
+          "operative_institution": "CAC + SAMR (state administrative enforcement)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "E-Commerce Law Article 18 (Jan 2019)",
+          "strategy": "Disclosure",
+          "sector": "E-commerce",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Requires non-personalized search options. Earliest Chinese legislative response to dashuju shashu",
+          "enforcement_mechanism": "SAMR; fines CNY 50,000-500,000",
+          "timeline": [
+            {
+              "date": "2019-01",
+              "event": "Took effect (Jan 1, 2019)"
+            }
+          ],
+          "formal_institution": "Market discipline (non-personalized options for consumer choice)",
+          "operative_institution": "SAMR (administrative penalties)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Anti-Monopoly Law (2022 revision, eff. Aug 2022)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Article 9 blanket prohibition on using data/algorithms for anticompetitive conduct",
+          "enforcement_mechanism": "SAMR; fines up to 10% of prior year revenue; criminal liability",
+          "timeline": [
+            {
+              "date": "2008",
+              "event": "Original AML enacted"
+            },
+            {
+              "date": "2022-08",
+              "event": "Amended AML takes effect (Aug 1, 2022)"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust)",
+          "operative_institution": "SAMR",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Algorithm Recommendation Management Provisions (Mar 2022)",
+          "strategy": "Code-as-Regulation",
+          "sector": "General (internet information services)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Algorithm registry (1,400+ filed); user profile control; transparency requirements",
+          "enforcement_mechanism": "CAC, SAMR, MIIT; fines up to CNY 100,000; algorithm filing requirement",
+          "timeline": [
+            {
+              "date": "2021-12",
+              "event": "Published (Dec 31, 2021)"
+            },
+            {
+              "date": "2022-03",
+              "event": "Took effect (March 1, 2022)"
+            }
+          ],
+          "formal_institution": "State oversight (algorithm registry and transparency)",
+          "operative_institution": "CAC + SAMR + MIIT + Ministry of Public Security",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Anti-Unfair Competition Law (2025 revision, eff. Oct 2025)",
+          "strategy": "Competition",
+          "sector": "General (digital economy emphasis)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Prohibits algorithmic differential treatment and forcing below-cost sales",
+          "enforcement_mechanism": "SAMR; fines, injunctions",
+          "timeline": [
+            {
+              "date": "2025-06",
+              "event": "Revised AUCL passed"
+            },
+            {
+              "date": "2025-10",
+              "event": "Took effect (Oct 15, 2025)"
+            }
+          ],
+          "formal_institution": "Market structure (unfair competition)",
+          "operative_institution": "SAMR",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Pricing Law Revision (draft July 2025)",
+          "strategy": "Prohibition",
+          "sector": "General (economy-wide)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Would elevate algorithmic pricing prohibition to general statutory framework; first overhaul in 27 years",
+          "enforcement_mechanism": "NDRC, SAMR",
+          "timeline": [
+            {
+              "date": "2025-07",
+              "event": "Draft released for public comment"
+            }
+          ],
+          "formal_institution": "State prohibition (economy-wide statutory)",
+          "operative_institution": "NDRC + SAMR (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "On NPC legislative agenda; not yet enacted",
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Asia-Pacific"
+    },
+    {
+      "id": "eu",
+      "name": "European Union",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Dense regulatory surface from different eras, legal bases, and policy objectives. No coordinated design",
+      "key_finding": "Occupies every strategy except prohibition; no single instrument was designed for surveillance pricing",
+      "instrument_count": 8,
+      "molecule_file": "sp-eu.md",
+      "instruments": [
+        {
+          "name": "Consumer Rights Directive Art. 6(1)(ea) (Omnibus Directive, eff. May 2022)",
+          "strategy": "Disclosure",
+          "sector": "General (distance and off-premises contracts only)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Closest EU provision to surveillance pricing. Traders must disclose when price is personalized via automated decision-making",
+          "enforcement_mechanism": "National consumer protection authorities; penalties up to 4% turnover or EUR 2M",
+          "timeline": [
+            {
+              "date": "2019",
+              "event": "Omnibus Directive adopted"
+            },
+            {
+              "date": "2022-05",
+              "event": "Art. 6(1)(ea) became operative (May 28, 2022)"
+            }
+          ],
+          "formal_institution": "Market discipline (disclosure to consumers)",
+          "operative_institution": "National consumer protection authorities",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "GDPR Article 22 — Automated Decision-Making (May 2018)",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Right not to be subject to solely automated decisions; applicability to pricing contested; SCHUFA ruling expanded scope",
+          "enforcement_mechanism": "National DPAs; fines up to EUR 20M or 4% of global turnover",
+          "timeline": [
+            {
+              "date": "2018-05",
+              "event": "GDPR takes effect (May 25, 2018)"
+            },
+            {
+              "date": "2023-12",
+              "event": "CJEU SCHUFA ruling expands Art. 22 scope"
+            },
+            {
+              "date": "2025-02",
+              "event": "CJEU Dun & Bradstreet ruling on trade secret balance"
+            }
+          ],
+          "formal_institution": "Individual rights (right to refuse automated decisions)",
+          "operative_institution": "National DPAs (no DPA has acted on pricing)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "TFEU Articles 101/102 + 2023 Horizontal Guidelines",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Multiple active investigations confirmed July 2025; requires coordination (Art. 101) or dominance (Art. 102)",
+          "enforcement_mechanism": "European Commission; national competition authorities; fines up to 10% global turnover",
+          "timeline": [
+            {
+              "date": "1957",
+              "event": "Treaty provisions (Art. 101/102)"
+            },
+            {
+              "date": "2023",
+              "event": "Horizontal Guidelines address algorithmic collusion"
+            },
+            {
+              "date": "2025-07",
+              "event": "Commission confirms multiple active investigations"
+            }
+          ],
+          "formal_institution": "Market structure (competition enforcement)",
+          "operative_institution": "European Commission DG Competition + national competition authorities",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Digital Markets Act (eff. May 2023; full application Mar 2024)",
+          "strategy": "Competition",
+          "sector": "Core platform services (gatekeepers only)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Restricts data combination and self-preferencing by gatekeepers; does not prohibit personalized pricing",
+          "enforcement_mechanism": "European Commission exclusively; fines up to 10% global turnover",
+          "timeline": [
+            {
+              "date": "2022",
+              "event": "DMA adopted"
+            },
+            {
+              "date": "2023-05",
+              "event": "Entered into force"
+            },
+            {
+              "date": "2024-03",
+              "event": "Full application to designated gatekeepers"
+            }
+          ],
+          "formal_institution": "Market structure (structural platform regulation)",
+          "operative_institution": "European Commission (exclusive enforcement)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AI Act (Regulation 2024/1689, eff. Aug 2024; high-risk provisions Aug 2026)",
+          "strategy": "Code-as-Regulation",
+          "sector": "Sector-specific (credit scoring and insurance pricing only)",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Credit/insurance pricing classified as high-risk; general algorithmic pricing NOT classified",
+          "enforcement_mechanism": "National market surveillance authorities; fines up to EUR 35M or 7% global turnover",
+          "timeline": [
+            {
+              "date": "2024-08",
+              "event": "Entered into force (Aug 2024)"
+            },
+            {
+              "date": "2026-08",
+              "event": "High-risk provisions apply (Aug 2026)"
+            }
+          ],
+          "formal_institution": "State oversight (risk-based AI governance)",
+          "operative_institution": "National market surveillance authorities + AI Office",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Unfair Commercial Practices Directive (2005/29/EC, amended 2019)",
+          "strategy": "Disclosure",
+          "sector": "General (B2C)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Baseline against misleading practices; not deployed specifically against personalized pricing",
+          "enforcement_mechanism": "National consumer protection authorities; CPC Network",
+          "timeline": [
+            {
+              "date": "2005",
+              "event": "UCPD adopted"
+            },
+            {
+              "date": "2019",
+              "event": "Amended by Omnibus Directive"
+            }
+          ],
+          "formal_institution": "Market discipline (consumer protection baseline)",
+          "operative_institution": "National consumer protection authorities + CPC Network",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Digital Fairness Act (consultation closed Oct 2025)",
+          "strategy": "Disclosure",
+          "sector": "General (digital B2C)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "May address drip pricing, dynamic pricing, personalized pricing; draft expected Q3 2026",
+          "enforcement_mechanism": "TBD",
+          "timeline": [
+            {
+              "date": "2026-07",
+              "event": "Expected proposal (post-consultation)"
+            }
+          ],
+          "formal_institution": "TBD (may include disclosure or prohibition of drip pricing)",
+          "operative_institution": "TBD",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Consultation complete; draft expected Q3 2026",
+          "private_right_of_action": null
+        },
+        {
+          "name": "Platform-to-Business Regulation (eff. July 2020; repeal proposed Nov 2025)",
+          "strategy": "Disclosure",
+          "sector": "Online intermediation services (B2B)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "B2B transparency for ranking and parity; repeal proposed as part of Digital Omnibus simplification",
+          "enforcement_mechanism": "National courts; mediation",
+          "timeline": [
+            {
+              "date": "2020-07",
+              "event": "Took effect (July 12, 2020)"
+            },
+            {
+              "date": "2025-11",
+              "event": "Repeal proposed (Digital Omnibus simplification)"
+            }
+          ],
+          "formal_institution": "Market discipline (B2B platform transparency)",
+          "operative_institution": "National courts + mediation",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Europe"
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom",
+      "design_logic": "Differentiated",
+      "design_logic_detail": "Different strategies for different sectors: prohibition for insurance, disclosure for general commerce, competition for digital markets",
+      "key_finding": "Only jurisdiction with sector-specific prohibition on algorithmic price discrimination (FCA insurance price walking ban)",
+      "instrument_count": 9,
+      "molecule_file": "sp-uk.md",
+      "instruments": [
+        {
+          "name": "DMCCA 2024 Part 4 — Consumer Provisions (eff. Apr 2025)",
+          "strategy": "Disclosure",
+          "sector": "General (B2C; drip pricing and misleading omissions)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "CMA can now directly enforce consumer protection without court proceedings",
+          "enforcement_mechanism": "CMA direct enforcement; fines up to 10% of global turnover",
+          "timeline": [
+            {
+              "date": "2024-05",
+              "event": "DMCCA receives Royal Assent"
+            },
+            {
+              "date": "2025-04",
+              "event": "Consumer provisions take effect (Apr 6, 2025)"
+            },
+            {
+              "date": "2025-11",
+              "event": "First enforcement sweep (8 investigations, 100 advisory letters)"
+            }
+          ],
+          "formal_institution": "Market discipline (consumer protection: drip pricing, misleading omissions)",
+          "operative_institution": "CMA (direct enforcement without court proceedings)",
+          "institution_divergence": true,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "CMA Dynamic Pricing Project (Nov 2024-June 2025)",
+          "strategy": "Disclosure",
+          "sector": "General (travel, hospitality, entertainment, e-commerce)",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": true,
+          "summary": "Guidance on dynamic and personalized pricing practices",
+          "enforcement_mechanism": "Non-binding; informs future enforcement",
+          "timeline": [
+            {
+              "date": "2024-11",
+              "event": "Project launched"
+            },
+            {
+              "date": "2025-06",
+              "event": "Guidance published"
+            }
+          ],
+          "formal_institution": "Market discipline (informational guidance)",
+          "operative_institution": "CMA",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "CMA Consumer Protection Enforcement Sweep (Nov 2025)",
+          "strategy": "Disclosure",
+          "sector": "Sector-specific (ticketing, driving schools, gyms, homeware)",
+          "status": "Active Investigation",
+          "reaches_proprietary_pricing": false,
+          "summary": "First exercise of new DMCCA powers; advisory letters to 100 firms",
+          "enforcement_mechanism": "CMA direct enforcement under DMCCA; eight investigations opened",
+          "timeline": [
+            {
+              "date": "2025-11",
+              "event": "Enforcement sweep launched; 8 investigations opened"
+            }
+          ],
+          "formal_institution": "Market discipline (consumer protection enforcement)",
+          "operative_institution": "CMA (new direct enforcement powers under DMCCA)",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "FCA PS21/5 — Insurance Price Walking Ban (eff. Jan 2022)",
+          "strategy": "Prohibition",
+          "sector": "Insurance (home and motor only)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Renewal price cannot exceed equivalent new business price. Eliminates loyalty penalty",
+          "enforcement_mechanism": "FCA; annual senior manager attestation; pricing reports",
+          "timeline": [
+            {
+              "date": "2021-09",
+              "event": "Policy statement published"
+            },
+            {
+              "date": "2022-01",
+              "event": "Price walking ban takes effect (Jan 1, 2022)"
+            }
+          ],
+          "formal_institution": "State prohibition (sector-specific insurance)",
+          "operative_institution": "FCA (annual senior manager attestation; pricing reports)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "UK GDPR Article 22 (retained EU law, eff. May 2018; amended by DUAA 2025)",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Right against automated decisions; weakened by DUAA 2025",
+          "enforcement_mechanism": "ICO; fines up to GBP 17.5M or 4% of global turnover",
+          "timeline": [
+            {
+              "date": "2018-05",
+              "event": "UK GDPR takes effect"
+            },
+            {
+              "date": "2025-05",
+              "event": "DUAA 2025 receives Royal Assent; weakens Art. 22 protections"
+            }
+          ],
+          "formal_institution": "Individual rights (right against automated decisions)",
+          "operative_institution": "ICO",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Data (Use and Access) Act 2025 (DUAA, Royal Assent May 2025)",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Loosens UK GDPR automated decision-making restrictions; diverges from EU rights-based approach",
+          "enforcement_mechanism": "ICO",
+          "timeline": [
+            {
+              "date": "2025-05",
+              "event": "DUAA receives Royal Assent"
+            }
+          ],
+          "formal_institution": "Individual rights (weakened: facilitates automated decisions)",
+          "operative_institution": "ICO",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Act 1998 (Chapter I and II prohibitions)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Anti-competitive agreements and abuse of dominance provisions",
+          "enforcement_mechanism": "CMA; fines up to 10% of worldwide turnover per year (max 3 years)",
+          "timeline": [
+            {
+              "date": "1998",
+              "event": "Competition Act enacted"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust)",
+          "operative_institution": "CMA",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "DMCCA 2024 Part 1 — SMS Regime (eff. Jan 2025)",
+          "strategy": "Competition",
+          "sector": "Digital markets (designated SMS firms only)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "First designations June 2025: Google, Apple",
+          "enforcement_mechanism": "CMA Digital Markets Unit; fines up to 10% global turnover",
+          "timeline": [
+            {
+              "date": "2025-01",
+              "event": "SMS regime takes effect (Jan 1, 2025)"
+            },
+            {
+              "date": "2025-06",
+              "event": "First designations: Google, Apple"
+            }
+          ],
+          "formal_institution": "Market structure (digital markets: SMS designation)",
+          "operative_institution": "CMA Digital Markets Unit",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "UK Pro-Innovation AI Regulatory Framework (2023 White Paper)",
+          "strategy": "Self-Regulation",
+          "sector": "General",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Principles-based, no binding obligations; sector regulators apply existing law",
+          "enforcement_mechanism": "Sector regulators; no dedicated AI regulator",
+          "timeline": [
+            {
+              "date": "2023",
+              "event": "White Paper published"
+            }
+          ],
+          "formal_institution": "Sector regulators (principles-based)",
+          "operative_institution": "Sector regulators apply existing law; no dedicated AI regulator",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Principles-based; no binding obligations created",
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Europe"
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "design_logic": "Unified",
+      "design_logic_detail": "Deliberate pro-innovation, principles-based. Voluntary governance across all sectors",
+      "key_finding": "Elaborate voluntary AI governance infrastructure, zero binding instruments targeting pricing",
+      "instrument_count": 12,
+      "molecule_file": "sp-singapore.md",
+      "instruments": [
+        {
+          "name": "PDPA ss. 13-20 — Consent and Notification (eff. July 2014; amended 2020)",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "No equivalent to GDPR Art. 22; no right against automated decisions",
+          "enforcement_mechanism": "PDPC; fines up to SGD 1M or 10% annual turnover",
+          "timeline": [
+            {
+              "date": "2014-07",
+              "event": "PDPA takes effect (July 2, 2014)"
+            },
+            {
+              "date": "2020",
+              "event": "Major amendments (legitimate interests, increased penalties)"
+            }
+          ],
+          "formal_institution": "Individual consent (data protection)",
+          "operative_institution": "PDPC",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "PDPC Advisory Guidelines on AI Systems (Mar 2024)",
+          "strategy": "Self-Regulation",
+          "sector": "General (discriminative AI only)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Clarifies PDPA application to AI; no pricing-specific guidance",
+          "enforcement_mechanism": "PDPC (non-binding advisory)",
+          "timeline": [
+            {
+              "date": "2024-03",
+              "event": "Published (March 1, 2024)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (advisory guidance)",
+          "operative_institution": "PDPC (informational only)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Model AI Governance Framework, 2nd ed. (Jan 2020)",
+          "strategy": "Self-Regulation",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Singapore's signature AI governance contribution; widely cited, entirely voluntary",
+          "enforcement_mechanism": "None (voluntary adoption)",
+          "timeline": [
+            {
+              "date": "2020-01",
+              "event": "2nd edition published (Jan 2020)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (industry framework)",
+          "operative_institution": "None (voluntary adoption)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AI Verify Toolkit (2022) with CCCS AIM Plugin (2024)",
+          "strategy": "Self-Regulation",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Open-source testing toolkit for AI governance; AIM plugin tests for anticompetitive pricing",
+          "enforcement_mechanism": "None (self-assessment)",
+          "timeline": [
+            {
+              "date": "2022",
+              "event": "AI Verify launched"
+            },
+            {
+              "date": "2024",
+              "event": "CCCS AIM Plugin added"
+            }
+          ],
+          "formal_institution": "Voluntary governance (self-assessment toolkit)",
+          "operative_institution": "None (self-assessment)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "CPFTA — Consumer Protection (Fair Trading) Act 2003",
+          "strategy": "Disclosure",
+          "sector": "General (B2C)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Does not address personalized pricing; targets unfair trade practices generally",
+          "enforcement_mechanism": "CCCS; court-based enforcement via injunctions",
+          "timeline": [
+            {
+              "date": "2003",
+              "event": "CPFTA enacted"
+            }
+          ],
+          "formal_institution": "Market discipline (consumer protection)",
+          "operative_institution": "CCCS + court-based enforcement",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "CCCS Guidelines on Price Transparency (eff. Nov 2020)",
+          "strategy": "Disclosure",
+          "sector": "General (from online travel sector study)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Addresses drip pricing and misleading price comparisons; not personalized pricing",
+          "enforcement_mechanism": "CCCS (informs CPFTA enforcement)",
+          "timeline": [
+            {
+              "date": "2020-11",
+              "event": "Published (Nov 1, 2020)"
+            }
+          ],
+          "formal_institution": "Market discipline (price transparency guidance)",
+          "operative_institution": "CCCS",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Act 2004, s. 34 — Anti-Competitive Agreements",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Could reach algorithmic collusion; no enforcement on pricing to date",
+          "enforcement_mechanism": "CCCS; penalties up to 10% of turnover (max 3 years)",
+          "timeline": [
+            {
+              "date": "2006-01",
+              "event": "Section 34 took effect (Jan 1, 2006)"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust: agreements)",
+          "operative_institution": "CCCS",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Act 2004, s. 47 — Abuse of Dominance",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Requires exclusionary harm, not merely exploitative. High bar for pricing cases",
+          "enforcement_mechanism": "CCCS; same penalty structure",
+          "timeline": [
+            {
+              "date": "2007-11",
+              "event": "Section 47 took effect (Nov 1, 2007)"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust: dominance)",
+          "operative_institution": "CCCS",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "CCCS Revised Competition Guidelines (eff. Feb 2022)",
+          "strategy": "Competition",
+          "sector": "General (includes digital economy)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Notes need for monitoring of algorithmic collusion; calls for further study",
+          "enforcement_mechanism": "CCCS (non-binding guidance)",
+          "timeline": [
+            {
+              "date": "2022-02",
+              "event": "Published (Feb 1, 2022)"
+            }
+          ],
+          "formal_institution": "Market structure (competition guidance)",
+          "operative_institution": "CCCS",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "MAS FEAT Principles (Nov 2018) and Veritas Initiative",
+          "strategy": "Self-Regulation",
+          "sector": "Financial services",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Among earliest financial sector AI governance frameworks; voluntary fairness principles",
+          "enforcement_mechanism": "MAS (voluntary; supervisory expectations)",
+          "timeline": [
+            {
+              "date": "2018-11",
+              "event": "FEAT Principles published (Nov 2018)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (financial sector AI principles)",
+          "operative_institution": "MAS (supervisory expectations)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "MAS Proposed AI Risk Management Guidelines (Nov 2025)",
+          "strategy": "Self-Regulation",
+          "sector": "Financial services",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Closest approach to binding AI governance; consultation closed Jan 2026",
+          "enforcement_mechanism": "MAS (supervisory expectations; not binding rules)",
+          "timeline": [
+            {
+              "date": "2025-11",
+              "event": "Consultation published"
+            },
+            {
+              "date": "2026-01",
+              "event": "Consultation closed (Jan 31, 2026)"
+            }
+          ],
+          "formal_institution": "Supervisory expectations (financial sector)",
+          "operative_institution": "MAS",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Consultation closed; final guidelines pending",
+          "private_right_of_action": false
+        },
+        {
+          "name": "MAS Fair Dealing Guidelines (updated May 2024)",
+          "strategy": "Disclosure",
+          "sector": "Financial services",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Requires fair treatment but does not specifically address algorithmic pricing",
+          "enforcement_mechanism": "MAS (supervisory oversight)",
+          "timeline": [
+            {
+              "date": "2024-05",
+              "event": "Updated (May 30, 2024)"
+            }
+          ],
+          "formal_institution": "Market discipline (financial sector fair dealing)",
+          "operative_institution": "MAS",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Southeast Asia"
+    },
+    {
+      "id": "south-korea",
+      "name": "South Korea",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Dense but indirect. Instruments from different eras addressing different problems, none specifically targeting surveillance pricing",
+      "key_finding": "Only APAC jurisdiction with binding dark pattern regulation reaching pricing transparency AND automated decision-making right in data protection law",
+      "instrument_count": 9,
+      "molecule_file": "sp-south-korea.md",
+      "instruments": [
+        {
+          "name": "E-Commerce Act Art. 21-2 — Dark Patterns (eff. Feb 2025)",
+          "strategy": "Disclosure",
+          "sector": "General (e-commerce B2C)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Binding dark pattern regulation reaching pricing transparency; drip pricing grace period ended Aug 2025",
+          "enforcement_mechanism": "KFTC; corrective orders and administrative fines",
+          "timeline": [
+            {
+              "date": "2025-02",
+              "event": "Dark pattern provisions take effect"
+            },
+            {
+              "date": "2025-08",
+              "event": "Drip pricing grace period ended"
+            }
+          ],
+          "formal_institution": "Market discipline (dark pattern prohibition)",
+          "operative_institution": "KFTC",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "PIPA Art. 37-2 — Automated Decision-Making Rights (eff. Sept 2024)",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Right to refuse automated decisions and demand explanation; potentially undermined by prior-consent exception",
+          "enforcement_mechanism": "PIPC; fines up to 3% of revenue (10% for aggravated violations)",
+          "timeline": [
+            {
+              "date": "2024-09",
+              "event": "Took effect (Sept 2024)"
+            }
+          ],
+          "formal_institution": "Individual rights (right to refuse automated decisions)",
+          "operative_institution": "PIPC",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "MRFTA Art. 19 — Unfair Collaborative Acts / Cartels",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Could reach algorithmic collusion; no enforcement on pricing algorithms to date",
+          "enforcement_mechanism": "KFTC; surcharges up to 20% of relevant turnover; criminal referral",
+          "timeline": [
+            {
+              "date": "1980",
+              "event": "Enacted as part of MRFTA"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust: cartels)",
+          "operative_institution": "KFTC",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "MRFTA Art. 3-2 — Abuse of Market Dominance",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Could reach exploitative algorithmic pricing by dominant firms",
+          "enforcement_mechanism": "KFTC; surcharges up to 6% of relevant turnover",
+          "timeline": [
+            {
+              "date": "1980",
+              "event": "Enacted as part of MRFTA"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust: dominance)",
+          "operative_institution": "KFTC",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "MRFTA Art. 23/45 — Unfair Trade Practices",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Includes price discrimination as unfair trade practice",
+          "enforcement_mechanism": "KFTC; fines up to 2% of annual turnover",
+          "timeline": [
+            {
+              "date": "1980",
+              "event": "Enacted as part of MRFTA"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust: unfair trade)",
+          "operative_institution": "KFTC",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AI Basic Act (eff. Jan 2026)",
+          "strategy": "Disclosure",
+          "sector": "General (high-impact AI in designated sectors)",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "AI governance framework with transparency requirements for high-impact AI",
+          "enforcement_mechanism": "MSIT; fines up to KRW 30M for violations; National AI Committee",
+          "timeline": [
+            {
+              "date": "2026-01",
+              "event": "Took effect (Jan 2026)"
+            }
+          ],
+          "formal_institution": "State oversight (AI governance framework)",
+          "operative_institution": "MSIT + National AI Committee",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Online Platform Fairness Act (proposed; seven bills in 22nd Assembly)",
+          "strategy": "Competition",
+          "sector": "Digital platforms",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Deadlocked due to U.S. trade pressure; seven competing bills",
+          "enforcement_mechanism": "KFTC (proposed); fines up to 10% total revenue",
+          "timeline": [
+            {
+              "date": "2021",
+              "event": "Bills introduced (seven versions)"
+            }
+          ],
+          "formal_institution": "Market structure (platform regulation)",
+          "operative_institution": "KFTC (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Deadlocked due to U.S. trade pressure; seven competing bills",
+          "private_right_of_action": false
+        },
+        {
+          "name": "KFTC Platform Regulation Roadmap (Sept 2024)",
+          "strategy": "Competition",
+          "sector": "Digital platforms",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Structural competition reforms pending MRFTA amendments",
+          "enforcement_mechanism": "KFTC",
+          "timeline": [
+            {
+              "date": "2024-09",
+              "event": "Roadmap published (Sept 2024)"
+            }
+          ],
+          "formal_institution": "Market structure (platform competition reform)",
+          "operative_institution": "KFTC",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pending MRFTA amendments",
+          "private_right_of_action": false
+        },
+        {
+          "name": "FSC Guidelines on AI in Financial Services (Dec 2024)",
+          "strategy": "Self-Regulation",
+          "sector": "Financial services",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Voluntary guidelines; regulatory sandbox approach",
+          "enforcement_mechanism": "FSC/FSS (supervisory oversight)",
+          "timeline": [
+            {
+              "date": "2024-12",
+              "event": "Published (Dec 2024)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (financial sector)",
+          "operative_institution": "FSC/FSS",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Asia-Pacific"
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Study-to-legislation pipeline: ACCC inquiry produced recommendation, which produced exposure draft bill",
+      "key_finding": "Gap between analytical recognition and legislative response; enforcement intensity on pricing-adjacent conduct but no targeted instruments",
+      "instrument_count": 9,
+      "molecule_file": "sp-australia.md",
+      "instruments": [
+        {
+          "name": "ACL s.18 — Misleading or Deceptive Conduct (eff. Jan 2011)",
+          "strategy": "Disclosure",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Workhorse consumer protection; deployed against drip pricing (Webjet $9M) and illusory discounts (Coles/Woolworths)",
+          "enforcement_mechanism": "ACCC; penalties up to AUD 50M or 3x benefit or 30% turnover",
+          "timeline": [
+            {
+              "date": "2011-01",
+              "event": "ACL took effect (Jan 1, 2011)"
+            },
+            {
+              "date": "2025",
+              "event": "Webjet $9M penalty; Coles/Woolworths proceedings ongoing"
+            }
+          ],
+          "formal_institution": "Market discipline (misleading conduct prohibition)",
+          "operative_institution": "ACCC",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "ACL s.21 — Unconscionable Conduct",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Broad unconscionability standard; not yet applied to algorithmic pricing",
+          "enforcement_mechanism": "ACCC; same penalty structure",
+          "timeline": [
+            {
+              "date": "2011-01",
+              "event": "ACL took effect (Jan 1, 2011)"
+            }
+          ],
+          "formal_institution": "Individual rights (unconscionability standard)",
+          "operative_institution": "ACCC",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "CCA s.45 — Anti-Competitive Agreements (concerted practices added 2017)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Concerted practices prohibition designed for tacit coordination; untested for algorithmic collusion",
+          "enforcement_mechanism": "ACCC; criminal penalties for cartel conduct (10 years imprisonment)",
+          "timeline": [
+            {
+              "date": "2010",
+              "event": "CCA enacted"
+            },
+            {
+              "date": "2017-11",
+              "event": "Concerted practices prohibition added"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust)",
+          "operative_institution": "ACCC",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "CCA s.46 — Misuse of Market Power (effects test added 2017)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Effects-based test for market power misuse; could theoretically reach dominant firm pricing",
+          "enforcement_mechanism": "ACCC; civil pecuniary penalties",
+          "timeline": [
+            {
+              "date": "2017-11",
+              "event": "Effects test added"
+            }
+          ],
+          "formal_institution": "Market structure (market power misuse)",
+          "operative_institution": "ACCC",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "ACCC Digital Platform Services Inquiry (2020-2025)",
+          "strategy": "Disclosure",
+          "sector": "Digital platforms",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": true,
+          "summary": "Five-year inquiry; recommended economy-wide unfair trading practices prohibition",
+          "enforcement_mechanism": "Non-binding; informs legislative agenda",
+          "timeline": [
+            {
+              "date": "2020",
+              "event": "Five-year inquiry launched"
+            },
+            {
+              "date": "2025-06",
+              "event": "Final report published (June 2025)"
+            }
+          ],
+          "formal_institution": "Government research (regulatory recommendations)",
+          "operative_institution": "ACCC",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Unfair Trading Practices Bill 2026 (exposure draft Feb 2026)",
+          "strategy": "Disclosure",
+          "sector": "General (consumer transactions)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": true,
+          "summary": "Would prohibit conduct that 'unreasonably manipulates' consumers; could theoretically reach personalized pricing",
+          "enforcement_mechanism": "ACCC; penalties up to AUD 50M or 3x benefit or 30% turnover",
+          "timeline": [
+            {
+              "date": "2026-02",
+              "event": "Exposure draft published"
+            },
+            {
+              "date": "2027-07",
+              "event": "Proposed effective date"
+            }
+          ],
+          "formal_institution": "State prohibition (unfair trading: hybrid)",
+          "operative_institution": "ACCC (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Exposure draft consultation closed Feb 2026; proposed eff. July 2027",
+          "private_right_of_action": true
+        },
+        {
+          "name": "Privacy Act 1988 — APP 1 Reform: ADM Transparency (eff. Dec 2026)",
+          "strategy": "Disclosure",
+          "sector": "General",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": true,
+          "summary": "Requires disclosure of automated decision-making in privacy policies; weakest ADM provision in dataset",
+          "enforcement_mechanism": "OAIC; infringement notice regime",
+          "timeline": [
+            {
+              "date": "2026-12",
+              "event": "ADM transparency provisions take effect (Dec 10, 2026)"
+            }
+          ],
+          "formal_institution": "Market discipline (disclosure in privacy policies)",
+          "operative_institution": "OAIC",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "ASIC Insurance Pricing Enforcement (IAG, QBE, RACQ — 2023-ongoing)",
+          "strategy": "Disclosure",
+          "sector": "Insurance",
+          "status": "Active Investigation",
+          "reaches_proprietary_pricing": false,
+          "summary": "Targets misleading loyalty discount claims. Functionally analogous to UK price walking ban but via disclosure enforcement",
+          "enforcement_mechanism": "ASIC; Federal Court penalties (IAG AUD 40M, RACQ AUD 10M)",
+          "timeline": [
+            {
+              "date": "2023",
+              "event": "Enforcement actions commenced (IAG, QBE, RACQ)"
+            },
+            {
+              "date": "2025",
+              "event": "IAG $40M penalty; RACQ $10M penalty"
+            },
+            {
+              "date": "2026-04",
+              "event": "QBE trial (Apr 2026)"
+            }
+          ],
+          "formal_institution": "Market discipline (misleading loyalty discount claims)",
+          "operative_institution": "ASIC + Federal Court",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AI Mandatory Guardrails (consultation Sept 2024) / National AI Plan (Dec 2025)",
+          "strategy": "Self-Regulation",
+          "sector": "General (high-risk AI settings)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Does not address algorithmic pricing; focused on safety, accountability, transparency",
+          "enforcement_mechanism": "AI Safety Institute (established Nov 2025)",
+          "timeline": [
+            {
+              "date": "2024-09",
+              "event": "Consultation opened"
+            },
+            {
+              "date": "2025-11",
+              "event": "AI Safety Institute established"
+            },
+            {
+              "date": "2025-12",
+              "event": "National AI Plan published"
+            }
+          ],
+          "formal_institution": "Self-regulation (moving toward mandatory guardrails)",
+          "operative_institution": "AI Safety Institute (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Consultation complete; no legislation enacted",
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Asia-Pacific"
+    },
+    {
+      "id": "india",
+      "name": "India",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Reactive, enforcement-triggered. Responding to specific complaints rather than addressing structural practice",
+      "key_finding": "Activity is enforcement-led (CCPA Uber/Ola notices). Instruments fragmented across multiple regulators with no coordination",
+      "instrument_count": 12,
+      "molecule_file": "sp-india.md",
+      "instruments": [
+        {
+          "name": "Consumer Protection Act 2019, s. 2(47) — Unfair Trade Practices",
+          "strategy": "Disclosure",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "General unfair trade practices prohibition; enforcement against differential pricing emerging",
+          "enforcement_mechanism": "CCPA; consumer commissions; penalties up to INR 10 lakh",
+          "timeline": [
+            {
+              "date": "2019",
+              "event": "Consumer Protection Act enacted"
+            }
+          ],
+          "formal_institution": "Market discipline (unfair trade practices prohibition)",
+          "operative_institution": "CCPA + consumer commissions",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "Consumer Protection (E-Commerce) Rules 2020",
+          "strategy": "Disclosure",
+          "sector": "E-commerce",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Transparency requirements for e-commerce platforms",
+          "enforcement_mechanism": "CCPA; consumer commissions",
+          "timeline": [
+            {
+              "date": "2020",
+              "event": "Rules notified"
+            }
+          ],
+          "formal_institution": "Market discipline (e-commerce transparency)",
+          "operative_institution": "CCPA + consumer commissions",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "CCPA Dark Patterns Guidelines 2023",
+          "strategy": "Disclosure",
+          "sector": "E-commerce",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "13 specified dark patterns; self-audit model",
+          "enforcement_mechanism": "CCPA; self-audit model; penalties up to INR 10 lakh",
+          "timeline": [
+            {
+              "date": "2023",
+              "event": "Guidelines published"
+            }
+          ],
+          "formal_institution": "Market discipline (dark pattern prevention)",
+          "operative_institution": "CCPA (self-audit model)",
+          "institution_divergence": true,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "CCPA Enforcement — Uber/Ola Differential Pricing (Jan 2025)",
+          "strategy": "Disclosure",
+          "sector": "Ride-hailing",
+          "status": "Active Investigation",
+          "reaches_proprietary_pricing": true,
+          "summary": "Notices for differential pricing based on operating systems (iPhone vs Android fares)",
+          "enforcement_mechanism": "CCPA Investigation Wing",
+          "timeline": [
+            {
+              "date": "2025-01",
+              "event": "CCPA issues notices to Uber and Ola"
+            }
+          ],
+          "formal_institution": "Market discipline (consumer protection enforcement)",
+          "operative_institution": "CCPA Investigation Wing",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Act 2002 (amended 2023), ss. 3 and 4",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Anti-competitive agreements and abuse of dominance",
+          "enforcement_mechanism": "CCI; penalties up to 10% of average turnover for preceding 3 years",
+          "timeline": [
+            {
+              "date": "2002",
+              "event": "Competition Act enacted"
+            },
+            {
+              "date": "2023",
+              "event": "Amended (expanded definitions and penalties)"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust)",
+          "operative_institution": "CCI",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "CCI Market Study on AI and Competition (Oct 2025)",
+          "strategy": "Self-Regulation",
+          "sector": "General",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Warning that pricing algorithms can produce collusion without human intent",
+          "enforcement_mechanism": "Non-binding; self-audit framework recommended",
+          "timeline": [
+            {
+              "date": "2025-10",
+              "event": "Published (Oct 2025)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (self-audit framework)",
+          "operative_institution": "CCI (non-binding)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Digital Personal Data Protection Act 2023 (DPDPA)",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Limited automated decision-making provisions; rules notified Nov 2025",
+          "enforcement_mechanism": "Data Protection Board; penalties up to INR 250 crore",
+          "timeline": [
+            {
+              "date": "2023",
+              "event": "DPDPA enacted"
+            },
+            {
+              "date": "2025-11",
+              "event": "Rules notified"
+            }
+          ],
+          "formal_institution": "Individual rights (limited ADM provisions)",
+          "operative_institution": "Data Protection Board",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "DPDP Rules 2025, Rule 13(3) — Algorithmic Impact Assessments",
+          "strategy": "Rights & Liabilities",
+          "sector": "General (Significant Data Fiduciaries only)",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Algorithmic impact assessments for significant data fiduciaries; phased implementation",
+          "enforcement_mechanism": "Data Protection Board",
+          "timeline": [
+            {
+              "date": "2025-11",
+              "event": "Rules notified (phased implementation)"
+            }
+          ],
+          "formal_institution": "State oversight (algorithmic impact assessments)",
+          "operative_institution": "Data Protection Board",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Draft Digital Competition Bill 2024 (SSDE obligations)",
+          "strategy": "Competition",
+          "sector": "Digital markets (Core Digital Services only)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Ex ante competition regulation for digital markets; not yet introduced in Parliament",
+          "enforcement_mechanism": "CCI (proposed); penalties up to 10% global turnover",
+          "timeline": [
+            {
+              "date": "2024-05",
+              "event": "Public consultation closed (May 2024)"
+            }
+          ],
+          "formal_institution": "Market structure (ex ante platform regulation)",
+          "operative_institution": "CCI (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Public consultation complete; not introduced in Parliament",
+          "private_right_of_action": false
+        },
+        {
+          "name": "IRDAI Insurance Products Regulations 2024",
+          "strategy": "Disclosure",
+          "sector": "Insurance",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Product governance and pricing principles for insurance",
+          "enforcement_mechanism": "IRDAI",
+          "timeline": [
+            {
+              "date": "2024",
+              "event": "Regulations published"
+            }
+          ],
+          "formal_institution": "Sector regulation (insurance pricing governance)",
+          "operative_institution": "IRDAI",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "RBI Digital Lending Directions 2025",
+          "strategy": "Disclosure",
+          "sector": "Digital lending",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Transparency for digital lending; neutrality obligations for multi-lender apps",
+          "enforcement_mechanism": "RBI; Key Fact Statement requirements",
+          "timeline": [
+            {
+              "date": "2025-05",
+              "event": "Directions take effect (May 2025)"
+            }
+          ],
+          "formal_institution": "Sector regulation (digital lending transparency)",
+          "operative_institution": "RBI",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "India AI Governance Guidelines (Nov 2025)",
+          "strategy": "Self-Regulation",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Non-binding AI governance principles",
+          "enforcement_mechanism": "None (voluntary)",
+          "timeline": [
+            {
+              "date": "2025-11",
+              "event": "Published (Nov 2025)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (AI principles)",
+          "operative_institution": "None (voluntary)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Asia-Pacific"
+    },
+    {
+      "id": "indonesia",
+      "name": "Indonesia",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Institutional fragmentation and legislative lag. Patchwork of general-purpose laws with overlapping mandates",
+      "key_finding": "Ride-hailing tariff cap regime (direct action) and competition law amendment with algorithmic collusion provisions in 2026 priority legislation",
+      "instrument_count": 11,
+      "molecule_file": "sp-indonesia.md",
+      "instruments": [
+        {
+          "name": "Consumer Protection Law (UU 8/1999), Arts. 9-17",
+          "strategy": "Disclosure",
+          "sector": "General (B2C)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Unfair trade practices; enforcement limited for digital practices",
+          "enforcement_mechanism": "BPSK; criminal max 2 years or IDR 500M fine",
+          "timeline": [
+            {
+              "date": "1999",
+              "event": "UU 8/1999 enacted"
+            }
+          ],
+          "formal_institution": "Market discipline (unfair trade practices)",
+          "operative_institution": "BPSK (regional dispute resolution)",
+          "institution_divergence": true,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "PDP Law (UU 27/2022), Art. 10 — Right to Object to ADM",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Right to object to automated decision-making; full enforcement from Oct 2024",
+          "enforcement_mechanism": "Komdigi; sanctions up to 2% annual revenue; criminal up to 6 years",
+          "timeline": [
+            {
+              "date": "2022-10",
+              "event": "UU 27/2022 enacted"
+            },
+            {
+              "date": "2024-10",
+              "event": "Full enforcement begins (Oct 17, 2024)"
+            }
+          ],
+          "formal_institution": "Individual rights (right to object to ADM)",
+          "operative_institution": "Komdigi",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Law (UU 5/1999), Arts. 5, 6, 19(d)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Price fixing (Art. 5), price discrimination (Art. 6 per se illegal), discriminatory practices (Art. 19d)",
+          "enforcement_mechanism": "KPPU; fines up to IDR 25B; criminal max 5 months for price discrimination",
+          "timeline": [
+            {
+              "date": "1999",
+              "event": "UU 5/1999 enacted"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust: price discrimination per se illegal)",
+          "operative_institution": "KPPU",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "GR 80/2019 on E-Commerce (amended by GR 31/2023)",
+          "strategy": "Disclosure",
+          "sector": "E-commerce",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Transparency and fair dealing principles for e-commerce",
+          "enforcement_mechanism": "Ministry of Trade; license revocation",
+          "timeline": [
+            {
+              "date": "2019",
+              "event": "GR 80/2019 enacted"
+            },
+            {
+              "date": "2023",
+              "event": "Amended by GR 31/2023"
+            }
+          ],
+          "formal_institution": "Market discipline (e-commerce transparency)",
+          "operative_institution": "Ministry of Trade",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "MOT Regulation 31/2023 (Permendag 31/2023) — Anti-Price Manipulation",
+          "strategy": "Disclosure",
+          "sector": "E-commerce (marketplace and social commerce)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Platform reporting obligations for suspected price manipulation",
+          "enforcement_mechanism": "Ministry of Trade; platform reporting to KPPU within 3 days",
+          "timeline": [
+            {
+              "date": "2023-09",
+              "event": "Permendag 31/2023 took effect (Sept 26, 2023)"
+            }
+          ],
+          "formal_institution": "Market discipline (platform price manipulation reporting)",
+          "operative_institution": "Ministry of Trade + KPPU (reporting channel)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Permenhub 12/2019 — Ride-Hailing Tariff Caps",
+          "strategy": "Direct Action",
+          "sector": "Transportation (ride-hailing)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Government-set tariff bands constraining algorithmic pricing; updated via Permenhub 564/2022",
+          "enforcement_mechanism": "Ministry of Transportation; administrative sanctions",
+          "timeline": [
+            {
+              "date": "2019",
+              "event": "Permenhub 12/2019 enacted"
+            },
+            {
+              "date": "2022",
+              "event": "Updated via Permenhub 564/2022 (Greater Jakarta)"
+            }
+          ],
+          "formal_institution": "State-set pricing (tariff bands)",
+          "operative_institution": "Ministry of Transportation",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "OJK AI Ethics Guidelines for Fintech (Dec 2023; updated Dec 2024)",
+          "strategy": "Self-Regulation",
+          "sector": "Financial services (fintech)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Voluntary code of ethics for AI in fintech",
+          "enforcement_mechanism": "OJK (supervisory expectations)",
+          "timeline": [
+            {
+              "date": "2023-12",
+              "event": "Published (Dec 2023)"
+            },
+            {
+              "date": "2024-12",
+              "event": "Updated (Dec 2024)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (fintech AI ethics)",
+          "operative_institution": "OJK (supervisory expectations)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "OJK AI Governance for Banking (Apr 2025)",
+          "strategy": "Self-Regulation",
+          "sector": "Financial services (banking)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Voluntary AI governance guidelines for banking sector",
+          "enforcement_mechanism": "OJK (supervisory guidance)",
+          "timeline": [
+            {
+              "date": "2025-04",
+              "event": "Published (Apr 2025)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (banking AI)",
+          "operative_institution": "OJK (supervisory guidance)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Draft Competition Law Amendment (2026 Priority Legislation)",
+          "strategy": "Competition",
+          "sector": "General (including digital markets)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Algorithmic collusion provisions; Parliamentary Working Committee deliberation Feb 2026",
+          "enforcement_mechanism": "KPPU (proposed expanded powers: search and seizure, digital evidence)",
+          "timeline": [
+            {
+              "date": "2025-11",
+              "event": "Public hearing (Nov 2025)"
+            },
+            {
+              "date": "2026-02",
+              "event": "Parliamentary Working Committee deliberation"
+            }
+          ],
+          "formal_institution": "Market structure (expanded antitrust + algorithmic collusion)",
+          "operative_institution": "KPPU (proposed expanded powers)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "In 2026 priority legislation; Parliamentary deliberation ongoing",
+          "private_right_of_action": false
+        },
+        {
+          "name": "Draft Presidential Regulation on AI Roadmap and Ethics",
+          "strategy": "Self-Regulation",
+          "sector": "General",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "AI governance framework; pushed to early 2026",
+          "enforcement_mechanism": "Komdigi (cross-sector)",
+          "timeline": [
+            {
+              "date": "2025-08",
+              "event": "Draft published (Aug 2025)"
+            }
+          ],
+          "formal_institution": "State oversight (AI governance framework)",
+          "operative_institution": "Komdigi (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Pushed to early 2026",
+          "private_right_of_action": false
+        },
+        {
+          "name": "Draft Consumer Protection Law Overhaul",
+          "strategy": "Disclosure",
+          "sector": "General (B2C, including digital)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "Proposed institutional reforms for digital-era consumer protection",
+          "enforcement_mechanism": "Proposed National Consumer Protection Agency",
+          "timeline": [
+            {
+              "date": "1999",
+              "event": "UU 8/1999 enacted"
+            }
+          ],
+          "formal_institution": "Market discipline (unfair trade practices)",
+          "operative_institution": "BPSK (regional dispute resolution)",
+          "institution_divergence": true,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        }
+      ],
+      "region": "Southeast Asia"
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Competition-dominated. Layers national instruments on top of EU baseline, Bundeskartellamt as both intellectual leader and enforcer",
+      "key_finding": "First enforcement order and monetary disgorgement against algorithmic pricing mechanisms in the EU (Amazon Section 19a)",
+      "instrument_count": 9,
+      "molecule_file": "sp-germany.md",
+      "instruments": [
+        {
+          "name": "GWB Section 19a — Paramount Cross-Market Significance (eff. Jan 2021)",
+          "strategy": "Competition",
+          "sector": "Digital markets (designated: Meta, Google, Amazon, Apple)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Amazon enforcement order Feb 2026. First digital competition instrument of its kind",
+          "enforcement_mechanism": "Bundeskartellamt; prohibition orders; disgorgement; fines up to 10% global turnover",
+          "timeline": [
+            {
+              "date": "2021-01",
+              "event": "GWB Digitalisation Act took effect (Jan 19, 2021)"
+            },
+            {
+              "date": "2026-02",
+              "event": "Amazon enforcement order (first algorithmic pricing disgorgement in EU)"
+            }
+          ],
+          "formal_institution": "Market structure (digital competition: paramount significance)",
+          "operative_institution": "Bundeskartellamt",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "GWB Sections 19/20 — Abuse of Dominance / Relative Market Power",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Broader than EU Art. 102: covers relative market power, not just dominance",
+          "enforcement_mechanism": "Bundeskartellamt; fines up to 10% global turnover",
+          "timeline": [
+            {
+              "date": "1958",
+              "event": "GWB enacted"
+            }
+          ],
+          "formal_institution": "Market structure (abuse of dominance + relative market power)",
+          "operative_institution": "Bundeskartellamt",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "Section 312d BGB / Article 246a EGBGB (Omnibus Directive, eff. May 2022)",
+          "strategy": "Disclosure",
+          "sector": "General (distance and off-premises contracts)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "German transposition of EU personalized pricing disclosure requirement",
+          "enforcement_mechanism": "State consumer protection authorities; fines up to EUR 25,000",
+          "timeline": [
+            {
+              "date": "2022-05",
+              "event": "German Omnibus Directive transposition took effect"
+            }
+          ],
+          "formal_institution": "Market discipline (personalized pricing disclosure)",
+          "operative_institution": "State consumer protection authorities",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "UWG Sections 5a/5b — Misleading Omissions and Ranking Transparency",
+          "strategy": "Disclosure",
+          "sector": "General (B2C)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Amended to implement Omnibus Directive. Competitor enforcement mechanism (Abmahnungen) is unusual",
+          "enforcement_mechanism": "State authorities; competitor actions (Abmahnungen); injunctions and damages",
+          "timeline": [
+            {
+              "date": "2022-05",
+              "event": "Omnibus Directive amendments took effect"
+            }
+          ],
+          "formal_institution": "Market discipline (misleading omissions)",
+          "operative_institution": "State authorities + competitor actions (Abmahnungen)",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "PAngV — Price Indication Regulation (amended May 2022)",
+          "strategy": "Disclosure",
+          "sector": "General (B2C retail)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Requires prior-price disclosure for promotions; 30-day lowest-price rule",
+          "enforcement_mechanism": "State authorities; fines up to EUR 25,000",
+          "timeline": [
+            {
+              "date": "2022-05",
+              "event": "Amended (May 2022)"
+            }
+          ],
+          "formal_institution": "Market discipline (price display rules)",
+          "operative_institution": "State authorities",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "BDSG Section 37 — Automated Individual Decision-Making",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Supplements GDPR Art. 22; contested after SCHUFA ruling",
+          "enforcement_mechanism": "BfDI; state DPAs; fines per GDPR schedule",
+          "timeline": [
+            {
+              "date": "2018-05",
+              "event": "New BDSG enacted (GDPR adaptation)"
+            }
+          ],
+          "formal_institution": "Individual rights (automated individual decision-making)",
+          "operative_institution": "BfDI + state DPAs",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "BDSG Section 31 — Scoring in Commercial Transactions",
+          "strategy": "Rights & Liabilities",
+          "sector": "Credit and scoring",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "CJEU compatibility questioned; proposed deletion",
+          "enforcement_mechanism": "BfDI; state DPAs",
+          "timeline": [
+            {
+              "date": "2018-05",
+              "event": "New BDSG enacted (GDPR adaptation)"
+            }
+          ],
+          "formal_institution": "Individual rights (scoring regulation)",
+          "operative_institution": "BfDI + state DPAs",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "KI-MIG — AI Market Surveillance Act (Cabinet approved 2025)",
+          "strategy": "Code-as-Regulation",
+          "sector": "AI systems (implementing EU AI Act)",
+          "status": "Proposed",
+          "reaches_proprietary_pricing": false,
+          "summary": "German implementation of EU AI Act; not yet enacted as of Feb 2026",
+          "enforcement_mechanism": "Federal Network Agency (BNetzA) as central authority",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Cabinet approved"
+            }
+          ],
+          "formal_institution": "State oversight (AI market surveillance)",
+          "operative_institution": "BNetzA (proposed)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": "Stalled",
+          "political_economy_detail": "Cabinet approved; not yet enacted as of Feb 2026",
+          "private_right_of_action": false
+        },
+        {
+          "name": "Datenethikkommission Report (Oct 2019)",
+          "strategy": "Self-Regulation",
+          "sector": "General (advisory, non-binding)",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Five-tier risk framework for algorithmic systems; influenced EU AI Act design",
+          "enforcement_mechanism": "N/A (recommendations only)",
+          "timeline": [
+            {
+              "date": "2019-10",
+              "event": "Report published (Oct 2019)"
+            }
+          ],
+          "formal_institution": "Advisory (non-binding recommendations)",
+          "operative_institution": "N/A (recommendations only)",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Europe"
+    },
+    {
+      "id": "canada",
+      "name": "Canada",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Active motion. Substantially amended Competition Act (2022, 2024) but Bill C-27 death left no federal ADM framework",
+      "key_finding": "Competition Bureau's June 2025 algorithmic pricing discussion paper is the closest institutional engagement with surveillance pricing",
+      "instrument_count": 9,
+      "molecule_file": "sp-canada.md",
+      "instruments": [
+        {
+          "name": "Competition Act, s. 74.01(1.1) — Drip Pricing Prohibition (2022, strengthened 2024)",
+          "strategy": "Prohibition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Drip pricing prohibition, among strongest globally",
+          "enforcement_mechanism": "Competition Bureau; AMPs up to CAD $10M or 3% global turnover; private right of action (June 2025)",
+          "timeline": [
+            {
+              "date": "2022",
+              "event": "Drip pricing prohibition enacted"
+            },
+            {
+              "date": "2024-06",
+              "event": "Strengthened by Bill C-59 (June 2024)"
+            },
+            {
+              "date": "2024-09",
+              "event": "Cineplex $38.9M penalty"
+            },
+            {
+              "date": "2025-05",
+              "event": "Canada's Wonderland action filed"
+            },
+            {
+              "date": "2025-06",
+              "event": "DoorDash action filed; private right of action takes effect"
+            }
+          ],
+          "formal_institution": "State prohibition (drip pricing)",
+          "operative_institution": "Competition Bureau + Competition Tribunal",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "Competition Act, s. 45 — Criminal Conspiracy (Price-Fixing)",
+          "strategy": "Prohibition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Untested for algorithmic collusion",
+          "enforcement_mechanism": "Competition Bureau; imprisonment up to 14 years; fines up to CAD $25M",
+          "timeline": [
+            {
+              "date": "1985",
+              "event": "Competition Act enacted"
+            }
+          ],
+          "formal_institution": "State prohibition (price-fixing: criminal)",
+          "operative_institution": "Competition Bureau (criminal prosecution)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Act, s. 90.1 — Civil Competitor Collaboration (amended 2024)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Expanded to non-competitors if significant purpose is lessening competition",
+          "enforcement_mechanism": "Competition Bureau; Competition Tribunal",
+          "timeline": [
+            {
+              "date": "2024",
+              "event": "Amended (expanded to non-competitors)"
+            }
+          ],
+          "formal_institution": "Market structure (civil collaboration)",
+          "operative_institution": "Competition Bureau + Competition Tribunal",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Act, ss. 78-79 — Abuse of Dominance (amended 2024)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Excessive pricing now an enumerated anti-competitive act",
+          "enforcement_mechanism": "Competition Bureau; AMPs up to 3% global turnover",
+          "timeline": [
+            {
+              "date": "2024",
+              "event": "Amended (excessive pricing enumerated)"
+            }
+          ],
+          "formal_institution": "Market structure (abuse of dominance)",
+          "operative_institution": "Competition Bureau + Competition Tribunal",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Act, s. 74.01(1) — Deceptive Marketing",
+          "strategy": "Disclosure",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "False/misleading representations; private right of action added June 2025",
+          "enforcement_mechanism": "Competition Bureau; AMPs up to CAD $10M/$15M or 3% turnover; private right of action (June 2025)",
+          "timeline": [
+            {
+              "date": "2025-06",
+              "event": "Private right of action takes effect (June 2025)"
+            }
+          ],
+          "formal_institution": "Market discipline (false/misleading representations)",
+          "operative_institution": "Competition Bureau + Competition Tribunal",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "PIPEDA — Consent and Purpose Limitation",
+          "strategy": "Rights & Liabilities",
+          "sector": "Private sector commercial activity (federal)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "General data protection; lacks automated decision-making provisions",
+          "enforcement_mechanism": "OPC; findings and recommendations (non-binding); Federal Court enforcement",
+          "timeline": [
+            {
+              "date": "2000",
+              "event": "PIPEDA enacted"
+            }
+          ],
+          "formal_institution": "Individual rights (consent and purpose limitation)",
+          "operative_institution": "OPC (findings non-binding); Federal Court",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Quebec Law 25 — Automated Decision-Making (s. 12.1, eff. Sept 2023)",
+          "strategy": "Rights & Liabilities",
+          "sector": "Private sector (Quebec)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Only Canadian jurisdiction with automated decision-making rights; directly relevant to pricing",
+          "enforcement_mechanism": "CAI; AMPs up to CAD $25M or 4% global turnover",
+          "timeline": [
+            {
+              "date": "2023-09",
+              "event": "ADM provisions took effect (Sept 2023)"
+            }
+          ],
+          "formal_institution": "Individual rights (right to refuse automated decisions)",
+          "operative_institution": "CAI (Commission d'acces a l'information du Quebec)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Treasury Board Directive on ADM (2019, amended 2023)",
+          "strategy": "Code-as-Regulation",
+          "sector": "Federal government only",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Government-only. Early public-sector ADM governance",
+          "enforcement_mechanism": "Treasury Board Secretariat; Algorithmic Impact Assessment mandatory",
+          "timeline": [
+            {
+              "date": "2019",
+              "event": "Directive issued"
+            },
+            {
+              "date": "2023",
+              "event": "Amended"
+            }
+          ],
+          "formal_institution": "State oversight (government ADM governance)",
+          "operative_institution": "Treasury Board Secretariat",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Competition Bureau — Algorithmic Pricing Discussion Paper (June 2025)",
+          "strategy": "Disclosure",
+          "sector": "General",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": true,
+          "summary": "'What We Heard' report Jan 2026. Closest institutional engagement with surveillance pricing",
+          "enforcement_mechanism": "N/A: policy development stage",
+          "timeline": [
+            {
+              "date": "2025-06",
+              "event": "Discussion paper published (June 2025)"
+            },
+            {
+              "date": "2026-01",
+              "event": "'What We Heard' report published (Jan 2026)"
+            }
+          ],
+          "formal_institution": "Government research (policy development)",
+          "operative_institution": "Competition Bureau",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        }
+      ],
+      "region": "North America"
+    },
+    {
+      "id": "netherlands",
+      "name": "Netherlands",
+      "design_logic": "Accumulated",
+      "design_logic_detail": "Institutionally coordinated. Instruments from different eras but regulators actively talk to each other about algorithms",
+      "key_finding": "First EU national market investigation specifically into computer-controlled consumer pricing (ACM aviation sector); AFM found ~50% of non-life insurers charge loyal customers higher margins",
+      "instrument_count": 12,
+      "molecule_file": "sp-netherlands.md",
+      "instruments": [
+        {
+          "name": "Article 6:230m(1)(ea) BW — Personalized Pricing Disclosure (eff. May 2022)",
+          "strategy": "Disclosure",
+          "sector": "General (distance and off-premises contracts)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "Dutch transposition of EU Omnibus Directive personalized pricing disclosure",
+          "enforcement_mechanism": "ACM; fines up to EUR 900,000 or 1% of turnover",
+          "timeline": [
+            {
+              "date": "2022-05",
+              "event": "Dutch Omnibus transposition took effect"
+            }
+          ],
+          "formal_institution": "Market discipline (personalized pricing disclosure)",
+          "operative_institution": "ACM",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Section 6:193a-j BW — Unfair Commercial Practices",
+          "strategy": "Disclosure",
+          "sector": "General (B2C)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "UCPD implementation; baseline against misleading practices",
+          "enforcement_mechanism": "ACM; fines; private actions for damages",
+          "timeline": [
+            {
+              "date": "2008",
+              "event": "EU Unfair Commercial Practices Directive transposed"
+            }
+          ],
+          "formal_institution": "Market discipline (unfair commercial practices)",
+          "operative_institution": "ACM + private actions",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "ACM Leidraad Bescherming Online Consument (2020, updated May 2024)",
+          "strategy": "Self-Regulation",
+          "sector": "Digital (B2C online)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Online consumer protection guidelines",
+          "enforcement_mechanism": "ACM (guidance)",
+          "timeline": [
+            {
+              "date": "2020",
+              "event": "Published"
+            },
+            {
+              "date": "2024-05",
+              "event": "Updated (May 2024)"
+            }
+          ],
+          "formal_institution": "Voluntary governance (online consumer protection)",
+          "operative_institution": "ACM (guidance)",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "ACM Leidraad Prijsweergave (Sept 2025) — Price Display Guidelines",
+          "strategy": "Disclosure",
+          "sector": "General (B2C retail)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Price display and comparison guidelines",
+          "enforcement_mechanism": "ACM; fines up to EUR 900,000 or 1% of turnover",
+          "timeline": [
+            {
+              "date": "2025-09",
+              "event": "Published (Sept 2025)"
+            }
+          ],
+          "formal_institution": "Market discipline (price display guidance)",
+          "operative_institution": "ACM",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Besluit Prijsaanduiding Producten — 30-Day Prior Price Rule (eff. Jan 2023)",
+          "strategy": "Disclosure",
+          "sector": "General (B2C retail)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "30-day lowest-price rule for promotions",
+          "enforcement_mechanism": "ACM; fines up to EUR 900,000 or 1% of turnover",
+          "timeline": [
+            {
+              "date": "2023-01",
+              "event": "30-day prior price rule took effect (Jan 2023)"
+            }
+          ],
+          "formal_institution": "Market discipline (price transparency)",
+          "operative_institution": "ACM",
+          "institution_divergence": false,
+          "target_visibility": "Conspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "Mededingingswet — Dutch Competition Act (Articles 6, 24)",
+          "strategy": "Competition",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Anti-competitive agreements and abuse of dominance",
+          "enforcement_mechanism": "ACM; fines up to 10% of global turnover; private damages",
+          "timeline": [
+            {
+              "date": "1998",
+              "event": "Mededingingswet enacted"
+            }
+          ],
+          "formal_institution": "Market structure (antitrust)",
+          "operative_institution": "ACM",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": true
+        },
+        {
+          "name": "ACM Market Investigation — Computer-Controlled Prices in Aviation (2025)",
+          "strategy": "Competition",
+          "sector": "Aviation",
+          "status": "Active Investigation",
+          "reaches_proprietary_pricing": true,
+          "summary": "First EU national investigation specifically into algorithmic pricing; draft report expected early 2026",
+          "enforcement_mechanism": "ACM (non-binding recommendations; may trigger enforcement)",
+          "timeline": [
+            {
+              "date": "2025",
+              "event": "Market investigation launched (aviation sector)"
+            },
+            {
+              "date": "2026",
+              "event": "Draft report expected early 2026"
+            }
+          ],
+          "formal_institution": "Market structure (sector investigation)",
+          "operative_institution": "ACM",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "UAVG — GDPR Implementation Act",
+          "strategy": "Rights & Liabilities",
+          "sector": "General",
+          "status": "Operative",
+          "reaches_proprietary_pricing": true,
+          "summary": "GDPR implementation; includes Article 22 automated decision-making provisions",
+          "enforcement_mechanism": "AP (Autoriteit Persoonsgegevens); fines per GDPR schedule",
+          "timeline": [
+            {
+              "date": "2018-05",
+              "event": "UAVG enacted (GDPR implementation)"
+            }
+          ],
+          "formal_institution": "Individual rights (GDPR Art. 22 implementation)",
+          "operative_institution": "AP (Autoriteit Persoonsgegevens)",
+          "institution_divergence": true,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AFM Exploratory Study on Personalized Pricing in Insurance (June 2021)",
+          "strategy": "Self-Regulation",
+          "sector": "Insurance",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": true,
+          "summary": "First EU financial supervisor study specifically on personalized insurance pricing",
+          "enforcement_mechanism": "AFM (underlying Wft obligations)",
+          "timeline": [
+            {
+              "date": "2021-06",
+              "event": "Study published (June 2021)"
+            }
+          ],
+          "formal_institution": "Supervisory research (insurance pricing fairness)",
+          "operative_institution": "AFM",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AFM Deep Dive: Margin Personalisation (Apr 2025)",
+          "strategy": "Self-Regulation",
+          "sector": "Insurance (non-life)",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": true,
+          "summary": "Found ~50% of non-life insurers charge loyal customers higher margins; call to action",
+          "enforcement_mechanism": "AFM (underlying Wft obligations; product governance)",
+          "timeline": [
+            {
+              "date": "2025-04",
+              "event": "Published (Apr 2025)"
+            }
+          ],
+          "formal_institution": "Supervisory research (insurance margin personalisation)",
+          "operative_institution": "AFM (underlying Wft obligations)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "DNB Sector Update: AI at Insurers (Mar 2025)",
+          "strategy": "Self-Regulation",
+          "sector": "Insurance",
+          "status": "Enacted",
+          "reaches_proprietary_pricing": false,
+          "summary": "Supervisory expectations for AI use in insurance",
+          "enforcement_mechanism": "DNB (prudential supervision)",
+          "timeline": [
+            {
+              "date": "2025-03",
+              "event": "Published (Mar 2025)"
+            }
+          ],
+          "formal_institution": "Supervisory expectations (insurance AI)",
+          "operative_institution": "DNB (prudential supervision)",
+          "institution_divergence": false,
+          "target_visibility": "Inconspicuous",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        },
+        {
+          "name": "AP as Coordinating AI Supervisor / DCA (est. 2023)",
+          "strategy": "Code-as-Regulation",
+          "sector": "General (algorithms and AI)",
+          "status": "Operative",
+          "reaches_proprietary_pricing": false,
+          "summary": "Institutional coordination for algorithmic oversight; connects multiple regulators",
+          "enforcement_mechanism": "AP; coordination with ACM, AFM, RDI, CvdM",
+          "timeline": [
+            {
+              "date": "2023",
+              "event": "DCA established within AP"
+            }
+          ],
+          "formal_institution": "State oversight (algorithmic oversight coordination)",
+          "operative_institution": "AP + ACM + AFM + RDI + CvdM",
+          "institution_divergence": false,
+          "target_visibility": "Mixed",
+          "political_economy_outcome": null,
+          "political_economy_detail": null,
+          "private_right_of_action": false
+        }
+      ],
+      "region": "Europe"
+    }
+  ],
+  "strategy_types": [
+    "Prohibition",
+    "Disclosure",
+    "Competition",
+    "Rights & Liabilities",
+    "Code-as-Regulation",
+    "Self-Regulation",
+    "Direct Action"
+  ],
+  "status_types": [
+    "Operative",
+    "Enacted",
+    "Proposed",
+    "Failed",
+    "Paused",
+    "Active Investigation"
+  ]
+}

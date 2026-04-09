@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[China]]"
 ---
 
 # China — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 China deploys the most comprehensive instrument set in the global landscape — prohibition as primary strategy, supported by data protection rights, disclosure, competition enforcement, and algorithm governance — unified under a single policy direction of state-led consumer protection, with rights-based instruments that formally trust individuals but operationally trust the state.
 
@@ -183,16 +182,6 @@ The speed of movement in 2025 is notable: three major instruments (AUCL revision
 
 The Cambridge Handbook of Algorithmic Price Personalization and the Law (2025, Chapter 11, by Jiangqiu Ge) notes that China's approach to algorithmic price personalization is "regulated by a dense web of legal sources and enforced by various authorities that significantly limit retailers' power to personalize prices." This characterization is accurate: the density of the instrument set is itself a feature of the regulatory design.
 
-## Open Questions
-
-1. **Operational enforcement of the Price Behavior Rules.** The rules take effect April 10, 2026. No enforcement actions have occurred yet. How actively will the NDRC/SAMR/CAC joint supervisory framework operate? Will enforcement be complaint-driven or proactive?
-2. **Coupon migration.** Industry observers note platforms may shift from direct price discrimination to differentiated coupon distribution — technically outside the prohibition's scope while achieving similar personalization. Will regulators treat this as [[creative-compliance]] or extend the prohibition?
-3. **Private litigation viability.** Both major private cases (Hu v. Trip.com, Consumer v. Didi) failed on the price discrimination claim or were dismissed. The move to state-enforced prohibition acknowledges this difficulty, but if the prohibition is enforced administratively, do consumers have any independent enforcement pathway?
-4. **Algorithm registry depth.** Over 1,400 algorithms registered, but the public information is "brief and basic." Does the registry function as a genuine transparency tool, or primarily as a supervisory checklist for regulators?
-5. **Pricing Law timeline.** The draft was released in July 2025, but enactment is not yet scheduled. If enacted, how would the general statutory prohibition interact with the sector-specific Price Behavior Rules?
-6. **Surveillance state paradox.** China deploys pervasive state surveillance but prohibits commercial algorithmic pricing. The Cambridge Handbook (Ch. 11) notes this tension. Is the prohibition genuinely consumer-protective, or is it about consolidating data control in the state (rather than in private platforms)? This interpretive question matters for the [[surveillance-pricing-comparative-regulation|Paper 1]] topology: it determines whether China occupies the prohibition position because it values consumer autonomy or because it values state authority over data.
-7. **Cross-border applicability.** The rules apply to pricing behavior "within the territory of the People's Republic of China." How will they apply to cross-border platforms serving Chinese consumers?
-
 ## Sources
 
 **Primary**:
@@ -230,18 +219,3 @@ The Cambridge Handbook of Algorithmic Price Personalization and the Law (2025, C
 - [Springer, "AI-enabled price discrimination as an abuse of dominance: a law and economics analysis" (2023)](https://link.springer.com/article/10.1007/s12689-023-00099-z)
 - [Springer, "Assessment of AI-enabled Price Discrimination Under Competition-Related Rules in China" (2025)](https://link.springer.com/chapter/10.1007/978-3-031-84790-5_4)
 - Jiangqiu Ge, "Algorithmic Price Personalization in China," in Esposito & Grochowski, eds., *The Cambridge Handbook of Algorithmic Price Personalization and the Law* (Cambridge University Press, 2025), Ch. 11
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[command-and-control]]
-- [[disclosure-regulation]]
-- [[competition-over-regulation]]
-- [[code-as-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[creative-compliance]]
-- [[algorithmic-prohibition-u-markets]]
-- [[sp-new-york]]
-- [[sp-california]]

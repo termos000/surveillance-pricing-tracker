@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[United Kingdom]]"
 ---
 
 # United Kingdom — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 The UK occupies a distinctive position on the topology: the only jurisdiction to have enacted a sector-specific prohibition on algorithmic price discrimination (the FCA price walking ban in home and motor insurance, operative since January 2022), while relying on disclosure-adjacent enforcement and competition powers for general commerce. The instrument set is institutionally concentrated — the CMA and FCA together hold the enforcement architecture — and is reinforced by the DMCCA 2024, which gave the CMA direct consumer enforcement powers (effective April 2025) that it is already deploying against pricing practices. Post-Brexit regulatory divergence from the EU is emerging: the Data (Use and Access) Act 2025 loosens the UK GDPR's automated decision-making restrictions, moving away from the EU's rights-based approach toward a lighter-touch framework that facilitates rather than constrains algorithmic pricing.
 
@@ -197,17 +196,6 @@ The trajectory is notable for what it includes and what it omits. The UK moved f
 
 The post-Brexit divergence is accelerating. While the EU is consulting on the Digital Fairness Act (potentially adding personalized pricing obligations), the UK is loosening automated decision-making restrictions through the DUAA 2025. The trajectories are moving in opposite directions: the EU toward greater constraint, the UK toward facilitation. This divergence may be the most analytically significant feature of the UK's profile for Paper 1.
 
-## Open Questions
-
-1. **Will the CMA extend its enforcement focus from drip pricing to personalized pricing?** Chairman Gurr's reference to "opaque algorithms" signals awareness, but the current enforcement actions target only fee transparency. The dynamic pricing project explicitly distinguished personalized pricing and did not address it. Will the CMA open a dedicated investigation into personalized pricing, or will it remain in the guidance-and-study phase?
-2. **Will other sectors adopt FCA-style price walking bans?** The FCA's prohibition applies only to home and motor insurance. Other insurance lines, telecoms, energy, and subscription services all exhibit similar loyalty penalty dynamics. Will the FCA extend the ban, or will other regulators adopt equivalent sector-specific prohibitions?
-3. **How will the DUAA 2025 affect algorithmic pricing in practice?** The narrowing of UK GDPR Article 22 to special category data removes a theoretical constraint on algorithmic pricing. Will firms expand personalized pricing practices in response? Will the ICO develop new guidance addressing algorithmic pricing under the relaxed framework?
-4. **UK-EU regulatory divergence — how far will it go?** The EU is consulting on the DFA (potentially adding personalized pricing obligations); the UK is loosening ADM restrictions. How will this divergence affect businesses operating in both markets? Will the UK become a more permissive environment for algorithmic pricing than the EU?
-5. **CMA competition enforcement on algorithmic collusion.** The CMA's 2018 working paper identified hub-and-spoke algorithmic collusion as an immediate risk. Seven years later, no enforcement action has followed. Will the CMA bring an algorithmic collusion case, and will it parallel the EU Commission's confirmed investigations?
-6. **FCA price walking ban — unintended consequences.** The 40% increase in motor insurance prices post-ban is significant. Will the FCA adjust the GIPP rules, or will the market stabilize? Does the unintended price increase undermine the case for prohibition in other sectors?
-7. **AI Bill.** A comprehensive AI Bill has been indicated for possible introduction in 2026. If enacted, will it impose any obligations on algorithmic pricing systems? Will it create a risk classification that captures pricing, similar to the EU AI Act's high-risk designation for credit scoring?
-8. **Personalized pricing and the DMCCA's misleading omissions prohibition.** Could a failure to disclose personalized pricing constitute a "misleading omission" under DMCCA Section 228? This theory is untested. If the CMA pursued it, it would create a de facto disclosure obligation for personalized pricing without explicit legislative mandate.
-
 ## Sources
 
 **Primary**:
@@ -260,21 +248,3 @@ The post-Brexit divergence is accelerating. While the EU is consulting on the Di
 - [Freshfields, "CMA Steps Up Enforcement Relating to Online Pricing Practices" (2025)](https://riskandcompliance.freshfields.com/post/102lvf8/cma-steps-up-enforcement-relating-to-online-pricing-practices)
 - [HSF Kramer, "UK Consumer Protection Round-Up 2025"](https://www.hsfkramer.com/insights/2025-12/uk-consumer-protection-round-up-2025)
 - [ICLG, "Consumer Protection 2025-2026: Everyone Has a Price"](https://iclg.com/practice-areas/consumer-protection-laws-and-regulations/01-everyone-has-a-price-the-impact-of-consumer-law-on-pricing-practices)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[command-and-control]]
-- [[competition-over-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[self-regulation]]
-- [[code-as-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[creative-compliance]]
-- [[sp-new-york]]
-- [[sp-california]]
-- [[sp-eu]]
-- [[sp-china]]

@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[India]]"
 ---
 
 # India — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 India has no instrument that directly addresses surveillance pricing or algorithmic personalized pricing. What it has instead is a constellation of general-purpose consumer protection, competition, and data protection instruments — none designed for the problem, but several being stretched toward it. The most significant regulatory activity is enforcement-led rather than legislative: the CCPA's January 2025 notices to Uber and Ola for differential pricing based on operating systems, and the CCI's October 2025 market study warning that pricing algorithms can produce collusion without human intent. The instrument set is fragmented across multiple regulators (CCPA, CCI, IRDAI, RBI, Data Protection Board) with no coordinating mechanism, and the two proposed instruments that could most directly reach algorithmic pricing — the Draft Digital Competition Bill 2024 and the DPDP Rules 2025's algorithmic impact assessments — remain either unintroduced or newly operative. India's regulatory posture toward surveillance pricing is best described as reactive and enforcement-triggered: regulators are responding to specific consumer complaints (iPhone vs. Android fare disparities) rather than addressing the structural practice.
 
@@ -245,17 +244,6 @@ India's trajectory is recent and enforcement-triggered rather than legislative.
 
 The trajectory shows India moving from general-purpose consumer protection and competition law toward recognition of algorithmic pricing as a distinct regulatory concern — but only reaching that recognition in 2025, and only through enforcement activity rather than legislation. There is no legislative instrument in India that specifically addresses surveillance pricing. The movement is from below: consumer complaints surface the problem, regulators respond with investigation and guidance, and legislative proposals (the Digital Competition Bill) remain unintroduced. India is approximately where the UK was in 2018 (analytical recognition through market studies) combined with enforcement-led discovery of specific practices (analogous to but earlier-stage than the CMA's November 2025 enforcement sweep).
 
-## Open Questions
-
-1. **Will the CCPA's Uber/Ola investigation produce a finding?** If the DG (Investigation) finds that OS-based differential pricing constitutes an unfair trade practice under s. 2(47), it would establish the first Indian regulatory precedent that algorithmic price differentiation based on device data violates consumer protection law. If the investigation finds no violation, it may signal that the existing legal framework cannot reach this practice without legislative amendment.
-2. **Will the Digital Competition Bill be introduced?** The bill has been in consultation since March 2024 with parliamentary introduction anticipated in 2025. Its enactment would add an ex ante structural competition instrument for digital markets. Its non-enactment would leave India relying solely on the CCI's ex post enforcement powers, which commentators have described as "ill-suited to cope with the challenges of algorithmic pricing and platform-based collusion."
-3. **Will SDFs be designated under the DPDP Rules 2025?** The algorithmic impact assessment obligation (Rule 13(3)) applies only to designated Significant Data Fiduciaries. Until SDFs are designated, the obligation is inoperative. Which firms will be designated, and whether the assessment obligation will be applied to pricing algorithms, remains unknown.
-4. **Will the CCI move from market study to enforcement?** The October 2025 market study identified algorithmic collusion risks and recommended self-audits. Will the CCI open investigations, or will the self-audit recommendation remain the ceiling of its engagement with algorithmic pricing — as the UK CMA's 2018 working paper was for seven years?
-5. **IRDAI — facilitative or regulatory?** IRDAI is encouraging telematics-based algorithmic insurance pricing. Will it introduce constraints (algorithmic transparency requirements, non-discrimination obligations) as the practice scales, or will the facilitative posture persist?
-6. **Scope of consumer complaint-driven enforcement.** The Uber/Ola investigation was triggered by consumer complaints about visible price differences (iPhone vs. Android). What about personalized pricing that is not visibly tied to device type — pricing based on behavioral profiles, browsing history, or location data? The complaint-driven model may systematically miss the less observable forms of algorithmic pricing.
-7. **E-Commerce Rules 2020 — "arbitrary classification" untested.** Rule 4's prohibition on discriminating between consumers of the same class or making "arbitrary classification" has not been applied to algorithmic pricing. Whether algorithmically segmented pricing constitutes "arbitrary classification" is an unresolved interpretive question.
-8. **RBI algorithmic neutrality — model for other sectors?** The RBI's 2025 requirement of algorithmic neutrality for multi-lender digital lending apps is the most specific Indian regulatory obligation for algorithmic fairness in a pricing-adjacent context. Could this serve as a model for CCPA or sector regulators in other domains?
-
 ## Sources
 
 **Primary**:
@@ -296,23 +284,3 @@ The trajectory shows India moving from general-purpose consumer protection and c
 - [Carnegie Endowment, "India's Advance on AI Regulation"](https://carnegieendowment.org/research/2024/11/indias-advance-on-ai-regulation?lang=en)
 - [Insurance Business Magazine, "India Motor Insurance Carriers Shift to Behaviour-Based Pricing"](https://www.insurancebusinessmag.com/asia/news/auto-motor/india-motor-insurance-carriers-shift-to-behaviourbased-pricing-557327.aspx)
 - [Synergia Legal, "Overview of the RBI's Digital Lending Directions, 2025"](https://synergialegal.com/an-overview-of-the-rbis-digital-lending-direction-2025/)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[command-and-control]]
-- [[competition-over-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[self-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[creative-compliance]]
-- [[algorithmic-coordination]]
-- [[algorithmic-agnosticism-wtp]]
-- [[market-power-precondition-algorithmic-harm]]
-- [[sp-uk]]
-- [[sp-eu]]
-- [[sp-china]]
-- [[sp-new-york]]

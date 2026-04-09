@@ -203,16 +203,27 @@ st.markdown("""
     .inst-name { font-weight: 500; color: #fafafa; }
     .inst-summary { font-size: 0.78rem; color: #9ca3af; margin-top: 2px; }
     /* Sidebar styling */
+    section[data-testid="stSidebar"] {
+        padding-top: 1rem;
+    }
     section[data-testid="stSidebar"] .stButton button {
         text-align: left;
         width: 100%;
         border: none;
         background: transparent;
-        padding: 0.3rem 0.5rem;
+        padding: 0.3rem 0.75rem;
         font-size: 0.85rem;
     }
     section[data-testid="stSidebar"] .stButton button:hover {
         background: rgba(255,255,255,0.05);
+    }
+    section[data-testid="stSidebar"] .stMarkdown {
+        padding-left: 0.25rem;
+    }
+    section[data-testid="stSidebar"] h3 {
+        font-size: 0.9rem !important;
+        padding-left: 0.25rem;
+        margin-bottom: 0.25rem !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -555,12 +566,23 @@ def render_detail(jurisdiction_id):
                 st.markdown(f"- Political economy: {pe}" + (f". {detail}" if detail else ""))
             st.markdown("")
 
-    # Full molecule
+    # Full molecule, split into collapsible sections
     st.markdown("---")
     st.markdown("#### Full Jurisdiction Profile")
     molecule = load_molecule(jurisdiction["molecule_file"])
     if molecule:
-        st.markdown(molecule)
+        # Split by ## headings into collapsible expanders
+        sections = re.split(r'^(## .+)$', molecule, flags=re.MULTILINE)
+        # First chunk is intro (before any ##)
+        intro = sections[0].strip()
+        if intro:
+            st.markdown(intro)
+        # Remaining pairs: heading, body
+        for i in range(1, len(sections), 2):
+            heading = sections[i].replace("## ", "").strip()
+            body = sections[i + 1].strip() if i + 1 < len(sections) else ""
+            with st.expander(heading):
+                st.markdown(body)
     else:
         st.warning(f"Molecule file not found: {jurisdiction['molecule_file']}")
 

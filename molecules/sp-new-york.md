@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[New York]]"
 ---
 
 # New York — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 New York occupies both ends of the topology simultaneously — disclosure for general commerce and prohibition for rental housing — deploying different strategies for different sectors in the same legislative moment (November-December 2025), with early evidence of active enforcement on the disclosure side.
 
@@ -94,16 +93,6 @@ The proposed S8623 (December 2025) signals potential further movement: from the 
 
 The Instacart inquiry (January 2026) is early evidence that the AG intends to enforce A6765 actively, which may influence whether disclosure proves sufficient or whether legislative pressure builds toward S8623-style prohibition.
 
-## Open Questions
-
-1. **Compliance rates under A6765.** No systematic data on how many businesses are displaying the required disclosure. The Instacart inquiry suggests at least some non-compliance, but the scope is unknown.
-2. **S7882 impact on landlord behavior.** No data on whether landlords have abandoned multi-owner pricing tools, switched to single-owner tools (which are exempt), or simply continued as before. The single-owner carve-out creates a clear migration path that could undermine the statute.
-3. **S8623 trajectory.** Will the proposed general prohibition advance? If so, how would it interact with the existing disclosure requirement in A6765?
-4. **Instacart inquiry outcome.** Will the AG's information request lead to formal enforcement? The outcome will signal how aggressively the AG interprets A6765's disclosure requirements.
-5. **First Amendment appeal.** The NRF's challenge was dismissed at the district court level. Whether it appeals could affect similar disclosure laws nationwide.
-6. **Private litigation under S7882.** No tenant lawsuits filed yet. Whether and when tenants exercise the private right of action will determine whether S7882 functions as a state-enforced prohibition or a private-enforcement regime.
-7. **Interaction with DOJ v. RealPage.** If the federal settlement is approved, how does it interact with S7882? Can landlords comply with federal terms but still violate New York's law?
-
 ## Sources
 
 **Primary**:
@@ -129,14 +118,3 @@ The Instacart inquiry (January 2026) is early evidence that the AG intends to en
 - [Groundwork Collaborative & Consumer Reports, Instacart pricing study (Dec 2025)]
 - [DOJ press release on RealPage settlement (Nov 24, 2025)](https://www.justice.gov/opa/pr/justice-department-requires-realpage-end-sharing-competitively-sensitive-information-and)
 - [Wilson Sonsini, "DOJ Settles Algorithmic Price-Fixing Case Against RealPage"](https://www.wsgr.com/en/insights/doj-settles-its-algorithmic-price-fixing-case-against-realpage.html)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[command-and-control]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[disclosure-lorelei]]
-- [[disclosure-chain-of-fragile-links]]

@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[Australia]]"
 ---
 
 # Australia — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 Australia's regulatory profile is defined by the gap between analytical recognition and legislative response. The ACCC's five-year Digital Platform Services Inquiry (2020–2025, final report June 2025) produced comprehensive analysis of algorithmic pricing risks and recommended an economy-wide unfair trading practices prohibition — a recommendation now moving toward legislation through the Competition and Consumer Amendment (Unfair Trading Practices) Bill 2026 (exposure draft February 2026, proposed effective date July 2027). In the interim, the operative instruments are general-purpose: the Australian Consumer Law's misleading conduct prohibition (ACL s.18) and the Competition and Consumer Act's anti-competitive agreement provisions (CCA s.45), neither of which was designed for algorithmic personalized pricing. What distinguishes Australia is the enforcement intensity on pricing-adjacent conduct — ACCC and ASIC have pursued drip pricing (Webjet AUD 9M penalty), illusory discounts (Coles/Woolworths proceedings), and insurance loyalty pricing (IAG AUD 40M penalty, QBE proceedings ongoing) — demonstrating institutional capacity and willingness to address pricing practices through existing law, while targeted instruments for personalized pricing remain prospective.
 
@@ -186,15 +185,6 @@ Australia's trajectory follows a study-to-legislation pipeline: comprehensive in
 
 The trajectory is notable for the gap between recognition and response. The ACCC has studied digital platform pricing since 2020 and recognized algorithmic pricing risks throughout. But the legislative response (the Unfair Trading Practices Bill) arrives in 2026 — six years after the inquiry began — and if passed, takes effect in 2027. In the interim, the ACCC has used existing tools (s.18 misleading conduct) with increasing intensity, creating an enforcement pattern that addresses pricing transparency without waiting for legislative reform. This enforcement-led approach is distinctive: the regulator acts within existing law while simultaneously advocating for new law.
 
-## Open Questions
-
-1. **Will the Unfair Trading Practices Bill reach personalized pricing?** The "unreasonably manipulates" and "unreasonably distorts the environment" language is broad. Could algorithmic personalized pricing — where the price environment a consumer sees is shaped by their data — constitute environmental distortion? The exposure draft does not address this. If courts construe the provision broadly, it could become the most significant instrument for surveillance pricing in the Common Law world.
-2. **Will the concerted practices prohibition be tested against algorithmic collusion?** Section 45(1)(c) has not been tested in court. Academic analysis suggests it likely requires communication, limiting its reach to autonomous algorithmic collusion. Will the ACCC bring a test case?
-3. **Will the Privacy Act ADM transparency obligation affect pricing practices?** The December 2026 requirement to disclose automated decision-making in privacy policies is systemic transparency — not individual rights. Will firms that use algorithmic pricing disclose this in privacy policies? Will the OAIC enforce? Will disclosure create public pressure for further regulation?
-4. **Will ASIC enforcement on insurance loyalty pricing extend to algorithmic pricing?** The IAG/QBE/RACQ enforcement targets misleading discount claims — not the underlying algorithmic pricing logic. Will ASIC move from "you lied about the discount" to "the pricing algorithm itself is unfair"? The Unfair Trading Practices Bill could provide this pathway.
-5. **Will the AI guardrails produce binding legislation?** The September 2024 consultation and December 2025 National AI Plan have not yet produced binding rules. If mandatory guardrails are enacted for high-risk AI settings, will pricing algorithms be designated as high-risk?
-6. **Is there a gap between ACCC drip pricing enforcement and personalized pricing?** The ACCC has made drip pricing an enforcement priority (2025-26) but has not signaled intent to address personalized pricing through s.18 or any other instrument. Will the ACCC extend its pricing enforcement focus from how prices are displayed to how they are set?
-
 ## Sources
 
 **Primary**:
@@ -226,22 +216,3 @@ The trajectory is notable for the gap between recognition and response. The ACCC
 - [Corrs Chambers Westgarth, "Australia Releases Proposed Mandatory Guardrails for AI Regulation" (2024)](https://www.corrs.com.au/insights/australia-releases-proposed-mandatory-guardrails-for-ai-regulation)
 - [White & Case, "Australia's National AI Plan: Big Ambitions, But Light on Details" (2025)](https://www.whitecase.com/insight-alert/australias-national-ai-plan-big-ambitions-light-details)
 - [Business Insurance Consulting, "IAG Faces New Class Action Over Loyalty Pricing" (Jan 2025)](https://businessinsuranceconsulting.com.au/2025/01/07/iag-faces-new-class-action-over-loyalty-pricing-what-australian-policyholders-need-to-know/)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[competition-over-regulation]]
-- [[self-regulation]]
-- [[command-and-control]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[sp-uk]]
-- [[sp-eu]]
-- [[sp-china]]
-- [[sp-singapore]]
-- [[sp-south-korea]]
-- [[sp-new-york]]
-- [[sp-california]]

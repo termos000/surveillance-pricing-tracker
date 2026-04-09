@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[Indonesia]]"
 ---
 
 # Indonesia — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 Indonesia has no instrument that directly targets surveillance pricing or algorithmic personalized pricing. Its regulatory landscape is a patchwork of general-purpose laws — consumer protection, competition, data protection, e-commerce platform governance — none of which were designed for or have been applied to personalized pricing. What distinguishes Indonesia from [[Singapore]] (its ASEAN neighbor with a similarly absent targeted regime) is not the gap itself but the nature of the gap: where Singapore's absence reflects a deliberate pro-innovation design choice backed by sophisticated voluntary governance infrastructure, Indonesia's absence reflects institutional fragmentation and legislative lag. Multiple agencies — [[KPPU]], the [[Ministry of Trade]], [[OJK]], and [[Komdigi]] — govern adjacent spaces with overlapping but uncoordinated mandates. The most distinctive feature of Indonesia's regulatory landscape is the ride-hailing tariff cap regime (Permenhub 12/2019), which represents a [[direct-action]] intervention on algorithmic pricing in transportation — not framed as surveillance pricing regulation, but functionally constraining platforms' ability to deploy unchecked dynamic pricing. The regime is in active ferment: the competition law is being amended (2026 priority legislation) with explicit provisions on algorithmic collusion and data misuse, a consumer protection law overhaul is underway, the PDP Law's automated decision-making provisions remain untested, and AI governance is being formalized through a forthcoming presidential regulation. Indonesia is a jurisdiction in transition — from absence toward framework — but as of February 2026, the framework has not arrived.
 
@@ -175,24 +174,6 @@ The trajectory shows a jurisdiction that is moving, but from a much lower baseli
 
 The ride-hailing tariff cap trajectory is distinctive — it represents the earliest direct intervention on algorithmic platform pricing (2019), predating much of the global regulatory activity documented in other jurisdiction molecules. But this intervention was driven by transportation policy and political economy, not by a regulatory theory about surveillance pricing, and it has not been replicated in other sectors.
 
-## Open Questions
-
-1. **Will the competition law amendment be enacted in 2026, and will it address algorithmic pricing?** The draft includes provisions on algorithmic collusion, data misuse, and digital market dominance. If enacted, it would give KPPU search and seizure authority and the legal basis to pursue algorithmic coordination. But the amendment has been pending for years, and the 2026 Prolegnas Prioritas designation does not guarantee passage.
-
-2. **Will implementing regulations clarify the PDP Law's automated decision-making provisions?** Art. 10's right to object to automated decision-making is unimplemented in practice. Without clarity on what constitutes "significant impact," whether personalized pricing qualifies, and how the objection mechanism works, the provision is a dead letter for surveillance pricing purposes.
-
-3. **Will a dedicated Data Protection Authority be established?** The PDP Law assigns enforcement to Komdigi, but a specialist DPA would be better positioned to handle technically complex automated decision-making complaints. No timeline for establishment has been announced.
-
-4. **How does the ride-hailing tariff cap regime interact with algorithmic pricing in practice?** Platforms must price within the regulated band, but retain discretion within it. Is there evidence of personalized pricing within the tariff bands — charging different passengers different amounts for the same route based on personal data, so long as both fall within the floor and ceiling? This interaction between direct-action price regulation and algorithmic pricing is theoretically interesting and empirically unexplored.
-
-5. **Will the Consumer Protection Law overhaul address algorithmic pricing?** The 2024 draft bill addresses digital commerce generally but does not appear to include specific provisions on personalized pricing or automated decision-making in pricing. Will the final bill close this gap?
-
-6. **Will the forthcoming Presidential Regulation on AI address pricing?** The AI roadmap identifies priority sectors (healthcare, education, food security, smart cities, bureaucratic reform) and plans sector-specific regulations. Pricing and consumer-facing algorithmic decision-making are not among the stated priorities. Will the final instrument address algorithmic pricing, or will this remain a gap?
-
-7. **What is the practical impact of Permendag 31/2023's anti-price manipulation provisions?** The regulation requires platforms to report suspected price manipulation to KPPU within three business days. Has any platform filed such a report? Has KPPU received or acted on any reports? The provision creates a novel reporting obligation, but no evidence of its use exists.
-
-8. **Will the proposed Grab-GoTo merger proceed, and what are its implications for algorithmic pricing?** If the merger creates a 91% market share entity in ride-hailing, the combined platform's pricing algorithm would operate in a near-monopoly environment. Would the tariff cap regime sufficiently constrain pricing power? Would KPPU impose behavioral remedies on pricing?
-
 ## Sources
 
 **Primary**:
@@ -227,18 +208,3 @@ The ride-hailing tariff cap trajectory is distinctive — it represents the earl
 - [Jakarta Post, "AI Rules Pushed to 2026 as Govt Charts Next Move" (Oct 2025)](https://www.thejakartapost.com/business/2025/10/29/ai-rules-pushed-to-2026-as-govt-charts-next-move.html)
 - [The Diplomat, "Workers Lose as Indonesian Laws Can't Keep Pace With Rideshare Apps" (Dec 2023)](https://thediplomat.com/2023/12/workers-lose-as-indonesian-laws-cant-keep-pace-with-rideshare-apps/)
 - [Fulcrum (ISEAS), "How Platform Drivers in Indonesia Are Being Taken for a Ride"](https://fulcrum.sg/how-platform-drivers-in-indonesia-are-being-taken-for-a-ride/)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[self-regulation]]
-- [[competition-over-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[direct-action]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[sp-singapore]]
-- [[sp-china]]
-- [[sp-eu]]

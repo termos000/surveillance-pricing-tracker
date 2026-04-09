@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[Germany]]"
 ---
 
 # Germany — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 Germany layers a distinctive national regulatory architecture on top of the [[sp-eu|EU baseline]]. Where the EU provides the general framework (GDPR, CRD, UCPD, AI Act, DMA), Germany adds three things the EU alone does not: a pioneering digital competition instrument (GWB Section 19a) that has already produced the first enforcement order and monetary disgorgement against algorithmic pricing mechanisms in the EU; a consumer protection transposition (Section 312d BGB and Article 246a EGBGB) that implements the Omnibus Directive's personalized pricing disclosure with German-specific procedural obligations; and a sustained institutional investment in algorithmic pricing research by the Bundeskartellamt, including the 2019 joint study with the Autorite de la concurrence and the 2017-2019 comparison websites sector inquiry. The design logic is accumulated but competition-dominated: the Bundeskartellamt is the active institution, and the instruments it wields (Sections 19, 19a, and 20 GWB) have produced more enforcement activity relevant to algorithmic pricing than any other national competition authority in the EU.
 
@@ -221,17 +220,6 @@ The trajectory reveals a consistent pattern: the Bundeskartellamt has been the d
 
 The movement is from analysis (joint study, sector inquiry, DEK report) through designation (Section 19a determinations 2022-2023) to enforcement (preliminary assessment 2025, prohibition order 2026). The escalation is clearly visible: each step builds on the previous one, and the 11th GWB Amendment's disgorgement simplification appears to have been designed with enforcement actions like the Amazon case in mind.
 
-## Open Questions
-
-1. **Will the Amazon enforcement order survive appeal?** Amazon has one month to appeal to the Federal Court of Justice. The Court has upheld the Bundeskartellamt's Section 19a designations for Amazon and Apple, but the behavioral prohibition and disgorgement order raise different legal questions. If upheld, the order establishes a strong precedent for competition enforcement against algorithmic pricing mechanisms.
-2. **Will the Bundeskartellamt extend Section 19a enforcement to consumer-facing personalized pricing?** The Amazon case targets platform-to-seller price control, not consumer-facing personalized pricing. Could the Bundeskartellamt bring a case against a designated firm's use of personal data to set individualized consumer prices? The legal basis exists (Section 19a(2) prohibitions on making services conditional on unreasonable data processing), but no proceeding has been initiated.
-3. **Will a German DPA take a position on personalized pricing under GDPR Article 22?** No German DPA has addressed whether algorithmic personalized pricing constitutes automated decision-making under GDPR Article 22. The SCHUFA ruling makes this more plausible but no action has followed.
-4. **Will Section 312d BGB disclosure be enforced?** Nearly four years after taking effect, no enforcement action has targeted personalized pricing disclosure. Is this because personalized pricing is rare in German e-commerce (consistent with the 2018 Verbraucherzentrale findings), because non-compliance is undetected, or because enforcement resources are directed elsewhere?
-5. **What becomes of BDSG Section 31?** The German government proposed deleting Section 31 and introducing Section 37a following the SCHUFA ruling. The amendment has not been enacted. The legal status of credit scoring under German law remains uncertain until this legislative gap is resolved.
-6. **Will the KI-MIG be enacted and in what form?** Political uncertainty following the February 2025 federal election creates questions about the KI-MIG's timeline and final content. The AI Act's high-risk obligations become applicable in August 2026, creating a hard deadline for national implementation.
-7. **Is the Verbraucherzentrale's 2018 finding still accurate?** The study found little individualized pricing in German e-commerce. Seven years later, algorithmic pricing capabilities have advanced significantly. Has personalized pricing become more prevalent in the German market? No updated empirical study has been identified.
-8. **Germany's relationship to the EU Digital Fairness Act.** The DFA (draft expected Q3 2026) may impose additional personalized pricing obligations at EU level. Will Germany advocate for stricter requirements (consistent with the Bundeskartellamt's enforcement posture) or lighter ones (consistent with the German government's innovation-oriented approach in the KI-MIG)?
-
 ## Sources
 
 **Primary**:
@@ -283,18 +271,3 @@ The movement is from analysis (joint study, sector inquiry, DEK report) through 
 - [K&L Gates, "11th Amendment to the German Competition Act" (Nov 2023)](https://www.klgates.com/11th-Amendment-to-the-German-Competition-Act-GWB-New-Powers-of-Intervention-for-the-Bundeskartellamt-Creating-New-Challenges-for-Companies-11-7-2023)
 - [Global Competition Review, "Germany: Enforcement Authority Sets Big Tech in Its Sights" (2026)](https://globalcompetitionreview.com/market-review/market-review-antimonopoly/2026/article/germany-enforcement-authority-sets-big-tech-in-its-sights)
 - [SCiDA, "Sec. 19a of the German Act against Competition Restraints"](https://scidaproject.com/sec-19a-of-the-german-act-against-competition-restraints-gwb/)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[competition-over-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[code-as-regulation]]
-- [[self-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[creative-compliance]]
-- [[sp-eu]]
-- [[sp-uk]]

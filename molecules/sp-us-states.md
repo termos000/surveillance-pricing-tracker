@@ -7,14 +7,13 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[United States]]"
   - "[[US states]]"
 ---
 
 # US States (Composite) — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]]. This is a composite molecule covering the wave of state legislative activity across multiple jurisdictions. For individual state profiles, see [[sp-new-york]] and [[sp-california]]. For federal instruments, see [[sp-us-federal]].*
 
 Between 2024 and early 2026, US state legislatures produced a rapid, decentralized legislative wave targeting surveillance pricing: 51 bills across 24 states in the first seven months of 2025 alone, up from 10 bills in all of 2024, with at least 12 additional states introducing bills in January-February 2026. The wave is overwhelmingly Democratic-sponsored, concentrated in blue and purple states, and characterized by a high failure rate — as of February 2026, only one state (New York, via A3008/A6765) has enacted a surveillance pricing-specific disclosure law, while New Mexico's HB 285 (a sector-specific grocery prohibition) cleared both chambers unanimously in February 2026. The dominant strategies are prohibition and disclosure, with a notable secondary thread of sector-specific grocery/food bans. The failure rate is itself significant data: it reveals the political economy constraint on surveillance pricing regulation in the US — legislatures can propose prohibition but industry opposition (led by the [[California Chamber of Commerce]], TechNet, and the Chamber of Progress) consistently blocks enactment except where bills are narrowed to disclosure or confined to the grocery sector.
 
@@ -132,17 +131,6 @@ Several bills target both surveillance pricing and surveillance wage-setting —
 
 **Temporal pattern.** The wave has three identifiable catalysts: (a) the FTC 6(b) study (July 2024), which provided the evidentiary foundation cited by legislators across states; (b) the New York A6765 enactment (May 2025), which provided a model for disclosure legislation; and (c) consumer anxiety around grocery prices and electronic shelf labels (late 2025-2026), which drove the sector-specific grocery ban thread. The 2025 change of federal administration and resulting federal regulatory vacuum accelerated state action — legislators explicitly cite federal inaction as motivation.
 
-## Open Questions
-
-1. **Will New Mexico HB 285 be signed?** The bill passed both chambers unanimously, but gubernatorial signature is not guaranteed. If signed, it would be the first state prohibition (albeit sector-specific) to become law.
-2. **Will the 2026 second wave succeed where the 2025 first wave failed?** The bills are more sophisticated (Kentucky's KCDPA integration, Washington's ESL moratorium-plus-study), but face the same industry opposition. Has the political economy shifted?
-3. **Will disclosure converge toward a national standard?** New York A6765's mandatory text is being replicated in Illinois and Texas bills. If multiple states adopt similar disclosure requirements, it may create de facto national standardization through compliance costs — businesses may adopt the most stringent state's disclosure requirements nationwide rather than maintain state-by-state compliance.
-4. **Is sector-specific grocery regulation a gateway or a containment strategy?** The success of grocery-specific bills (New Mexico, Maryland, Washington) could represent either (a) a beachhead that expands to other sectors, or (b) a containment that allows industry to concede on grocery while preserving personalized pricing in higher-margin sectors (e-commerce, travel, insurance).
-5. **What is the role of electronic shelf labels?** The ESL moratorium thread (Washington HB 2481, Maryland SB 387, federal Stop Price Gouging Act) represents a [[code-as-regulation]] adjacent strategy — regulating the infrastructure rather than the pricing practice. Will ESL restrictions prove more durable than pricing prohibitions?
-6. **Will any state enact a general prohibition on surveillance pricing?** As of February 2026, no state has enacted a general (non-sector-specific) prohibition. The failure rate for such bills is 100%. The question is whether political conditions will shift, or whether the US will converge on a disclosure-plus-sector-specific-prohibition equilibrium.
-7. **How do state bills interact with preemption?** If federal legislation ever passes, would it preempt state laws? The current federal proposals (S. 232, H.R. 4640, S. 3387) do not contain explicit preemption clauses, but the question will arise if momentum builds.
-8. **Will private rights of action change the dynamic?** The most consequential structural difference among bills is whether they include a private right of action. Colorado and Georgia proposed them; New York A6765 lacks one. If a state enacts a prohibition with a private right of action, it would unlock private litigation as an enforcement mechanism — potentially more consequential than AG enforcement alone.
-
 ## Sources
 
 **Primary**:
@@ -186,17 +174,3 @@ Several bills target both surveillance pricing and surveillance wage-setting —
 - [Troutman Pepper, "Key Takeaways on Proposed State AI and Privacy Laws: January 2026"](https://www.troutmanprivacy.com/2026/02/key-takeaways-on-proposed-state-ai-and-privacy-laws-january-2026/)
 - [FTC, "Surveillance Pricing Study Indicates Wide Range of Personal Data Used" (Jan 2025)](https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-surveillance-pricing-study-indicates-wide-range-personal-data-used-set-individualized-consumer)
 - [Washington Policy Center, "House Bill 2481 will stifle innovation and hurt businesses" (2026)](https://www.washingtonpolicy.org/publications/detail/house-bill-2481-will-stifle-innovation-and-hurt-businesses)
-
-**Library**:
-- [[sp-new-york]]
-- [[sp-california]]
-- [[sp-us-federal]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[intel-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[command-and-control]]
-- [[disclosure-regulation]]
-- [[competition-over-regulation]]
-- [[code-as-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]

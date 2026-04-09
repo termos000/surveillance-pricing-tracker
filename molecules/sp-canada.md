@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[Canada]]"
 ---
 
 # Canada — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 Canada has no instrument specifically designed for surveillance pricing, but its regulatory landscape is in active motion. The Competition Act, substantially amended in 2022 and 2024, provides the most developed enforcement infrastructure through drip pricing prohibition, expanded abuse of dominance provisions, and civil competitor collaboration tools that can reach algorithmic coordination. Federal privacy law (PIPEDA) applies general consent and purpose limitation principles but lacks automated decision-making provisions. The most significant development is the Competition Bureau's June 2025 discussion paper on algorithmic pricing and its January 2026 "What We Heard" report, which represent Canada's most direct institutional engagement with surveillance pricing to date. The death of Bill C-27 in January 2025 left Canada without a federal automated decision-making framework or AI regulation, though Quebec's Law 25 provides provincial-level automated decision-making rights that are directly relevant. The overall design logic is accumulated: instruments from different eras, agencies, and legal bases (competition, privacy, consumer protection, provincial legislation) with no coordination and a growing awareness that the existing framework may not reach the core practice.
 
@@ -181,24 +180,6 @@ Second, the privacy enforcement institution (OPC) has the most relevant legal pr
 18. **2026 (Jan)**: Competition Bureau publishes What We Heard report on algorithmic pricing consultation
 19. **2026 (expected)**: New federal privacy legislation expected (PIPEDA successor); AI regulation to be considered separately
 
-## Open Questions
-
-1. **Will the Competition Bureau issue enforcement guidance on algorithmic pricing?** The discussion paper and What We Heard report are explicitly non-prescriptive. The Bureau has not indicated whether it will issue enforcement guidelines, compliance frameworks, or formal policy positions on algorithmic personalized pricing. Without guidance, the boundary between lawful dynamic pricing and unlawful personalized pricing under the Competition Act remains undefined.
-
-2. **Can section 45 reach algorithmic collusion?** The "agreement" requirement demands proof beyond a reasonable doubt of a meeting of the minds. Where pricing algorithms autonomously converge without explicit communication, the evidentiary burden may be insurmountable. The Bureau's discussion paper acknowledges this gap but does not propose a solution. Whether Canadian courts will adopt a broad interpretation of "agreement" (encompassing algorithm-mediated tacit coordination) or a narrow one (requiring explicit or inferrable human agreement) is untested.
-
-3. **What will replace Bill C-27?** The government has signalled that new federal privacy legislation is expected in 2026, with AI regulation proceeding separately. The key questions for surveillance pricing: Will the new privacy law include automated decision-making provisions comparable to Quebec Law 25 or the defunct CPPA? Will it give the OPC (or a successor tribunal) administrative monetary penalty power? Will the AI regulation framework cover commercial pricing algorithms, or will it focus on higher-risk applications?
-
-4. **Will Quebec's Law 25 produce enforcement precedent?** Section 12.1 has been operative since September 2023 — over two years. No enforcement action has tested its application to algorithmic pricing. The CAI's approach to interpreting the "exclusively automated" threshold and the scope of the explanation right will determine whether the provision has practical force against surveillance pricing.
-
-5. **Will the private right of action generate personalized pricing litigation?** As of June 2025, private parties can bring deceptive marketing claims before the Competition Tribunal. Could a consumer group or advocacy organization file a private application challenging undisclosed personalized pricing as a false or misleading representation under s. 74.01(1)? The "public interest" threshold for leave is untested.
-
-6. **How will federal-provincial interaction evolve?** Quebec has the strongest automated decision-making provisions; PIPEDA does not apply in Quebec for provincially regulated matters. If federal privacy reform includes ADM provisions, how will they interact with Quebec's (potentially stronger) existing law? And will other provinces (British Columbia, Alberta, Ontario) develop their own provisions?
-
-7. **What is the OPC's position on surveillance pricing?** The OPC has published general guidance on AI and profiling (2020 recommendations for PIPEDA reform) and on inappropriate data practices (s. 5(3) guidance), but has not issued a specific position on algorithmic or personalized pricing. The OPC's 2024-2025 annual report identifies "technological advancements such as generative AI" as a strategic priority, but algorithmic pricing does not appear as a named focus area.
-
-8. **Will Canada coordinate with international enforcement?** The Competition Bureau's Summit 2024 called for "cross-sector collaboration." Canada participates in the International Competition Network and has bilateral cooperation agreements. Whether the Bureau will coordinate with the US FTC (which launched a surveillance pricing inquiry in 2024), the EU Commission (which confirmed active algorithmic pricing investigations in 2025), or the UK CMA on enforcement strategy remains to be seen.
-
 ## Sources
 
 **Primary**:
@@ -251,23 +232,3 @@ Second, the privacy enforcement institution (OPC) has the most relevant legal pr
 - [Torys, "Consumer Protection in Canada: Where We Are and Where We're Going" (Q4 2025)](https://www.torys.com/our-latest-thinking/torys-quarterly/q4-2025/consumer-protection-in-canada)
 - [Baker McKenzie, "AI, Profiling and ADM — Canada" (2025)](https://resourcehub.bakermckenzie.com/en/resources/global-data-and-cyber-handbook/north-america/canada/topics/artificial-intelligence-profiling-and-automated-decision-making)
 - [HillNotes, "Privacy and Artificial Intelligence in Canada" (May 2025)](https://hillnotes.ca/2025/05/27/privacy-and-artificial-intelligence-in-canada/)
-
-**Library**:
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[command-and-control]]
-- [[competition-over-regulation]]
-- [[disclosure-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[code-as-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[creative-compliance]]
-- [[algorithmic-coordination]]
-- [[algorithmic-coordination-agreement-doctrine]]
-- [[algorithmic-coordination-evidence]]
-- [[market-power-precondition-algorithmic-harm]]
-- [[privacy-data-wtp-aggregation]]
-- [[sp-eu]]
-- [[sp-us-federal]]
-- [[sp-uk]]

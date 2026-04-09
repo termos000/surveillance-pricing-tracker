@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[California]]"
 ---
 
 # California — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 California's primary position is competition — targeting shared algorithms through antitrust reform (AB 325) and enforcement (RealPage/Greystar) — but the AG is pivoting laterally to privacy law (CCPA) to reach the proprietary personalized pricing that antitrust cannot touch, after the legislature blocked prohibition attempts.
 
@@ -135,16 +134,6 @@ The trajectory: California tried to move from competition to prohibition and was
 
 The failed bills are as informative as the enacted ones. They reveal that California's political economy draws a line: coordination between competitors is targetable (antitrust frame, bipartisan legitimacy); personalization by individual firms is not (industry opposition, appropriations committee gatekeeping).
 
-## Open Questions
-
-1. **Will the CCPA purpose limitation theory hold?** The AG's surveillance pricing sweep relies on interpreting "consistent with reasonable expectations" to prohibit personalized pricing. No court has tested this theory. If it fails, California has no statutory instrument reaching proprietary personalized pricing.
-2. **AB 325 litigation trajectory.** Will plaintiffs target software vendors (algorithm distributors) or their clients (algorithm users), or both?
-3. **What does "coerce" mean?** Section 16729(b) creates liability for coercing adoption of algorithm-recommended prices but does not define "coerce." Does a software vendor's default setting constitute coercion? Does a contractual penalty for deviating?
-4. **SB 295 carryover.** The Preventing Algorithmic Collusion Act carries over to the 2026 session. Would it complement or redundantly overlap AB 325?
-5. **Proprietary algorithm migration.** AB 325's shared-algorithm prohibition creates an incentive for firms to develop proprietary algorithms using only internal data. Does this migration undermine the statute's effectiveness, or is restoring competitive pricing (even if personalized) the intended policy outcome?
-6. **Interaction with federal DOJ RealPage settlement.** Can conduct that complies with the DOJ settlement still violate California law?
-7. **Industry response to CCPA sweep.** Will targeted businesses preemptively modify pricing practices, or contest the AG's authority?
-
 ## Sources
 
 **Primary**:
@@ -179,14 +168,3 @@ The failed bills are as informative as the enacted ones. They reveal that Califo
 - [Mintz, "Greystar Reaches Settlement" (Aug 2025)](https://www.mintz.com/insights-center/viewpoints/2025-08-13-no-day-today-greystar-reaches-settlement-agreement-department)
 - [Consumer Reports, "AB 446 Fails to Advance" (2025)](https://advocacy.consumerreports.org/press_release/californias-surveillance-pricing-protection-act-ab-446-fails-to-advance-california-legislature/)
 - [Consumer Watchdog, "Industry Disinformation Kills Surveillance Pricing Bill" (Sept 2025)](https://www.prnewswire.com/news-releases/industry-disinformation-kills-surveillance-pricing-bill-as-a-result-ab-446-is-withdrawn-says-consumer-watchdog-302548071.html)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[competition-over-regulation]]
-- [[disclosure-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[market-power-precondition-algorithmic-harm]]
-- [[sp-new-york]]

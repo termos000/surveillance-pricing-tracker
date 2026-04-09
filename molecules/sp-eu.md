@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[European Union]]"
 ---
 
 # European Union — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 The EU occupies every strategy except prohibition — disclosure, rights, competition, and code-as-regulation — but no single instrument was designed for surveillance pricing. The instrument set accumulated across different eras, legal bases, and policy objectives (consumer protection, data protection, competition, platform governance, AI safety), producing a dense regulatory surface with low coherence, no clear hierarchy, and contested operational status on the provision most directly relevant to personalized pricing (GDPR Article 22).
 
@@ -197,17 +196,6 @@ Critically, the EU has never adopted prohibition as a strategy for surveillance 
 
 The Netherlands ACM investigation (2025) represents a national-level initiative that could become a leading edge: if the ACM finds consumer harm from airline pricing algorithms, it could trigger either national enforcement or EU-level legislative action.
 
-## Open Questions
-
-1. **Will the DFA include a prohibition on any form of personalised pricing?** The European Parliament's 2022 study recommended considering prohibition. The consultation asked whether new action is necessary. Drip pricing prohibition appears most likely; personalised pricing prohibition is less certain. The DFA draft (expected Q3 2026) will determine whether the EU stays in the disclosure-rights range or moves toward prohibition.
-2. **GDPR Art. 22 — will a DPA test the personalised pricing theory?** The *SCHUFA* ruling expanded Article 22's scope but no DPA has extended it to pricing. If a DPA issues guidance or brings an enforcement action applying Article 22 to personalised consumer pricing, this would activate an instrument that currently exists only on paper for this practice.
-3. **What sectors are the Commission's competition investigations targeting?** McCallum confirmed investigations but not sectors. Are they targeting algorithmic collusion (shared pricing tools, paralleling the US RealPage model) or exploitative pricing by dominant platforms? The enforcement theory matters: Article 101 (coordination) has a lower threshold than Article 102 (dominance).
-4. **Netherlands ACM airline investigation outcomes.** Provisional results were expected by end of 2025 but have not been published. If the ACM finds consumer harm, does it recommend national enforcement, EU-level legislation, or sector-specific codes?
-5. **AI Act high-risk classification — scope creep?** The Commission was due to publish guidance on high-risk classification by February 2026. Could general algorithmic pricing systems be brought within scope through interpretive guidance, or is Annex III amendment required?
-6. **National transposition variation.** Germany (Section 312d BGB) and potentially other member states have transposed the CRD with stricter requirements. How much variation exists across member states, and does this create a fragmented regulatory surface within the EU?
-7. **Digital Omnibus simplification.** The November 2025 Digital Omnibus proposes to simplify the AI Act and repeal the P2B Regulation. How will this consolidation affect the already-accumulated instrument set? Will it reduce or increase coherence?
-8. **Interaction between GDPR Art. 22 and CRD Art. 6(1)(ea).** If a DPA finds personalised pricing violates Article 22, does this override the CRD's approach of permitting pricing with disclosure? The instruments have different legal bases (data protection vs consumer protection) and could produce contradictory regulatory signals.
-
 ## Sources
 
 **Primary**:
@@ -252,18 +240,3 @@ The Netherlands ACM investigation (2025) represents a national-level initiative 
 - [Covington, "Digital Fairness Act Series — Topic 3: Personalized Advertising and Pricing"](https://www.insideprivacy.com/consumer-protection/digital-fairness-act-series-topic-3-personalized-advertising-and-pricing/)
 - [Springer, "The Silent Death of EU Consumer Law and Its Resilient Revival" (2025)](https://link.springer.com/article/10.1007/s10603-025-09590-5)
 - [ICLG, "Consumer Protection 2025-2026: Everyone Has a Price"](https://iclg.com/practice-areas/consumer-protection-laws-and-regulations/01-everyone-has-a-price-the-impact-of-consumer-law-on-pricing-practices)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[competition-over-regulation]]
-- [[code-as-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[creative-compliance]]
-- [[sp-new-york]]
-- [[sp-california]]
-- [[sp-china]]

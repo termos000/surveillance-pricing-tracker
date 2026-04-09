@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[United States]]"
 ---
 
 # United States (Federal) — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 The US federal government has no statute, regulation, or binding rule that directly addresses surveillance pricing or personalized consumer pricing. Instead, federal regulatory activity operates through three channels: antitrust enforcement (DOJ Sherman Act actions against algorithmic collusion), consumer protection authority (FTC Section 5 unfairness/deception, deployed through studies and enforcement actions rather than rulemaking), and proposed but unenacted legislation (two congressional bills targeting algorithmic pricing, neither advancing past committee). The 2025 change of administration produced a sharp discontinuity: the FTC's surveillance pricing study was effectively suspended when Chair Andrew Ferguson closed the public comment period in January 2025, while the DOJ's RealPage prosecution — initiated under Biden — continued to settlement under the Trump DOJ in November 2025. The result is a jurisdiction where the most consequential regulatory action is antitrust enforcement against coordination, while the consumer protection dimension is stalled, and legislative proposals face a hostile congressional environment.
 
@@ -126,15 +125,6 @@ Second, the DOJ RealPage settlement deploys competition strategy — breaking al
 16. **November 24, 2025**: DOJ and RealPage announce proposed consent decree — landmark algorithmic pricing settlement.
 17. **December 2025**: Bipartisan Senate group (Warner, Hawley, Blumenthal, Gallego) writes to Ferguson urging FTC to reopen surveillance pricing investigation.
 
-## Open Questions
-
-1. **Will the DOJ RealPage consent decree survive Tunney Act review?** Public comments may challenge the absence of financial penalties and the non-admission of liability. If the court rejects or modifies the settlement, the enforcement precedent changes significantly.
-2. **Does the RealPage settlement create a regulatory template?** The settlement's behavioral requirements (data-age restrictions, software redesign, monitor) function as de facto regulation of algorithmic pricing software. Will DOJ apply the same framework to other sectors (airlines, e-commerce, insurance), or is it limited to the rental housing context?
-3. **Will the FTC reopen the surveillance pricing investigation?** Bipartisan congressional pressure (including Republican Senator Hawley) suggests surveillance pricing has cross-party salience as a consumer issue. But Ferguson's January 2025 closure and the broader Trump-era FTC deregulatory posture make reopening unlikely absent a political shift.
-4. **What is the status of the FTC's 2022 Section 5 Policy Statement?** Industry groups have urged withdrawal. If the Ferguson FTC rescinds or narrows the 2022 Policy Statement, the standalone Section 5 theory in the Amazon case — and any future application to surveillance pricing — would be weakened. The Amazon case's trial in 2027 will test whether the expanded Section 5 theory survives judicial review.
-5. **Will federal legislative proposals advance?** S. 232 and H.R. 4640 represent the competition and prohibition positions respectively. Neither has Republican co-sponsors beyond the bipartisan surveillance pricing letters. In the absence of federal legislation, state-level action (51 bills across 24 states as of July 2025) fills the vacuum — but creates fragmentation.
-6. **CFPB role.** The CFPB under the Biden administration issued guidance on algorithmic lending and automated decision-making in financial services. The Trump administration effectively paused CFPB operations (Acting Director Vought ordered cessation of supervision, investigation, enforcement, and rulemaking in February 2025). If the CFPB resumes operations, algorithmic pricing in financial services (credit pricing, insurance) could become a separate enforcement track.
-
 ## Sources
 
 **Primary**:
@@ -171,17 +161,3 @@ Second, the DOJ RealPage settlement deploys competition strategy — breaking al
 - [Wiley, "President Trump Revokes Biden Administration's AI EO: What To Know" (Jan 2025)](https://www.wiley.law/alert-President-Trump-Revokes-Biden-Administrations-AI-EO-What-To-Know)
 - [Alston & Bird, "First 100 Days: Federal Privacy and Cybersecurity Under Trump" (May 2025)](https://www.alston.com/en/insights/publications/2025/05/federal-privacy-cybersecurity-trump-administration)
 - [Consumer Reports Innovation, "How U.S. States Are Tackling Algorithmic Pricing" (2025)](https://innovation.consumerreports.org/how-u-s-states-are-tackling-algorithmic-pricing-2025-bill-tracker-and-analysis/)
-
-**Library**:
-- [[surveillance-pricing-comparative-regulation]]
-- [[intel-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[competition-over-regulation]]
-- [[command-and-control]]
-- [[code-as-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[sp-new-york]]
-- [[sp-california]]

@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[Netherlands]]"
 ---
 
 # Netherlands — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 The Netherlands layers a distinctive national regulatory architecture on top of the [[sp-eu|EU baseline]]. Where the EU provides the general framework (GDPR, CRD, UCPD, AI Act, DMA), the Netherlands adds three things the EU alone does not: a combined competition-and-consumer-protection authority (ACM) that has launched the first EU national-level market investigation specifically into computer-controlled consumer pricing (aviation sector, 2025); a financial sector regulator (AFM) that has produced the most developed supervisory framework for personalized pricing in insurance anywhere in the EU, including a 2021 exploratory study and a 2025 deep dive finding that almost half of non-life insurers charge loyal customers higher margins; and an institutional coordination infrastructure (the SDT platform and the AP's Department for the Coordination of Algorithmic Oversight) that connects the multiple regulators whose mandates touch algorithmic pricing. The design logic is accumulated but institutionally coordinated: the instruments come from different eras and legal bases, but the Netherlands has invested more than any other EU member state in making its regulators talk to each other about algorithms.
 
@@ -272,17 +271,6 @@ The trajectory reveals three concurrent developments. First, a progressive deepe
 
 What is absent from the trajectory is enforcement. No Dutch authority has enforced the personalized pricing disclosure obligation, applied GDPR Article 22 to pricing, or brought a competition case against algorithmic pricing. The Netherlands' contribution is institutional and analytical rather than enforcement-based. Whether the ACM's aviation investigation triggers a shift from analysis to enforcement remains the key question.
 
-## Open Questions
-
-1. **What will the ACM aviation investigation find?** The investigation's provisional results and recommendations were expected by end of 2025 but have not been published as of February 2026. Will the ACM find that aviation pricing is primarily dynamic (demand-responsive, not individualized) or that personalized pricing occurs? The answer determines whether the investigation generates enforcement action, legislative recommendations, or merely a descriptive report.
-2. **Will the ACM extend the aviation investigation to other sectors?** The ACM has emphasized that findings may extend beyond aviation. If algorithmic pricing is found to harm consumers in aviation, will the ACM launch investigations into e-commerce, travel platforms, or other sectors? The ACM's 2025 agenda describes "computer-driven consumer prices" as a focus area without limiting it to aviation.
-3. **Will the AFM's margin personalisation call to action produce compliance?** The AFM characterized the loyalty penalty as a potential Wft violation but stopped short of formal enforcement. Will insurers voluntarily adjust their pricing, or will the AFM escalate to enforcement orders? The choice between soft-law guidance and formal enforcement is the defining regulatory style question for the Dutch approach.
-4. **Will any Dutch authority apply GDPR Article 22 to personalized pricing?** The AP's UAVG extends automated decision-making protections beyond the GDPR minimum, but neither the AP nor any Dutch court has applied Article 22 to consumer pricing. The CJEU SCHUFA ruling makes this more plausible, but no action has followed.
-5. **How will the SDT coordination affect pricing regulation?** The SDT creates pathways for information sharing between ACM, AP, AFM, and CvdM, but coordination does not guarantee aligned action. Will the SDT produce joint guidance on algorithmic pricing, or will each regulator continue to address pricing within its own mandate?
-6. **Will the Netherlands advocate for stronger personalized pricing provisions in the EU Digital Fairness Act?** The ACM's aviation investigation and the AFM's insurance findings could inform the Netherlands' position on the DFA (draft expected Q3 2026). A jurisdiction with active investigations and empirical evidence of pricing harm may advocate for stronger EU-level obligations.
-7. **What is the state of personalized pricing in Dutch general e-commerce?** The Hanspach/Sapi/Wieting Bol.com study examined algorithmic pricing (third-party repricing tools) but not personalized pricing using individual consumer data. The ACM's investigation targets aviation. No empirical study of personalized retail pricing in the Netherlands has been identified. The gap between regulatory activity and empirical evidence is significant.
-8. **How will AI Act implementation affect Dutch algorithmic pricing supervision?** The AP is expected to be designated as a market surveillance authority for the AI Act. Credit scoring and insurance pricing algorithms are high-risk under Annex III; general algorithmic pricing is not. Will the AP or other Dutch authorities advocate for expanding the high-risk classification to include general personalized pricing?
-
 ## Sources
 
 **Primary**:
@@ -339,18 +327,3 @@ What is absent from the trajectory is enforcement. No Dutch authority has enforc
 - [Jones Day, "Netherlands Launches New Consumer and Market Authority — The New Dutch Super Regulator" (April 2013)](https://www.jonesday.com/en/insights/2013/04/antitrust-alert--the-netherlands-launches-new-consumer-and-market-authority--the-new-dutch-super-regulator)
 - [Taylor Wessing, "Most Notable Consumer Law Cases ACM 2024" (Feb 2025)](https://www.taylorwessing.com/en/insights-and-events/insights/2025/02/most-notable-consumer-law-cases-acm-2024)
 - [Maverick Advocaten, "High Fines for Use of Dark Patterns and ACM Shuts Down Online Store"](https://www.maverick-law.com/en/blogs/high-fines-for-use-of-dark-patterns-and-acm-shuts-down-online-store-due-to-misleading-practices.html)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[competition-over-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[code-as-regulation]]
-- [[self-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[creative-compliance]]
-- [[sp-eu]]
-- [[sp-germany]]

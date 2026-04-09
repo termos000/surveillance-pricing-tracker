@@ -6,13 +6,12 @@ tags:
   - "#molecules"
   - "#jurisdiction-profile"
 topic:
-  - "[[surveillance pricing]]"
+  - "[[surveillance-pricing]]"
   - "[[Singapore]]"
 ---
 
 # Singapore — Surveillance Pricing Regulatory Profile
 
-*Jurisdiction molecule for [[surveillance-pricing-comparative-regulation|Paper 1]].*
 
 Singapore has no instrument that directly targets surveillance pricing or algorithmic personalized pricing. Its regulatory landscape is composed entirely of general-purpose instruments — data protection, competition law, consumer protection — none of which were designed for or have been applied to personalized pricing. What distinguishes Singapore from other jurisdictions with similarly absent targeted regulation is not the gap itself but the deliberate governance architecture around AI that nonetheless leaves pricing unaddressed: the Model AI Governance Framework, the PDPC Advisory Guidelines on AI Systems, the MAS FEAT Principles, and the AI Verify toolkit collectively constitute a sophisticated voluntary governance infrastructure that emphasizes transparency and fairness in AI decision-making but contains no binding obligation relevant to pricing. The absence of regulation is a design choice, not an oversight — Singapore's "pro-innovation, principles-based" approach deliberately avoids sector-specific or practice-specific AI regulation, channeling governance through existing laws supplemented by non-binding frameworks.
 
@@ -167,16 +166,6 @@ The trajectory is notably linear and consistent. There is no inflection point, n
 
 The MAS proposed AI Risk Management Guidelines (November 2025 consultation) represent the most significant potential shift — from voluntary principles to supervisory expectations. If finalized, this would not create binding rules but would move the financial sector closer to enforceable governance. Whether this presages a broader shift from voluntarism remains to be seen.
 
-## Open Questions
-
-1. **Will MAS finalize the AI Risk Management Guidelines, and will they address pricing?** The consultation closed January 31, 2026. If the final guidelines include supervisory expectations on AI-driven pricing in financial services, this would be Singapore's first instrument with regulatory pressure on algorithmic pricing — even if it remains below the threshold of binding law.
-2. **Will the CCCS extend its enforcement focus to personalized pricing?** The CCCS has intensified consumer protection enforcement (2024-2025), but exclusively against drip pricing, dark patterns, and misleading practices. The 2020 market study found no major concerns about personalized pricing in e-commerce. Has the landscape changed? Will the CCCS revisit?
-3. **What is the adoption rate of voluntary frameworks?** Singapore's governance architecture is built on voluntary adoption, but no public data exists on how many firms have adopted the Model AI Governance Framework, used AI Verify for fairness testing, or applied FEAT Principles to pricing algorithms. Without adoption data, the effectiveness of the voluntary strategy is unknown.
-4. **How does the AIM Toolkit work in practice?** The CCCS AIM Toolkit tests for anticompetitive pricing behavior, but no public information exists on its methodology, test results, or adoption. Is it used by firms operating pricing algorithms? Has it detected anticompetitive pricing patterns?
-5. **Will Singapore's approach diverge from or converge with regional peers?** South Korea has enacted dark pattern regulation (E-Commerce Act, February 2025) and is considering the Online Platform Fairness Act. China has prohibited algorithmic price discrimination (Rules for Price Behavior, effective April 2026). Singapore's ASEAN neighbors Indonesia and Thailand are strengthening platform regulation. Will regional movement create pressure for Singapore to move beyond voluntarism?
-6. **Does the PDPA's consent framework provide an adequate check on surveillance pricing?** The PDPA requires consent for data use, but organizations draft purpose statements broadly. Does "personalization of services" or "improvement of customer experience" as a stated purpose effectively consent individuals to personalized pricing? The PDPC has not clarified.
-7. **Insurance pricing fairness gap.** MAS FEAT Principles address fairness in AI-driven financial decisions, but no binding rule prevents discriminatory algorithmic pricing in insurance. Unlike the UK's FCA price walking ban, Singapore has no sector-specific prohibition. Is there evidence of insurance price walking or algorithmic discrimination in Singapore's market?
-
 ## Sources
 
 **Primary**:
@@ -216,19 +205,3 @@ The MAS proposed AI Risk Management Guidelines (November 2025 consultation) repr
 - [Turing Institute, "AI Governance Around the World: Singapore" (Aug 2025)](https://www.turing.ac.uk/sites/default/files/2025-09/ai_governance_around_the_world_singapore.pdf)
 - [Osborne Clarke, "Singapore's Competition Regulator Sets Out New Guidelines on Price Transparency"](https://www.osborneclarke.com/insights/singapores-competition-regulator-sets-new-guidelines-price-transparency)
 - [Genesis Human Experience, "Responsible AI in Insurance: Beyond Compliance to Trust" (Sept 2025)](https://genesishumanexperience.com/2025/09/06/responsible-ai-in-insurance/)
-
-**Library**:
-- [[intel-comparative-regulation]]
-- [[surveillance-pricing-comparative-regulation]]
-- [[baldwin-regulatory-strategies]]
-- [[disclosure-regulation]]
-- [[self-regulation]]
-- [[competition-over-regulation]]
-- [[rights-and-liabilities-regulation]]
-- [[regulatory-topology-not-ladder]]
-- [[government-capacities-regulation]]
-- [[sp-uk]]
-- [[sp-eu]]
-- [[sp-china]]
-- [[sp-new-york]]
-- [[sp-california]]

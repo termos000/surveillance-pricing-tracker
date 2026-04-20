@@ -77,6 +77,8 @@ def load_molecule(filename):
         text = re.sub(r'\[\[([^\]]+)\]\]', r'\1', text)
         # Strip "Jurisdiction molecule for..." line
         text = re.sub(r'\n\*Jurisdiction molecule for[^\n]*\n', '\n', text)
+        # Strip em dashes
+        text = text.replace(' — ', ', ')
         return text.strip()
     return None
 
@@ -132,6 +134,10 @@ SPECIES_ORDER = [
     "Core Species", "Collusion", "Drip Pricing",
     "Surge Pricing", "Price Walking", "General",
 ]
+
+# Display labels: schema value → audience-facing label
+def display_species(s):
+    return "Surveillance Pricing" if s == "Core Species" else (s or "")
 
 # --- CSS (Light Theme) ---
 
@@ -381,14 +387,14 @@ def render_species():
         for st_name in strategy_list:
             count = sum(1 for _, i in all_instruments
                        if i.get("target_species") == sp and i.get("strategy") == st_name)
-            matrix_data.append({"Species": sp, "Strategy": st_name, "count": count})
+            matrix_data.append({"Species": display_species(sp), "Strategy": st_name, "count": count})
 
     df = pd.DataFrame(matrix_data)
 
     chart = alt.Chart(df).mark_rect().encode(
         x=alt.X("Strategy:N", sort=strategy_list, title=None,
                 axis=alt.Axis(labelAngle=-45, labelFontSize=11)),
-        y=alt.Y("Species:N", sort=species_list, title=None,
+        y=alt.Y("Species:N", sort=[display_species(s) for s in species_list], title=None,
                 axis=alt.Axis(labelFontSize=11)),
         color=alt.condition(
             alt.datum.count > 0,
@@ -412,7 +418,7 @@ def render_species():
     if reaches_instruments:
         table_html = '<table class="inst-table"><thead><tr><th>Jurisdiction</th><th>Instrument</th><th>Strategy</th><th>Status</th><th>Species</th></tr></thead><tbody>'
         for j, i in reaches_instruments:
-            table_html += f'<tr><td style="font-size:0.82rem;">{esc(j["name"])}</td><td><span class="inst-name">{esc(i["name"])}</span></td><td>{strategy_chip(i["strategy"])}</td><td>{status_pill(i["status"])}</td><td style="font-size:0.78rem;">{esc(i.get("target_species",""))}</td></tr>'
+            table_html += f'<tr><td style="font-size:0.82rem;">{esc(j["name"])}</td><td><span class="inst-name">{esc(i["name"])}</span></td><td>{strategy_chip(i["strategy"])}</td><td>{status_pill(i["status"])}</td><td style="font-size:0.78rem;">{esc(display_species(i.get("target_species","")))}</td></tr>'
         table_html += '</tbody></table>'
         st.markdown(table_html, unsafe_allow_html=True)
     else:
@@ -436,7 +442,7 @@ def render_landscape():
     operative = sum(1 for _, i in all_instruments if i["status"].startswith("Operative"))
     m3.metric("Operative", operative)
     reaches = sum(1 for _, i in all_instruments if i.get("reaches_core"))
-    m4.metric("Reaches surveillance pricing", reaches)
+    m4.metric("Reaches SP", reaches)
 
     # Jurisdiction x Strategy heatmap
     rows = []
@@ -654,7 +660,7 @@ def render_detail(jurisdiction_id):
     c1.metric("Instruments", jurisdiction.get("instrument_count", 0))
     rc = jurisdiction.get("reaches_core_count", 0)
     total = jurisdiction.get("instrument_count", 0)
-    c2.metric("Reaches surveillance pricing", f"{rc}/{total}")
+    c2.metric("Reaches SP", f"{rc}/{total}")
     c3.metric("Year range", f"{jurisdiction.get('year_first', '?')}-{jurisdiction.get('year_latest', '?')}")
     c4.metric("Design logic", jurisdiction.get("design_logic", ""))
 
@@ -675,7 +681,7 @@ def render_detail(jurisdiction_id):
     for inst in instruments:
         core_icon = '<span style="color:#16a34a; font-weight:600;">&#10003;</span>' if inst.get("reaches_core") else '<span style="color:#d6d3d1;">-</span>'
         pe = pe_pill(inst["pe_outcome"]) if inst.get("pe_outcome") else ""
-        species = esc(inst.get("target_species", ""))
+        species = esc(display_species(inst.get("target_species", "")))
 
         table_html += f'''<tr>
             <td><span class="inst-name">{esc(inst["name"])}</span></td>

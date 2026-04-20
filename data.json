@@ -458,140 +458,360 @@
     {
       "id": "canada",
       "name": "Canada",
-      "design_logic": "",
-      "key_finding": "",
-      "instrument_count": 9,
+      "design_logic": "Accumulated",
+      "key_finding": "Canada produced the dataset's largest drip pricing enforcement through competition law that explicitly identified its own inability to reach unilateral personalized pricing, generating a federal-provincial fracture in which provinces legislate what federal law structurally cannot.",
+      "instrument_count": 10,
       "operative_count": 8,
-      "reaches_core_count": 0,
+      "reaches_core_count": 1,
       "failed_count": 0,
       "strategy_set": [
-        "Code-as-regulation (code-as-regulation)",
-        "Command and control (command-and-control)",
-        "Competition (competition-over-regulation)",
-        "Disclosure (disclosure-regulation)",
-        "Disclosure (soft — consultation)",
-        "Rights & liabilities (rights-and-liabilities-regulation)"
+        "Competition",
+        "Direct Action",
+        "Disclosure",
+        "Prohibition",
+        "Rights & Liabilities"
       ],
-      "species_set": [],
-      "year_first": null,
-      "year_latest": null,
-      "region": "Other",
+      "species_set": [
+        "Collusion",
+        "Core Species",
+        "Drip Pricing",
+        "General"
+      ],
+      "year_first": 2000,
+      "year_latest": 2026,
+      "region": "North America",
       "molecule_file": "sp-canada.md",
-      "opening": "",
+      "opening": "Canada's regulatory response to algorithmic pricing is competition-dominated and federally constrained. The Competition Act, substantially amended in 2022 and 2024, provides the strongest enforcement infrastructure in the instrument set, with drip pricing penalties now judicially confirmed at CAD 38.9 million (Cineplex, Federal Court of Appeal, January 2026). The Competition Bureau's June 2025 discussion paper on algorithmic pricing is one of the few regulatory documents in the dataset that explicitly distinguishes dynamic pricing from personalized pricing and identifies the gap between coordination (reachable under the Act) and unilateral personalization (unreachable). Federal privacy law (PIPEDA) applies general consent and purpose limitation principles but lacks automated decision-making provisions, and Bill C-27, which would have introduced both privacy modernization and AI regulation, died twice on the Order Paper (January 2025 prorogation and the April 2025 election). The resulting federal vacuum has two provincial responses that formally address the core species but cannot operate nationally. Quebec's Law 25 (operative since September 2023) imposes automated decision-making transparency and human review obligations with no enforcement on pricing. Manitoba's Bill 49 (introduced March 2026) would prohibit personalized algorithmic pricing in retail, the first Canadian instrument specifically designed for the core species. The design logic is accumulated with a competition center of gravity and a federal-provincial dimension absent elsewhere in the dataset.",
       "instruments": [
         {
-          "name": "Competition Act, s. 74.01(1.1) — Drip Pricing Prohibition (2022, strengthened 2024)",
-          "strategy": "Command and control (command-and-control)",
+          "name": "Competition Act, s. 74.01(1.1) — Drip Pricing (2022/2024)",
+          "strategy": "Prohibition",
           "sub_type": null,
-          "sector": "General (all commercial sectors)",
+          "sector": "General",
           "status": "Operative",
-          "enforcement_mechanism": "Competition Bureau (Commissioner); Competition Tribunal; AMPs up to CAD $10M first offence or 3% global turnover; private right of action (eff. June 2025)",
-          "target_species": "",
+          "enforcement_mechanism": "Competition Bureau; Tribunal; AMPs to CAD 10M or 3% global; Cineplex CAD 38.9M (FCA upheld Jan 2026, SCC leave pending); Wonderland, DoorDash pending",
+          "target_species": "Drip Pricing",
+          "reaches_core": false,
+          "pe_outcome": null,
+          "private_right_of_action": false,
+          "timeline": [
+            {
+              "date": "2022-06",
+              "event": "Drip pricing prohibition enacted (Bill C-19, s. 74.01(1.1))"
+            },
+            {
+              "date": "2024-06",
+              "event": "Strengthened by Bill C-59; only statutory fees excludable"
+            },
+            {
+              "date": "2024-09",
+              "event": "Competition Tribunal orders Cineplex to pay CAD 38.9M"
+            },
+            {
+              "date": "2025-05",
+              "event": "Bureau files action against Canada's Wonderland"
+            },
+            {
+              "date": "2025-06",
+              "event": "Bureau files action against DoorDash (alleging nearly CAD 1B in mandatory fees over close to a decade)"
+            },
+            {
+              "date": "2026-01-21",
+              "event": "Federal Court of Appeal dismisses Cineplex appeal; CAD 38.9M upheld"
+            },
+            {
+              "date": "2026-01-26",
+              "event": "Cineplex seeks leave to appeal to Supreme Court of Canada (low probability of grant)"
+            }
+          ]
+        },
+        {
+          "name": "Competition Act, s. 45 — Criminal Conspiracy",
+          "strategy": "Prohibition",
+          "sub_type": null,
+          "sector": "General",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "Competition Bureau; criminal prosecution; up to 14 years, CAD 25M",
+          "target_species": "Collusion",
+          "reaches_core": false,
+          "pe_outcome": null,
+          "private_right_of_action": false,
+          "timeline": [
+            {
+              "date": "2022-06",
+              "event": "Drip pricing prohibition enacted (Bill C-19, s. 74.01(1.1))"
+            },
+            {
+              "date": "2024-06",
+              "event": "Strengthened by Bill C-59; only statutory fees excludable"
+            },
+            {
+              "date": "2024-09",
+              "event": "Competition Tribunal orders Cineplex to pay CAD 38.9M"
+            },
+            {
+              "date": "2025-05",
+              "event": "Bureau files action against Canada's Wonderland"
+            },
+            {
+              "date": "2025-06",
+              "event": "Bureau files action against DoorDash (alleging nearly CAD 1B in mandatory fees over close to a decade)"
+            },
+            {
+              "date": "2026-01-21",
+              "event": "Federal Court of Appeal dismisses Cineplex appeal; CAD 38.9M upheld"
+            },
+            {
+              "date": "2026-01-26",
+              "event": "Cineplex seeks leave to appeal to Supreme Court of Canada (low probability of grant)"
+            }
+          ]
+        },
+        {
+          "name": "Competition Act, s. 90.1 — Civil Collaboration (2024)",
+          "strategy": "Competition",
+          "sub_type": null,
+          "sector": "General",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "Competition Bureau; Tribunal; expanded to non-competitors (hub-and-spoke)",
+          "target_species": "Collusion",
+          "reaches_core": false,
+          "pe_outcome": null,
+          "private_right_of_action": false,
+          "timeline": [
+            {
+              "date": "2022-06",
+              "event": "Drip pricing prohibition enacted (Bill C-19, s. 74.01(1.1))"
+            },
+            {
+              "date": "2024-06",
+              "event": "Strengthened by Bill C-59; only statutory fees excludable"
+            },
+            {
+              "date": "2024-09",
+              "event": "Competition Tribunal orders Cineplex to pay CAD 38.9M"
+            },
+            {
+              "date": "2025-05",
+              "event": "Bureau files action against Canada's Wonderland"
+            },
+            {
+              "date": "2025-06",
+              "event": "Bureau files action against DoorDash (alleging nearly CAD 1B in mandatory fees over close to a decade)"
+            },
+            {
+              "date": "2026-01-21",
+              "event": "Federal Court of Appeal dismisses Cineplex appeal; CAD 38.9M upheld"
+            },
+            {
+              "date": "2026-01-26",
+              "event": "Cineplex seeks leave to appeal to Supreme Court of Canada (low probability of grant)"
+            }
+          ]
+        },
+        {
+          "name": "Competition Act, ss. 78-79 — Abuse of Dominance (2024)",
+          "strategy": "Competition",
+          "sub_type": null,
+          "sector": "General",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "Competition Bureau; Tribunal; AMPs to 3% global; excessive pricing enumerated",
+          "target_species": "General",
+          "reaches_core": false,
+          "pe_outcome": null,
+          "private_right_of_action": false,
+          "timeline": [
+            {
+              "date": "2022-06",
+              "event": "Drip pricing prohibition enacted (Bill C-19, s. 74.01(1.1))"
+            },
+            {
+              "date": "2024-06",
+              "event": "Strengthened by Bill C-59; only statutory fees excludable"
+            },
+            {
+              "date": "2024-09",
+              "event": "Competition Tribunal orders Cineplex to pay CAD 38.9M"
+            },
+            {
+              "date": "2025-05",
+              "event": "Bureau files action against Canada's Wonderland"
+            },
+            {
+              "date": "2025-06",
+              "event": "Bureau files action against DoorDash (alleging nearly CAD 1B in mandatory fees over close to a decade)"
+            },
+            {
+              "date": "2026-01-21",
+              "event": "Federal Court of Appeal dismisses Cineplex appeal; CAD 38.9M upheld"
+            },
+            {
+              "date": "2026-01-26",
+              "event": "Cineplex seeks leave to appeal to Supreme Court of Canada (low probability of grant)"
+            }
+          ]
+        },
+        {
+          "name": "Competition Act, s. 74.01(1) — Deceptive Marketing",
+          "strategy": "Disclosure",
+          "sub_type": null,
+          "sector": "General",
+          "status": "Operative",
+          "enforcement_mechanism": "Competition Bureau; Tribunal; AMPs to CAD 10M/15M or 3% global; private right of action eff. June 2025",
+          "target_species": "General",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": true,
-          "timeline": []
+          "timeline": [
+            {
+              "date": "2022-06",
+              "event": "Drip pricing prohibition enacted (Bill C-19, s. 74.01(1.1))"
+            },
+            {
+              "date": "2024-06",
+              "event": "Strengthened by Bill C-59; only statutory fees excludable"
+            },
+            {
+              "date": "2024-09",
+              "event": "Competition Tribunal orders Cineplex to pay CAD 38.9M"
+            },
+            {
+              "date": "2025-05",
+              "event": "Bureau files action against Canada's Wonderland"
+            },
+            {
+              "date": "2025-06",
+              "event": "Bureau files action against DoorDash (alleging nearly CAD 1B in mandatory fees over close to a decade)"
+            },
+            {
+              "date": "2026-01-21",
+              "event": "Federal Court of Appeal dismisses Cineplex appeal; CAD 38.9M upheld"
+            },
+            {
+              "date": "2026-01-26",
+              "event": "Cineplex seeks leave to appeal to Supreme Court of Canada (low probability of grant)"
+            }
+          ]
         },
         {
-          "name": "Competition Act, s. 45 — Criminal Conspiracy (price-fixing)",
-          "strategy": "Command and control (command-and-control)",
+          "name": "PIPEDA — Consent and Purpose Limitation (2000/2004)",
+          "strategy": "Rights & Liabilities",
           "sub_type": null,
-          "sector": "General",
-          "status": "Operative (untested for algorithmic collusion)",
-          "enforcement_mechanism": "Competition Bureau; criminal prosecution; imprisonment up to 14 years; fines up to CAD $25M",
-          "target_species": "",
+          "sector": "Private sector (federal)",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "OPC; findings and recommendations (non-binding); Federal Court enforcement; no AMP power",
+          "target_species": "General",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
-          "timeline": []
+          "timeline": [
+            {
+              "date": "2000",
+              "event": "PIPEDA enacted"
+            },
+            {
+              "date": "2004",
+              "event": "Fully in force for all provincial commercial activity (except provinces with substantially similar legislation)"
+            },
+            {
+              "date": "2020-11",
+              "event": "OPC publishes regulatory framework recommendations for AI and PIPEDA reform"
+            },
+            {
+              "date": "2022-11",
+              "event": "Bill C-27 introduced (would have enacted CPPA with ADM provisions, AIDA, and data protection tribunal)"
+            },
+            {
+              "date": "2025-01",
+              "event": "Parliament prorogued; Bill C-27 dies"
+            },
+            {
+              "date": "2025-04-28",
+              "event": "Federal election; Bill C-27 dies again"
+            },
+            {
+              "date": "2025-06",
+              "event": "Minister Solomon confirms AIDA \"off the table,\" signals separate privacy bill and AI regulation"
+            },
+            {
+              "date": "2026-02-02",
+              "event": "Commissioner Dufresne appears before ETHI on AI study"
+            },
+            {
+              "date": "2026 (expected)",
+              "event": "New federal privacy legislation anticipated but not yet introduced as of April 2026"
+            }
+          ]
         },
         {
-          "name": "Competition Act, s. 90.1 — Civil Competitor Collaboration (amended 2024)",
-          "strategy": "Competition (competition-over-regulation)",
-          "sub_type": null,
-          "sector": "General",
-          "status": "Operative",
-          "enforcement_mechanism": "Competition Bureau; Competition Tribunal; expanded to non-competitors if significant purpose is lessening competition",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
-          "private_right_of_action": false,
-          "timeline": []
-        },
-        {
-          "name": "Competition Act, ss. 78-79 — Abuse of Dominance (amended 2024)",
-          "strategy": "Competition (competition-over-regulation)",
-          "sub_type": null,
-          "sector": "General",
-          "status": "Operative",
-          "enforcement_mechanism": "Competition Bureau; Competition Tribunal; AMPs up to 3% global turnover; excessive pricing now an enumerated anti-competitive act",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
-          "private_right_of_action": false,
-          "timeline": []
-        },
-        {
-          "name": "Competition Act, s. 74.01(1) — Deceptive Marketing (false/misleading representations)",
-          "strategy": "Disclosure (disclosure-regulation)",
-          "sub_type": null,
-          "sector": "General",
-          "status": "Operative",
-          "enforcement_mechanism": "Competition Bureau; Competition Tribunal; AMPs up to CAD $10M (first) / $15M (subsequent) or 3% global turnover; private right of action (eff. June 2025)",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
-          "private_right_of_action": true,
-          "timeline": []
-        },
-        {
-          "name": "PIPEDA — Consent and Purpose Limitation Principles",
-          "strategy": "Rights & liabilities (rights-and-liabilities-regulation)",
-          "sub_type": null,
-          "sector": "Private sector commercial activity (federal)",
-          "status": "Operative",
-          "enforcement_mechanism": "Office of the Privacy Commissioner (OPC); findings and recommendations (non-binding); Federal Court enforcement; no direct AMP power",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
-          "private_right_of_action": false,
-          "timeline": []
-        },
-        {
-          "name": "Quebec Law 25 — Automated Decision-Making (s. 12.1, eff. Sept 2023)",
-          "strategy": "Rights & liabilities (rights-and-liabilities-regulation)",
+          "name": "Quebec Law 25, s. 12.1 — ADM (eff. Sept 2023)",
+          "strategy": "Rights & Liabilities",
           "sub_type": null,
           "sector": "Private sector (Quebec)",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "CAI; AMPs to CAD 25M or 4% global",
+          "target_species": "Core Species",
+          "reaches_core": false,
+          "pe_outcome": null,
+          "private_right_of_action": false,
+          "timeline": []
+        },
+        {
+          "name": "Treasury Board ADM Directive (2019/2023)",
+          "strategy": "Direct Action",
+          "sub_type": "Code-as-Regulation",
+          "sector": "Federal government",
           "status": "Operative",
-          "enforcement_mechanism": "Commission d'acces a l'information du Quebec (CAI); AMPs up to CAD $25M or 4% global turnover",
-          "target_species": "",
+          "enforcement_mechanism": "Treasury Board; internal compliance; AIA mandatory; June 2026 compliance deadline for existing systems",
+          "target_species": "General",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "Treasury Board Directive on Automated Decision-Making (2019, amended 2023)",
-          "strategy": "Code-as-regulation (code-as-regulation)",
-          "sub_type": null,
-          "sector": "Federal government only",
-          "status": "Operative (government sector only)",
-          "enforcement_mechanism": "Treasury Board Secretariat; internal compliance; Algorithmic Impact Assessment mandatory",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
-          "private_right_of_action": false,
-          "timeline": []
-        },
-        {
-          "name": "Competition Bureau — Algorithmic Pricing Discussion Paper (June 2025) / What We Heard Report (Jan 2026)",
-          "strategy": "Disclosure (soft — consultation)",
+          "name": "Competition Bureau Discussion Paper / What We Heard (2025-2026)",
+          "strategy": "Disclosure",
           "sub_type": null,
           "sector": "General",
-          "status": "Consultative (no binding effect)",
-          "enforcement_mechanism": "N/A — policy development stage",
-          "target_species": "",
+          "status": "Study",
+          "enforcement_mechanism": "N/A — policy development; 103 submissions received",
+          "target_species": "General",
           "reaches_core": false,
+          "pe_outcome": null,
+          "private_right_of_action": false,
+          "timeline": [
+            {
+              "date": "2024-09",
+              "event": "Competition Bureau Summit 2024 on \"Market Dynamics in the AI Era\""
+            },
+            {
+              "date": "2024-10",
+              "event": "AI and Competition What We Heard report (first, broader consultation)"
+            },
+            {
+              "date": "2025-06-10",
+              "event": "Algorithmic pricing discussion paper published; consultation opens"
+            },
+            {
+              "date": "2025-08-04",
+              "event": "Consultation closes (103 responses)"
+            },
+            {
+              "date": "2026-01-22",
+              "event": "What We Heard report published"
+            }
+          ]
+        },
+        {
+          "name": "Manitoba Bill 49 — Personalized Pricing Ban (Mar 2026)",
+          "strategy": "Prohibition",
+          "sub_type": null,
+          "sector": "General (Manitoba)",
+          "status": "Proposed",
+          "enforcement_mechanism": "Manitoba Director of Business Practices; fines to CAD 300K (first) / CAD 1M (subsequent); consumer compensation",
+          "target_species": "Core Species",
+          "reaches_core": true,
           "pe_outcome": null,
           "private_right_of_action": false,
           "timeline": []
@@ -1250,7 +1470,7 @@
         "Competition",
         "Disclosure",
         "Rights & Liabilities",
-        "Self-regulation"
+        "Self-Regulation"
       ],
       "species_set": [
         "Collusion",
@@ -1360,7 +1580,7 @@
         },
         {
           "name": "CCI Market Study on AI and Competition (Oct 2025)",
-          "strategy": "Self-regulation",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "General",
           "status": "Study",
@@ -1459,7 +1679,7 @@
         },
         {
           "name": "India AI Governance Guidelines (Nov 2025)",
-          "strategy": "Self-regulation",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "General",
           "status": "Study",
@@ -1792,169 +2012,255 @@
     {
       "id": "netherlands",
       "name": "Netherlands",
-      "design_logic": "",
-      "key_finding": "",
+      "design_logic": "Accumulated",
+      "key_finding": "The most institutionally unified consumer pricing authority in the dataset deploys exclusively soft instruments against algorithmic pricing (two concurrent market investigations, guidelines, supervisory dialogue, zero enforcement), demonstrating that institutional capacity and enforcement willingness are independent variables in regulatory design.",
       "instrument_count": 13,
       "operative_count": 9,
-      "reaches_core_count": 0,
+      "reaches_core_count": 4,
       "failed_count": 0,
       "strategy_set": [
-        "Code-as-regulation (code-as-regulation) / institutional coordination",
-        "Competition (competition-over-regulation)",
-        "Competition / Disclosure (market study)",
+        "Competition",
+        "Direct Action",
         "Disclosure",
-        "Disclosure (disclosure-regulation)",
-        "Disclosure / Self-regulation (self-regulation)",
-        "Disclosure / Self-regulation (supervisory guidance)",
-        "Institutional coordination",
-        "Rights & liabilities (rights-and-liabilities-regulation)",
-        "Self-regulation (supervisory expectations)"
+        "Rights & Liabilities",
+        "Self-Regulation"
       ],
-      "species_set": [],
-      "year_first": null,
-      "year_latest": null,
-      "region": "Other",
+      "species_set": [
+        "Collusion",
+        "Core Species",
+        "Drip Pricing",
+        "General",
+        "Price Walking"
+      ],
+      "year_first": 2013,
+      "year_latest": 2026,
+      "region": "Europe",
       "molecule_file": "sp-netherlands.md",
-      "opening": "",
+      "opening": "The Netherlands layers a distinctive national regulatory architecture on top of the EU baseline. Where the EU provides the general framework (GDPR, CRD, UCPD, AI Act, DMA), the Netherlands adds three things the EU alone does not. First, a combined competition-and-consumer-protection authority (ACM) that has launched the first EU national-level market investigation specifically into computer-controlled consumer pricing (aviation sector, 2025) and a second into grocery pricing (supermarkets, September 2025), representing the most investigation-intensive approach to consumer pricing in the dataset. Second, a financial sector regulator (AFM) that has produced the most developed supervisory framework for personalized pricing in insurance anywhere in the EU, including a 2021 exploratory study and a 2025 deep dive finding that almost half of non-life insurers charge loyal customers higher margins. Third, an institutional coordination infrastructure (the SDT platform and the AP's Department for the Coordination of Algorithmic Oversight) that connects the multiple regulators whose mandates touch algorithmic pricing. The design logic is accumulated but institutionally coordinated, and the instruments come from different eras and legal bases. The Netherlands has invested more than any other EU member state in making its regulators talk to each other about algorithms while choosing to investigate rather than enforce.",
       "instruments": [
         {
-          "name": "Article 6:230m(1)(ea) BW (Omnibus Directive transposition, eff. May 28, 2022) — personalized pricing disclosure",
-          "strategy": "Disclosure (disclosure-regulation)",
+          "name": "Article 6:230m(1)(ea) BW (eff. May 2022)",
+          "strategy": "Disclosure",
           "sub_type": null,
-          "sector": "General (distance and off-premises contracts)",
-          "status": "Operative",
-          "enforcement_mechanism": "ACM; fines up to EUR 900,000 or 1% of turnover",
-          "target_species": "",
-          "reaches_core": false,
+          "sector": "General (distance/off-premises)",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "ACM; EUR 900K or 1% turnover",
+          "target_species": "Core Species",
+          "reaches_core": true,
           "pe_outcome": null,
           "private_right_of_action": false,
-          "timeline": []
+          "timeline": [
+            {
+              "date": "2021-10",
+              "event": "Implementatiewet introduced in Tweede Kamer (dossier 35940)"
+            },
+            {
+              "date": "2022-05-28",
+              "event": "Enters into force"
+            },
+            {
+              "date": "2024-05",
+              "event": "ACM updates Leidraad Online Consument to incorporate CRD Implementation Act"
+            },
+            {
+              "date": "2026-04",
+              "event": "No enforcement action specifically targeting failure to disclose personalized pricing (approaching 48 months operative)"
+            }
+          ]
         },
         {
-          "name": "Section 6:193a-j BW (UCPD implementation) — unfair commercial practices",
+          "name": "Section 6:193a-j BW (UCPD implementation)",
           "strategy": "Disclosure",
           "sub_type": null,
           "sector": "General (B2C)",
-          "status": "Operative",
-          "enforcement_mechanism": "ACM; fines; private actions for damages or contract termination",
-          "target_species": "",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "ACM; fines; private actions (Art. 6:193j)",
+          "target_species": "General",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "ACM Leidraad Bescherming Online Consument (2020, updated May 2024) — online consumer protection guidelines",
-          "strategy": "Disclosure / Self-regulation (self-regulation)",
+          "name": "ACM Leidraad Bescherming Online Consument (2020, updated May 2024)",
+          "strategy": "Disclosure",
           "sub_type": null,
           "sector": "Digital (B2C online)",
-          "status": "Operative (soft law)",
-          "enforcement_mechanism": "ACM (underlying hard law); guidance function",
-          "target_species": "",
-          "reaches_core": false,
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "ACM (underlying hard law)",
+          "target_species": "Core Species",
+          "reaches_core": true,
           "pe_outcome": null,
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "ACM Leidraad Prijsweergave en -vergelijkingen (Sept 19, 2025) — price display guidelines",
+          "name": "ACM Leidraad Prijsweergave (Sept 2025)",
           "strategy": "Disclosure",
           "sub_type": null,
           "sector": "General (B2C retail)",
-          "status": "Operative (soft law)",
-          "enforcement_mechanism": "ACM (underlying hard law); fines up to EUR 900,000 or 1% of turnover",
-          "target_species": "",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "ACM (underlying hard law)",
+          "target_species": "Drip Pricing",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "Besluit prijsaanduiding producten (Price Indication Decree, eff. Jan 1, 2023) — 30-day prior price rule",
+          "name": "Besluit prijsaanduiding producten (eff. Jan 2023)",
           "strategy": "Disclosure",
           "sub_type": null,
           "sector": "General (B2C retail)",
           "status": "Operative",
-          "enforcement_mechanism": "ACM; fines up to EUR 900,000 or 1% of turnover",
-          "target_species": "",
+          "enforcement_mechanism": "ACM; EUR 900K or 1% turnover",
+          "target_species": "Drip Pricing",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
-          "timeline": []
+          "timeline": [
+            {
+              "date": "2023-01-01",
+              "event": "Enters into force"
+            },
+            {
+              "date": "2024-05",
+              "event": "ACM fines five online retailers EUR 621,000 for fake discounts"
+            },
+            {
+              "date": "2025-09",
+              "event": "ACM publishes Leidraad Prijsweergave; announces ongoing compliance checks"
+            },
+            {
+              "date": "2025-11",
+              "event": "ACM issues pre-Black Friday warning, reports 75% of retailers not complying"
+            }
+          ]
         },
         {
-          "name": "Mededingingswet (Mw) — Dutch Competition Act (Articles 6, 24)",
-          "strategy": "Competition (competition-over-regulation)",
+          "name": "Mededingingswet Arts. 6 and 24",
+          "strategy": "Competition",
           "sub_type": null,
           "sector": "General",
-          "status": "Operative",
-          "enforcement_mechanism": "ACM; fines up to 10% of global turnover; private damages actions",
-          "target_species": "",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "ACM; 10% global turnover; private damages",
+          "target_species": "Collusion",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
-          "timeline": []
+          "timeline": [
+            {
+              "date": "2013-04-01",
+              "event": "ACM created through merger of NMa (competition), CA (consumer protection), and OPTA (telecommunications)"
+            },
+            {
+              "date": "2026-04",
+              "event": "No competition enforcement action targeting algorithmic pricing or personalized pricing"
+            }
+          ]
         },
         {
-          "name": "ACM Market Investigation — Computer-Controlled Consumer Prices in Aviation (2025)",
-          "strategy": "Competition / Disclosure (market study)",
+          "name": "ACM Aviation Market Investigation (2025)",
+          "strategy": "Competition",
           "sub_type": null,
-          "sector": "Aviation (pilot sector)",
-          "status": "Ongoing (draft report expected early 2026)",
-          "enforcement_mechanism": "ACM (non-binding recommendations; may trigger enforcement)",
-          "target_species": "",
-          "reaches_core": false,
+          "sector": "Aviation",
+          "status": "Study",
+          "enforcement_mechanism": "ACM (non-binding recommendations)",
+          "target_species": "Core Species",
+          "reaches_core": true,
           "pe_outcome": null,
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "UAVG (Uitvoeringswet AVG) — GDPR Implementation Act",
-          "strategy": "Rights & liabilities (rights-and-liabilities-regulation)",
+          "name": "UAVG (GDPR Implementation Act)",
+          "strategy": "Rights & Liabilities",
           "sub_type": null,
           "sector": "General",
-          "status": "Operative",
-          "enforcement_mechanism": "AP (Autoriteit Persoonsgegevens); fines per GDPR schedule",
-          "target_species": "",
-          "reaches_core": false,
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "AP; GDPR fine schedule",
+          "target_species": "Core Species",
+          "reaches_core": true,
           "pe_outcome": null,
           "private_right_of_action": false,
-          "timeline": []
+          "timeline": [
+            {
+              "date": "2018-05-25",
+              "event": "GDPR/UAVG take effect"
+            },
+            {
+              "date": "2023",
+              "event": "AP's DCA receives initial EUR 1M funding"
+            },
+            {
+              "date": "2024-09",
+              "event": "AP fines Clearview AI EUR 30.5M (demonstrates algorithmic enforcement capacity)"
+            },
+            {
+              "date": "2026-03",
+              "event": "AP publishes RAN 6 (AI Impact Barometer turns red for first time)"
+            },
+            {
+              "date": "2026 Q4 (expected)",
+              "event": "EU AI Implementation Act to designate Dutch supervisory authorities"
+            }
+          ]
         },
         {
           "name": "AFM Exploratory Study on Personalized Pricing in Insurance (June 2021)",
-          "strategy": "Disclosure / Self-regulation (supervisory guidance)",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "Insurance",
-          "status": "Published (soft law)",
-          "enforcement_mechanism": "AFM (underlying Wft obligations)",
-          "target_species": "",
+          "status": "Study",
+          "enforcement_mechanism": "AFM (underlying Wft)",
+          "target_species": "Price Walking",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "AFM Deep Dive: Margin Personalisation — Fair Premium for Loyal Policyholders (April 8, 2025)",
-          "strategy": "Disclosure / Self-regulation (supervisory guidance)",
+          "name": "AFM Deep Dive: Margin Personalisation (April 2025)",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "Insurance (non-life)",
-          "status": "Published (soft law, call to action)",
-          "enforcement_mechanism": "AFM (underlying Wft obligations; product governance standards)",
-          "target_species": "",
+          "status": "Study",
+          "enforcement_mechanism": "AFM (underlying Wft; product governance standards)",
+          "target_species": "Price Walking",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
-          "timeline": []
+          "timeline": [
+            {
+              "date": "2021-06",
+              "event": "AFM publishes exploratory study"
+            },
+            {
+              "date": "2023-02",
+              "event": "EIOPA supervisory statement on differential pricing practices"
+            },
+            {
+              "date": "2025-04-08",
+              "event": "AFM publishes deep dive report"
+            },
+            {
+              "date": "2025 (H2)",
+              "event": "AFM in dialogue with identified insurers on compliance"
+            },
+            {
+              "date": "2026-04",
+              "event": "No escalation to formal enforcement"
+            }
+          ]
         },
         {
           "name": "DNB Sector Update: AI at Insurers (March 2025)",
-          "strategy": "Self-regulation (supervisory expectations)",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "Insurance",
-          "status": "Published (soft law)",
-          "enforcement_mechanism": "DNB (prudential supervision)",
-          "target_species": "",
+          "status": "Study",
+          "enforcement_mechanism": "DNB (prudential)",
+          "target_species": "General",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
@@ -1962,25 +2268,50 @@
         },
         {
           "name": "AP as Coordinating AI Supervisor / DCA (est. 2023)",
-          "strategy": "Code-as-regulation (code-as-regulation) / institutional coordination",
-          "sub_type": null,
-          "sector": "General (algorithms and AI)",
-          "status": "Operative (coordination role; AI Act market surveillance pending formal designation)",
+          "strategy": "Direct Action",
+          "sub_type": "Code-as-Regulation",
+          "sector": "General (algorithms/AI)",
+          "status": "Operative, unenforced",
           "enforcement_mechanism": "AP; coordination with ACM, AFM, RDI, CvdM",
-          "target_species": "",
+          "target_species": "General",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
-          "timeline": []
+          "timeline": [
+            {
+              "date": "2023",
+              "event": "DCA receives initial EUR 1M funding; AAK created within SDT"
+            },
+            {
+              "date": "2024-11",
+              "event": "AP/RDI publish joint final advice on AI Act supervisory structure"
+            },
+            {
+              "date": "2025",
+              "event": "DCA publishes RAN 5; funding increases"
+            },
+            {
+              "date": "2026-02-23",
+              "event": "Jetten cabinet sworn in (more receptive to AI regulation than predecessor)"
+            },
+            {
+              "date": "2026-03-05",
+              "event": "AP publishes RAN 6; AI Impact Barometer turns red for first time (four of nine indicators)"
+            },
+            {
+              "date": "2026 Q4 (expected)",
+              "event": "EU AI Implementation Act to designate Dutch supervisory authorities"
+            }
+          ]
         },
         {
-          "name": "SDT — Samenwerkingsplatform Digitale Toezichthouders (est. Oct 2021)",
-          "strategy": "Institutional coordination",
-          "sub_type": null,
+          "name": "SDT Platform (est. Oct 2021)",
+          "strategy": "Direct Action",
+          "sub_type": "Code-as-Regulation",
           "sector": "Digital (cross-sectoral)",
-          "status": "Operative",
-          "enforcement_mechanism": "Non-binding; participating authorities: ACM, AP, AFM, CvdM",
-          "target_species": "",
+          "status": "Operative, unenforced",
+          "enforcement_mechanism": "Non-binding; ACM, AP, AFM, CvdM",
+          "target_species": "General",
           "reaches_core": false,
           "pe_outcome": null,
           "private_right_of_action": false,
@@ -2127,8 +2458,8 @@
       "strategy_set": [
         "Competition",
         "Disclosure",
-        "Rights & liabilities",
-        "Self-regulation"
+        "Rights & Liabilities",
+        "Self-Regulation"
       ],
       "species_set": [
         "Collusion",
@@ -2143,7 +2474,7 @@
       "instruments": [
         {
           "name": "PDPA ss. 13-20 (consent and notification, eff. July 2, 2014; amended 2020)",
-          "strategy": "Rights & liabilities",
+          "strategy": "Rights & Liabilities",
           "sub_type": null,
           "sector": "General",
           "status": "Operative, unenforced",
@@ -2156,7 +2487,7 @@
         },
         {
           "name": "PDPC Advisory Guidelines on AI Recommendation and Decision Systems (March 1, 2024)",
-          "strategy": "Self-regulation",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "General (discriminative AI only)",
           "status": "Operative (voluntary)",
@@ -2169,7 +2500,7 @@
         },
         {
           "name": "Model AI Governance Framework, 2nd ed. (PDPC/IMDA, Jan 2020)",
-          "strategy": "Self-regulation",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "General",
           "status": "Operative (voluntary)",
@@ -2182,7 +2513,7 @@
         },
         {
           "name": "Model AI Governance Framework for Agentic AI (IMDA, Jan 22, 2026)",
-          "strategy": "Self-regulation",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "General",
           "status": "Operative (voluntary)",
@@ -2195,7 +2526,7 @@
         },
         {
           "name": "AI Verify Toolkit (IMDA, 2022) with CCCS AIM Plugin (Sept 2025)",
-          "strategy": "Self-regulation",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "General",
           "status": "Operative (voluntary)",
@@ -2273,7 +2604,7 @@
         },
         {
           "name": "MAS FEAT Principles (Nov 2018) and Veritas Initiative (2019-2023)",
-          "strategy": "Self-regulation",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "Financial services",
           "status": "Operative (voluntary)",
@@ -2286,7 +2617,7 @@
         },
         {
           "name": "MAS Proposed Guidelines on AI Risk Management (consultation Nov 2025; closed Jan 31, 2026; finalization pending)",
-          "strategy": "Self-regulation",
+          "strategy": "Self-Regulation",
           "sub_type": null,
           "sector": "Financial services",
           "status": "Proposed",
@@ -2324,8 +2655,6 @@
       "strategy_set": [
         "Competition",
         "Disclosure",
-        "Disclosure / Competition (hybrid)",
-        "Disclosure / Rights & Liabilities (hybrid)",
         "Rights & Liabilities",
         "Self-Regulation"
       ],
@@ -2457,7 +2786,7 @@
         },
         {
           "name": "AI Basic Act (eff. Jan 2026)",
-          "strategy": "Disclosure / Rights & Liabilities (hybrid)",
+          "strategy": "Disclosure",
           "sub_type": null,
           "sector": "General (high-impact AI)",
           "status": "Operative, unenforced",
@@ -2491,7 +2820,7 @@
         },
         {
           "name": "Online Platform Fairness Act (proposed)",
-          "strategy": "Disclosure / Competition (hybrid)",
+          "strategy": "Disclosure",
           "sub_type": null,
           "sector": "Digital platforms (≥KRW 10B revenue / ≥KRW 100B GTV)",
           "status": "Proposed",
@@ -3106,271 +3435,270 @@
     {
       "id": "us-states-composite",
       "name": "US States (Composite)",
-      "design_logic": "",
-      "key_finding": "",
+      "design_logic": "Accumulated",
+      "key_finding": "The legislative wave doubled in volume between 2025 and 2026 while maintaining a 100% failure rate for general prohibition; grocery-sector prohibition passed in two states (New Mexico, Maryland), confirming that industry opposition determines which regulatory framings survive the political economy filter.",
       "instrument_count": 19,
       "operative_count": 0,
-      "reaches_core_count": 0,
-      "failed_count": 0,
+      "reaches_core_count": 18,
+      "failed_count": 3,
       "strategy_set": [
-        "Competition",
         "Disclosure",
-        "Disclosure + opt-out",
-        "Prohibition",
-        "Prohibition + disclosure",
-        "Prohibition + moratorium"
+        "Prohibition"
       ],
-      "species_set": [],
+      "species_set": [
+        "Collusion",
+        "Core Species"
+      ],
       "year_first": null,
       "year_latest": null,
-      "region": "Other",
+      "region": "North America",
       "molecule_file": "sp-us-states.md",
-      "opening": "",
+      "opening": "Between 2024 and April 2026, US state legislatures produced a rapid, accelerating legislative wave targeting surveillance pricing, growing from 10 bills in 2024 to 51 across 24 states in 2025 to over 40 in the first quarter of 2026 alone (already outpacing the full 2025 total). The wave has now produced two enacted prohibition instruments beyond New York: New Mexico's HB 285 (signed March 2026, the first grocery-sector prohibition) and Maryland's Protection from Predatory Pricing Act (passed April 2026, the second). General prohibition of surveillance pricing across all sectors maintains a 100% failure rate across both legislative cycles, with every such bill dying in committee or on the floor. The dominant proposed strategy remains general prohibition, yet the only strategies that have produced enacted instruments are disclosure (New York A6765, profiled separately) and sector-specific grocery prohibition (New Mexico, Maryland). In February 2026, the United Food and Commercial Workers International Union launched a national campaign providing model legislation (surveillance pricing prohibition combined with electronic shelf label ban) to at least twelve states, marking the wave's transition from decentralized spontaneity to coordinated campaign in the grocery sector. Industry opposition (led by the California Chamber of Commerce, TechNet, National Retail Federation, and Chamber of Progress) continues to determine which strategies survive. The Congressional attempt to preempt state action through a ten-year moratorium on state AI regulations in the budget reconciliation bill failed when the Senate stripped it 99-1, preserving the state legislative pathway.",
       "instruments": [
         {
-          "name": "HB 1264 (2025)",
+          "name": "HB 1264 (CO, 2025)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "General (pricing + wages)",
-          "status": "",
-          "enforcement_mechanism": "Would have included AG + DA civil actions up to $10,000/violation; private right of action with $3,000 minimum damages",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Failed",
+          "enforcement_mechanism": "Would have: AG + DA civil actions $10K/violation; PRA $3K minimum",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Blocked",
           "private_right_of_action": true,
           "timeline": []
         },
         {
-          "name": "SB 164 (2025)",
+          "name": "SB 164 (GA, 2025)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "General (pricing + wages)",
-          "status": "",
-          "enforcement_mechanism": "Would have included AG enforcement; civil penalties up to $10,000/violation; private right of action",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Failed",
+          "enforcement_mechanism": "Would have: AG; civil penalties $10K/violation; PRA",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Blocked",
           "private_right_of_action": true,
           "timeline": []
         },
         {
-          "name": "HB 4248 (2025)",
-          "strategy": "Disclosure + opt-out",
-          "sub_type": null,
-          "sector": "General (online commerce)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
-          "private_right_of_action": false,
-          "timeline": []
-        },
-        {
-          "name": "HB 4544 (2026)",
+          "name": "HB 4248 (IL, 2025)",
           "strategy": "Disclosure",
           "sub_type": null,
-          "sector": "General (financial services exempted)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "sector": "General (online commerce)",
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HF 2452 / SF 3098 (2025)",
+          "name": "HB 4544 (IL, 2026)",
+          "strategy": "Disclosure",
+          "sub_type": null,
+          "sector": "General (financial exempt)",
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
+          "private_right_of_action": false,
+          "timeline": []
+        },
+        {
+          "name": "HF 2452 / SF 3098 (MN, 2025)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "General (AI-driven dynamic pricing)",
-          "status": "",
-          "enforcement_mechanism": "Would have included AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Failed",
+          "enforcement_mechanism": "Would have: AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Blocked",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "S 3612 (2025)",
+          "name": "S 3612 (NJ, 2025)",
           "strategy": "Prohibition",
           "sub_type": null,
-          "sector": "General (biometric and personal data)",
-          "status": "",
-          "enforcement_mechanism": "Division of Consumer Affairs enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "sector": "General (biometric + personal data)",
+          "status": "Proposed",
+          "enforcement_mechanism": "Division of Consumer Affairs",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HB 285 (2025-2026)",
-          "strategy": "Prohibition + disclosure",
+          "name": "HB 285 (NM, 2025-2026)",
+          "strategy": "Prohibition",
           "sub_type": null,
-          "sector": "Grocery and retail (sector-specific)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement under Unfair Practices Act",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "sector": "Grocery and retail",
+          "status": "Enacted",
+          "enforcement_mechanism": "AG under Unfair Practices Act",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Passed",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HB 1942 (2025)",
+          "name": "HB 1942 (PA, 2025)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "General",
-          "status": "",
-          "enforcement_mechanism": "Civil penalties up to $12,500/violation",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Proposed",
+          "enforcement_mechanism": "Civil penalties $12,500/violation",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "SB 2567 (2025)",
+          "name": "SB 2567 (TX, 2025)",
           "strategy": "Disclosure",
           "sub_type": null,
           "sector": "General (AI/algorithmic pricing)",
-          "status": "",
+          "status": "Proposed",
           "enforcement_mechanism": "Deceptive trade practice under DTPA",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "SB 79 (2025)",
-          "strategy": "Competition",
+          "name": "SB 79 (OH, 2025)",
+          "strategy": "Disclosure",
           "sub_type": null,
-          "sector": "General (nonpublic competitor data in algorithms)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
+          "sector": "General (nonpublic competitor data)",
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Collusion",
           "reaches_core": false,
-          "pe_outcome": null,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HB 99 (2025)",
+          "name": "HB 99 (MA, 2025)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "Grocery (biometric data pricing)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HB 33 (2026)",
+          "name": "HB 33 (KY, 2026)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "General (amends KCDPA)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement under KCDPA",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Proposed",
+          "enforcement_mechanism": "AG under KCDPA",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HB 121 (2026)",
+          "name": "HB 121 (VA, 2026)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "General (consumer transactions)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "SB 1746 (2026)",
-          "strategy": "Prohibition + disclosure",
+          "name": "SB 1746 (FL, 2026)",
+          "strategy": "Prohibition",
           "sub_type": null,
           "sector": "General",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HB 2481 (2026)",
-          "strategy": "Prohibition + moratorium",
+          "name": "HB 2481 (WA, 2026)",
+          "strategy": "Prohibition",
           "sub_type": null,
-          "sector": "Retail (+ 4-year moratorium on electronic shelf labels in stores >15,000 sq ft)",
-          "status": "",
-          "enforcement_mechanism": "Consumer Protection Act; Department of Commerce study mandated",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "sector": "Retail (+ 4-year ESL moratorium, stores >15K sq ft)",
+          "status": "Proposed",
+          "enforcement_mechanism": "Consumer Protection Act; Commerce study mandated",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "SB 387 / Protection from Predatory Pricing Act (2026)",
+          "name": "SB 387 / HB 895 (MD, 2026)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "Grocery (governor priority)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement; civil penalties up to $10,000 first offense, $25,000 subsequent",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Enacted",
+          "enforcement_mechanism": "AG; civil penalties $10K first, $25K subsequent",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Passed",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HB 1468 / SB 1807 (2026)",
+          "name": "HB 1468 / SB 1807 (TN, 2026)",
           "strategy": "Prohibition",
           "sub_type": null,
-          "sector": "General (financial and insurance exempted)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "sector": "General (financial and insurance exempt)",
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "HB 148 (2026)",
+          "name": "HB 148 (OK, 2026)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "General (pricing + wages)",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         },
         {
-          "name": "ME HP 1055 (2025)",
+          "name": "HP 1055 (ME, 2025)",
           "strategy": "Prohibition",
           "sub_type": null,
           "sector": "Grocery and food service",
-          "status": "",
-          "enforcement_mechanism": "AG enforcement",
-          "target_species": "",
-          "reaches_core": false,
-          "pe_outcome": null,
+          "status": "Proposed",
+          "enforcement_mechanism": "AG",
+          "target_species": "Core Species",
+          "reaches_core": true,
+          "pe_outcome": "Stalled",
           "private_right_of_action": false,
           "timeline": []
         }

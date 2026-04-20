@@ -119,10 +119,24 @@ def parse_opening(text):
         return opening
     return ""
 
+# Normalize strategy names from messy old-format molecules
+def normalize_strategy(raw):
+    raw = re.sub(r'\s*\([^)]*\)', '', raw).strip()  # strip parentheticals
+    raw = raw.split('/')[0].strip()  # take first if compound
+    raw = raw.split('+')[0].strip()  # take first if compound
+    mapping = {
+        "command and control": "Prohibition",
+        "code-as-regulation": "Direct Action",
+        "self-regulation": "Self-Regulation",
+        "rights & liabilities": "Rights & Liabilities",
+        "institutional coordination": "Direct Action",
+    }
+    return mapping.get(raw.lower(), raw.title() if raw[0:1].islower() else raw) if raw else ""
+
 # Map table row to instrument dict
 def row_to_instrument(row, timelines):
     name = row.get("Instrument", "")
-    strategy = row.get("Strategy", "")
+    strategy = normalize_strategy(row.get("Strategy", ""))
     subtype = row.get("Sub-type", "")
     sector = row.get("Sector", "")
     status = row.get("Status", "")

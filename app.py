@@ -614,25 +614,20 @@ def render_analysis():
     st.markdown("## What does the pattern show?")
     st.markdown("<p style='color:#57534e; font-size:0.88rem;'>Four findings from reading across fifteen jurisdictions.</p>", unsafe_allow_html=True)
 
-    analysis_path = Path(__file__).parent / "analysis.md"
-    if analysis_path.exists():
-        text = analysis_path.read_text(encoding="utf-8")
-        text = re.sub(r'\[\[([^|\]]+)\|([^\]]+)\]\]', r'\2', text)
-        text = re.sub(r'\[\[([^\]]+)\]\]', r'\1', text)
+    findings = [
+        ("Surveillance pricing is unreached.",
+         "Enforcement actions in the dataset reach collusion, drip pricing, surge pricing, and price walking. All involve practices whose structural characteristics match what the instruments were designed to detect. No jurisdiction in the dataset has an operative instrument that has been enforced against surveillance pricing. Fifteen out of fifteen."),
+        ("Formal coverage produces no enforcement.",
+         "A small number of instruments do address the right practice. GDPR Article 22 has been operative since 2018. The Omnibus Directive's disclosure obligation since 2022. New York's A6765 since November 2025. None has produced enforcement on personalized pricing. The structural characteristics explain why: the consumer does not know the right has been triggered, and the regulator cannot observe the practice from outside."),
+        ("Enforcement follows the instrument's original design.",
+         "Each institution enforces what its instrument was designed for. Competition authorities find coordination. Consumer protection finds deception visible in the interface. Sector regulators find practices that are already politically salient. The instruments carry the institutional fingerprint of the problems they were originally built to solve."),
+        ("The enforcing institution was solving a different problem.",
+         "In fourteen of fifteen jurisdictions, the institution that actually enforces diverges from what the regulatory strategy theoretically implies. Competition authorities have become the de facto enforcers because they had the tools for a related problem. The instruments were designed for adjacent practices and stretched toward surveillance pricing. The stretch does not reach."),
+    ]
 
-        # Split by ## headings
-        sections = re.split(r'^(## .+)$', text, flags=re.MULTILINE)
-        intro = sections[0].strip()
-        if intro:
-            st.markdown(intro)
-
-        for i in range(1, len(sections), 2):
-            heading = sections[i].replace("## ", "").strip()
-            body = sections[i+1].strip() if i+1 < len(sections) else ""
-            with st.expander(heading):
-                st.markdown(body)
-    else:
-        st.info("Analysis file not found.")
+    for title, body in findings:
+        with st.expander(title):
+            st.markdown(body)
 
 
 # ============================================================

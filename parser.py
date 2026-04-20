@@ -116,7 +116,9 @@ def parse_opening(text):
         # Strip wikilinks
         opening = re.sub(r'\[\[([^|\]]+)\|([^\]]+)\]\]', r'\2', opening)
         opening = re.sub(r'\[\[([^\]]+)\]\]', r'\1', opening)
-        return opening
+        # Strip internal references
+        opening = re.sub(r'\*Jurisdiction molecule for[^*]*\*\.?\s*', '', opening)
+        return opening.strip()
     return ""
 
 # Normalize strategy names from messy old-format molecules

@@ -8,25 +8,45 @@ from pathlib import Path
 from collections import Counter
 
 st.set_page_config(
-    page_title="Surveillance Pricing Jurisdiction Tracker",
+    page_title="Surveillance Pricing Tracker",
+    page_icon=None,
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
-# --- Auth ---
+# --- Landing + Auth ---
+
+LANDING_COPY = """How is the world trying to regulate surveillance pricing? In 2024, the FTC defined the practice: firms using your personal data to set the price they think you'll pay. This dataset maps over 150 instruments across fifteen jurisdictions to find out what reaches it. The answer: almost everything regulators have built reaches the visible forms of algorithmic pricing, coordination, drip pricing, surge pricing. Almost nothing reaches surveillance pricing itself."""
 
 def check_password():
     if "authenticated" not in st.session_state:
         st.session_state.authenticated = False
     if st.session_state.authenticated:
         return True
-    pwd = st.text_input("Password", type="password", key="pwd_input")
+    st.markdown("""
+    <style>
+        .block-container { max-width: 560px !important; padding-top: 8rem !important; }
+        /* Hide sidebar on landing page */
+        section[data-testid="stSidebar"] { display: none !important; }
+        [data-testid="collapsedControl"] { display: none !important; }
+        /* Hide all Streamlit chrome on landing */
+        header, [role="banner"] { display: none !important; }
+        #MainMenu { visibility: hidden; }
+        footer { visibility: hidden; }
+        [data-testid="stDeployButton"], .stDeployButton { display: none !important; }
+        [data-testid="stToolbar"] { display: none !important; }
+    </style>
+    """, unsafe_allow_html=True)
+    st.markdown("## Surveillance Pricing Tracker")
+    st.markdown(f"<p style='font-size:0.92rem; color:#57534e; line-height:1.7;'>{LANDING_COPY}</p>", unsafe_allow_html=True)
+    pwd = st.text_input("Password", type="password", key="pwd_input", label_visibility="collapsed", placeholder="Password")
     if pwd:
         if pwd == st.secrets.get("password", ""):
             st.session_state.authenticated = True
             st.rerun()
         else:
             st.error("Incorrect password")
+    st.caption("Comparative regulation research, 2026")
     return False
 
 if not check_password():
@@ -42,188 +62,231 @@ def load_data():
 @st.cache_data
 def load_molecule(filename):
     path = Path(__file__).parent / "molecules" / filename
+    if not path.exists():
+        path = Path.home() / "exocortex" / "library" / "molecules" / filename
     if path.exists():
         text = path.read_text(encoding="utf-8")
         if text.startswith("---"):
             end = text.find("---", 3)
             if end != -1:
                 text = text[end + 3:].strip()
+        # Strip Key Data block
+        text = re.sub(r'^## Key Data\s*\n.*?\n(?=\n)', '', text, flags=re.DOTALL | re.MULTILINE)
+        # Strip wikilinks
         text = re.sub(r'\[\[([^|\]]+)\|([^\]]+)\]\]', r'\2', text)
         text = re.sub(r'\[\[([^\]]+)\]\]', r'\1', text)
-        return text
+        # Strip "Jurisdiction molecule for..." line
+        text = re.sub(r'\n\*Jurisdiction molecule for[^\n]*\n', '\n', text)
+        return text.strip()
     return None
-
-@st.cache_data
-def load_analysis():
-    path = Path(__file__).parent / "analysis.md"
-    if path.exists():
-        text = path.read_text(encoding="utf-8")
-        text = re.sub(r'\[\[([^|\]]+)\|([^\]]+)\]\]', r'\2', text)
-        text = re.sub(r'\[\[([^\]]+)\]\]', r'\1', text)
-        return text
-    return None
-
-@st.cache_data
-def parse_analysis_sections():
-    """Parse analysis.md into navigable sections."""
-    text = load_analysis()
-    if not text:
-        return []
-
-    sections = []
-    current_h2 = None
-    current_h2_body = ""
-
-    for line in text.split("\n"):
-        if line.startswith("## "):
-            if current_h2:
-                sections.append({"level": "h2", "title": current_h2, "body": current_h2_body.strip()})
-            current_h2 = line[3:].strip()
-            current_h2_body = ""
-        elif line.startswith("### "):
-            if current_h2_body.strip():
-                # flush any h2 intro text before the first h3
-                pass
-            current_h2_body += line + "\n"
-        else:
-            current_h2_body += line + "\n"
-
-    if current_h2:
-        sections.append({"level": "h2", "title": current_h2, "body": current_h2_body.strip()})
-
-    # Now split each h2 section into h3 subsections
-    result = []
-    for sec in sections:
-        h3_parts = re.split(r'^### ', sec["body"], flags=re.MULTILINE)
-        # First part is intro text (before any ###)
-        intro = h3_parts[0].strip()
-        subsections = []
-        for part in h3_parts[1:]:
-            lines = part.split("\n", 1)
-            title = lines[0].strip()
-            body = lines[1].strip() if len(lines) > 1 else ""
-            subsections.append({"title": title, "body": body})
-
-        result.append({
-            "title": sec["title"],
-            "intro": intro,
-            "subsections": subsections,
-        })
-
-    return result
-
 
 data = load_data()
 
 # --- Constants ---
 
-STATUS_COLORS = {
-    "Operative": "#22c55e",
-    "Enacted": "#3b82f6",
-    "Proposed": "#eab308",
-    "Failed": "#ef4444",
-    "Paused": "#6b7280",
-    "Active Investigation": "#a855f7",
-}
-
-DESIGN_LOGIC_COLORS = {
-    "Unified": "#22c55e",
-    "Differentiated": "#3b82f6",
-    "Accumulated": "#eab308",
-}
-
 STRATEGY_ORDER = [
-    "Prohibition", "Disclosure", "Competition",
-    "Rights & Liabilities", "Code-as-Regulation",
-    "Self-Regulation", "Direct Action",
+    "Prohibition", "Competition", "Disclosure",
+    "Rights & Liabilities", "Direct Action",
+    "Self-Regulation", "Incentive-Based",
 ]
 
 STRATEGY_COLORS = {
-    "Prohibition": "#ef4444",
-    "Disclosure": "#3b82f6",
-    "Competition": "#f97316",
-    "Rights & Liabilities": "#8b5cf6",
-    "Code-as-Regulation": "#06b6d4",
-    "Self-Regulation": "#6b7280",
-    "Direct Action": "#ec4899",
+    "Prohibition": "#dc2626",
+    "Disclosure": "#2563eb",
+    "Competition": "#ea580c",
+    "Rights & Liabilities": "#7c3aed",
+    "Direct Action": "#db2777",
+    "Code-as-Regulation": "#0891b2",
+    "Self-Regulation": "#78716c",
+    "Incentive-Based": "#059669",
+}
+
+STATUS_COLORS = {
+    "Operative": "#166534",
+    "Operative, unenforced": "#854d0e",
+    "Enacted": "#1e40af",
+    "Proposed": "#854d0e",
+    "Failed": "#dc2626",
+    "Paused": "#78716c",
+    "Contested": "#dc2626",
+    "Settled": "#166534",
+    "Study": "#57534e",
 }
 
 PE_COLORS = {
-    "Stalled": "#eab308",
-    "Blocked": "#ef4444",
-    "Withdrawn": "#6b7280",
-    "Passed": "#22c55e",
+    "Stalled": "#854d0e",
+    "Blocked": "#dc2626",
+    "Withdrawn": "#78716c",
+    "Passed": "#166534",
+    "Contested": "#dc2626",
+    "Settled": "#166534",
 }
 
-# --- CSS ---
+DESIGN_LOGIC_COLORS = {
+    "Unified": "#166534",
+    "Differentiated": "#1e40af",
+    "Accumulated": "#854d0e",
+}
+
+SPECIES_ORDER = [
+    "Core Species", "Collusion", "Drip Pricing",
+    "Surge Pricing", "Price Walking", "General",
+]
+
+# --- CSS (Light Theme) ---
 
 st.markdown("""
 <style>
-    .block-container { max-width: 1200px; padding-top: 2rem; }
-    h1 { font-size: 1.75rem !important; font-weight: 600 !important; margin-bottom: 0.25rem !important; }
-    .card-badge {
-        font-size: 0.72rem;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-weight: 500;
+    /* Light theme base */
+    .stApp { background-color: #fafaf9; }
+    .block-container { max-width: 1100px; padding-top: 1.5rem; }
+
+    /* Typography */
+    h1, h2, h3 { font-family: 'Georgia', 'Source Serif 4', serif !important; color: #1c1917 !important; }
+    h1 { font-size: 1.5rem !important; font-weight: 700 !important; margin-bottom: 0.25rem !important; }
+    h2 { font-size: 1.2rem !important; font-weight: 600 !important; }
+
+    /* Hide ALL Streamlit chrome */
+    #MainMenu { visibility: hidden !important; }
+    header[data-testid="stHeader"],
+    .stAppHeader,
+    header:has(button),
+    [role="banner"] {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
-    .strategy-chip {
-        font-size: 0.7rem;
-        padding: 2px 7px;
-        border-radius: 3px;
-        display: inline-block;
-        margin: 1px;
-        font-weight: 500;
+    footer, .stAppFooter { visibility: hidden !important; }
+    [data-testid="stDeployButton"],
+    .stDeployButton,
+    [data-testid="stToolbar"],
+    .stToolbar,
+    [data-testid="stDecoration"],
+    [data-testid="stStatusWidget"] {
+        display: none !important;
     }
-    .status-pill {
-        font-size: 0.72rem;
-        padding: 2px 8px;
-        border-radius: 10px;
-        font-weight: 500;
-        display: inline-block;
-    }
-    .inst-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 1rem 0; }
-    .inst-table th {
-        text-align: left;
-        padding: 0.6rem 0.75rem;
-        border-bottom: 2px solid #2a2a3a;
-        color: #6b7280;
-        font-weight: 500;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    .inst-table td {
-        padding: 0.6rem 0.75rem;
-        border-bottom: 1px solid #1a1a2a;
-        color: #d1d5db;
-        vertical-align: top;
-    }
-    .inst-table tr:hover td { background: rgba(255,255,255,0.02); }
-    .inst-name { font-weight: 500; color: #fafafa; }
-    .inst-summary { font-size: 0.78rem; color: #9ca3af; margin-top: 2px; }
-    /* Sidebar styling */
+
+    /* Sidebar - always visible, no collapse */
     section[data-testid="stSidebar"] {
-        padding-top: 1rem;
+        background: #fff;
+        border-right: 1px solid #e7e5e4;
+        min-width: 220px !important;
+        width: 220px !important;
+        transform: none !important;
+    }
+    section[data-testid="stSidebar"] button[kind="header"] {
+        display: none;
+    }
+    [data-testid="collapsedControl"] {
+        display: none;
     }
     section[data-testid="stSidebar"] .stButton button {
         text-align: left;
         width: 100%;
         border: none;
         background: transparent;
-        padding: 0.3rem 0.75rem;
-        font-size: 0.85rem;
+        padding: 6px 12px;
+        font-size: 0.82rem;
+        color: #57534e;
+        border-radius: 4px;
     }
     section[data-testid="stSidebar"] .stButton button:hover {
-        background: rgba(255,255,255,0.05);
+        background: #f5f5f4;
     }
-    section[data-testid="stSidebar"] .stMarkdown {
-        padding-left: 0.25rem;
+
+    /* Cards */
+    [data-testid="stExpander"] {
+        border: 1px solid #e7e5e4 !important;
+        border-radius: 8px !important;
+        background: #fff;
     }
-    section[data-testid="stSidebar"] h3 {
-        font-size: 0.9rem !important;
-        padding-left: 0.25rem;
-        margin-bottom: 0.25rem !important;
+
+    /* Metric cards */
+    [data-testid="stMetric"] {
+        background: #fff;
+        border: 1px solid #e7e5e4;
+        border-radius: 8px;
+        padding: 12px 16px;
+    }
+    [data-testid="stMetricValue"] { color: #1c1917 !important; }
+    [data-testid="stMetricLabel"] {
+        color: #a8a29e !important;
+        text-transform: uppercase;
+        font-size: 0.72rem !important;
+        letter-spacing: 0.05em;
+    }
+
+    /* Strategy chips */
+    .chip {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: 3px;
+        display: inline-block;
+        margin: 1px;
+        font-weight: 500;
+    }
+
+    /* Status pills */
+    .pill {
+        font-size: 0.72rem;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-weight: 500;
+        display: inline-block;
+    }
+
+    /* Tables */
+    .inst-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 1rem 0; }
+    .inst-table th {
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 2px solid #e7e5e4;
+        color: #a8a29e;
+        font-weight: 500;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .inst-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #f5f5f4;
+        color: #44403c;
+        vertical-align: top;
+    }
+    .inst-table tr:hover td { background: #fafaf9; }
+    .inst-name { font-weight: 500; color: #1c1917; }
+    .inst-summary { font-size: 0.75rem; color: #a8a29e; margin-top: 2px; }
+
+    /* Core callout */
+    .core-callout {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        border-radius: 8px;
+        padding: 14px 20px;
+        margin-bottom: 20px;
+        font-size: 0.88rem;
+        color: #991b1b;
+    }
+
+    /* Section labels */
+    .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #a8a29e;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    /* Tooltip style */
+    .has-tip {
+        border-bottom: 1px dotted #a8a29e;
+        cursor: help;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -232,208 +295,237 @@ st.markdown("""
 # --- Helpers ---
 
 def esc(text):
-    return html_lib.escape(str(text))
-
-def design_logic_badge(logic):
-    color = DESIGN_LOGIC_COLORS.get(logic, "#6b7280")
-    bg = f"{color}20"
-    return f'<span class="card-badge" style="color:{color}; background:{bg};">{esc(logic)}</span>'
-
-def status_pill(status):
-    color = STATUS_COLORS.get(status, "#6b7280")
-    bg = f"{color}20"
-    return f'<span class="status-pill" style="color:{color}; background:{bg};">{esc(status)}</span>'
-
-def status_dot(status):
-    color = STATUS_COLORS.get(status, "#6b7280")
-    return f'<span style="color:{color};">●</span>'
+    return html_lib.escape(str(text)) if text else ""
 
 def strategy_chip(name):
-    color = STRATEGY_COLORS.get(name, "#6b7280")
-    bg = f"{color}20"
-    return f'<span class="strategy-chip" style="color:{color}; background:{bg}; border:1px solid {color}40;">{esc(name)}</span>'
+    color = STRATEGY_COLORS.get(name, "#78716c")
+    bg = f"{color}25"
+    return f'<span class="chip" style="color:{color}; background:{bg}; border:1px solid {color}30;">{esc(name)}</span>'
+
+def status_pill(status):
+    color = STATUS_COLORS.get(status, "#78716c")
+    bg = f"{color}25"
+    return f'<span class="pill" style="color:{color}; background:{bg};">{esc(status)}</span>'
 
 def pe_pill(outcome):
-    color = PE_COLORS.get(outcome, "#6b7280")
-    bg = f"{color}20"
-    return f'<span class="status-pill" style="color:{color}; background:{bg};">{esc(outcome)}</span>'
+    color = PE_COLORS.get(outcome, "#78716c")
+    bg = f"{color}25"
+    return f'<span class="pill" style="color:{color}; background:{bg};">{esc(outcome)}</span>'
+
+def design_badge(logic):
+    color = DESIGN_LOGIC_COLORS.get(logic, "#78716c")
+    bg = f"{color}25"
+    return f'<span class="chip" style="color:{color}; background:{bg}; border:1px solid {color}30;">{esc(logic)}</span>'
 
 
 # --- State ---
 
 if "page" not in st.session_state:
-    st.session_state.page = "grid"
+    st.session_state.page = "species"  # default: "Does it reach surveillance pricing?"
 if "jurisdiction_id" not in st.session_state:
     st.session_state.jurisdiction_id = None
-if "analysis_section" not in st.session_state:
-    st.session_state.analysis_section = None
 
 
-# --- Sidebar Navigation ---
+# --- Sidebar ---
 
 with st.sidebar:
-    st.markdown("### Navigation")
+    st.markdown('<div class="section-label">Views</div>', unsafe_allow_html=True)
 
-    # Overview
-    if st.button("All Jurisdictions", key="nav_grid", use_container_width=True):
-        st.session_state.page = "grid"
-        st.session_state.jurisdiction_id = None
-        st.rerun()
+    views = [
+        ("Does it reach surveillance pricing?", "species"),
+        ("What have regulators built?", "landscape"),
+        ("How did each jurisdiction get here?", "jurisdictions"),
+        ("What keeps failing?", "political_economy"),
+        ("What does the pattern show?", "analysis"),
+    ]
 
-    # New views
-    st.markdown("**Views**")
-    if st.button("Timeline", key="nav_timeline", use_container_width=True):
-        st.session_state.page = "timeline"
-        st.rerun()
-    if st.button("Institution Divergence", key="nav_divergence", use_container_width=True):
-        st.session_state.page = "divergence"
-        st.rerun()
-    if st.button("Strategy × Visibility", key="nav_matrix", use_container_width=True):
-        st.session_state.page = "matrix"
-        st.rerun()
-    if st.button("Political Economy", key="nav_pe", use_container_width=True):
-        st.session_state.page = "political_economy"
-        st.rerun()
+    for label, key in views:
+        if st.button(label, key=f"nav_{key}", use_container_width=True):
+            st.session_state.page = key
+            st.session_state.jurisdiction_id = None
+            st.rerun()
 
     st.markdown("---")
+    st.markdown('<div class="section-label">Jurisdictions</div>', unsafe_allow_html=True)
 
-    # Jurisdictions list
-    st.markdown("**Jurisdictions**")
     for j in data["jurisdictions"]:
-        label = j["name"]
-        if st.button(label, key=f"nav_j_{j['id']}", use_container_width=True):
+        if st.button(j["name"], key=f"nav_j_{j['id']}", use_container_width=True):
             st.session_state.page = "detail"
             st.session_state.jurisdiction_id = j["id"]
             st.rerun()
 
-    st.markdown("---")
 
-    # Analysis sections (H2 only, subsections navigable via tabs inside)
-    st.markdown("**Analysis**")
-    analysis_sections = parse_analysis_sections()
-    for sec in analysis_sections:
-        if st.button(sec["title"].split("(")[0].strip(), key=f"nav_a_{sec['title'][:20]}", use_container_width=True):
-            st.session_state.page = "analysis"
-            st.session_state.analysis_section = sec["title"]
-            st.rerun()
+# ============================================================
+# VIEW 1: Does it reach surveillance pricing? (Target Species)
+# ============================================================
 
-    st.markdown("---")
-    # attribution removed
+def render_species():
+    st.markdown("## Does it reach surveillance pricing?")
+    st.markdown("<p style='color:#57534e; font-size:0.88rem;'>Each row is a species of algorithmic pricing. Each column is a regulatory strategy. The bottom row is surveillance pricing. Filter to see what reaches it.</p>", unsafe_allow_html=True)
 
+    # Build species x strategy matrix
+    all_instruments = [(j, i) for j in data["jurisdictions"] for i in j["instruments"]]
+    total = len(all_instruments)
+    reaches = sum(1 for _, i in all_instruments if i.get("reaches_core"))
+    gap = total - reaches
 
-# --- URL param handling ---
+    # Core callout
+    st.markdown(f'<div class="core-callout"><strong>{reaches} of {total}</strong> instruments reach surveillance pricing. The rest ({gap}) target coordination, drip pricing, surge pricing, or general consumer protection.</div>', unsafe_allow_html=True)
 
-params = st.query_params
-if "jurisdiction" in params:
-    jid = params["jurisdiction"]
-    if any(j["id"] == jid for j in data["jurisdictions"]):
-        st.session_state.page = "detail"
-        st.session_state.jurisdiction_id = jid
+    # Matrix: species (rows) x strategy (columns)
+    species_list = SPECIES_ORDER
+    strategy_list = [s for s in STRATEGY_ORDER if any(i.get("strategy") == s for _, i in all_instruments)]
+
+    matrix_data = []
+    for sp in species_list:
+        for st_name in strategy_list:
+            count = sum(1 for _, i in all_instruments
+                       if i.get("target_species") == sp and i.get("strategy") == st_name)
+            matrix_data.append({"Species": sp, "Strategy": st_name, "count": count})
+
+    df = pd.DataFrame(matrix_data)
+
+    chart = alt.Chart(df).mark_rect().encode(
+        x=alt.X("Strategy:N", sort=strategy_list, title=None,
+                axis=alt.Axis(labelAngle=-45, labelFontSize=11)),
+        y=alt.Y("Species:N", sort=species_list, title=None,
+                axis=alt.Axis(labelFontSize=11)),
+        color=alt.condition(
+            alt.datum.count > 0,
+            alt.Color("count:Q",
+                      scale=alt.Scale(scheme="orangered", domain=[0, 20]),
+                      legend=alt.Legend(title="Instruments")),
+            alt.value("#f5f5f4")
+        ),
+        tooltip=["Species:N", "Strategy:N", "count:Q"],
+    ).properties(height=300).configure_axis(
+        grid=False,
+    ).configure_view(
+        strokeWidth=0,
+    )
+
+    st.altair_chart(chart, use_container_width=True)
+
+    # Reaches surveillance pricing filter
+    st.markdown("### Instruments that reach surveillance pricing")
+    reaches_instruments = [(j, i) for j, i in all_instruments if i.get("reaches_core")]
+    if reaches_instruments:
+        table_html = '<table class="inst-table"><thead><tr><th>Jurisdiction</th><th>Instrument</th><th>Strategy</th><th>Status</th><th>Species</th></tr></thead><tbody>'
+        for j, i in reaches_instruments:
+            table_html += f'<tr><td style="font-size:0.82rem;">{esc(j["name"])}</td><td><span class="inst-name">{esc(i["name"])}</span></td><td>{strategy_chip(i["strategy"])}</td><td>{status_pill(i["status"])}</td><td style="font-size:0.78rem;">{esc(i.get("target_species",""))}</td></tr>'
+        table_html += '</tbody></table>'
+        st.markdown(table_html, unsafe_allow_html=True)
+    else:
+        st.info("No instruments with 'Reaches Core' data yet. Molecules still being updated.")
 
 
 # ============================================================
-# GRID VIEW
+# VIEW 2: What have regulators built? (Landscape)
 # ============================================================
 
-def render_grid():
-    st.title("Surveillance Pricing Jurisdiction Tracker")
-    st.caption("Comparative regulation across 15 jurisdictions. Baldwin's regulatory strategies mapped to instruments")
+def render_landscape():
+    st.markdown("## What have regulators built?")
+    st.markdown("<p style='color:#57534e; font-size:0.88rem;'>Fifteen jurisdictions, seven regulatory strategies. Every cell shows instrument count by status.</p>", unsafe_allow_html=True)
 
-    # Stats
-    total_instruments = sum(j["instrument_count"] for j in data["jurisdictions"])
-    operative = sum(1 for j in data["jurisdictions"] for i in j["instruments"] if i["status"] == "Operative")
-    reaches = sum(1 for j in data["jurisdictions"] for i in j["instruments"] if i.get("reaches_proprietary_pricing"))
+    all_instruments = [(j, i) for j in data["jurisdictions"] for i in j["instruments"]]
 
+    # Metrics
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("Jurisdictions", len(data["jurisdictions"]))
-    m2.metric("Instruments", total_instruments)
+    m2.metric("Instruments", len(all_instruments))
+    operative = sum(1 for _, i in all_instruments if i["status"].startswith("Operative"))
     m3.metric("Operative", operative)
-    m4.metric("Reaches Proprietary Pricing", reaches)
+    reaches = sum(1 for _, i in all_instruments if i.get("reaches_core"))
+    m4.metric("Reaches surveillance pricing", reaches)
 
-    # Proprietary pricing gap chart
-    with st.expander("Proprietary pricing gap", expanded=False):
-        gap_rows = []
-        for j in data["jurisdictions"]:
-            r = sum(1 for i in j["instruments"] if i.get("reaches_proprietary_pricing"))
-            nr = j["instrument_count"] - r
-            gap_rows.append({"jurisdiction": j["name"], "count": r, "type": "Reaches proprietary"})
-            gap_rows.append({"jurisdiction": j["name"], "count": nr, "type": "Does not reach"})
-        gap_df = pd.DataFrame(gap_rows)
-        # Sort by proportion reaching
-        j_order = gap_df[gap_df["type"] == "Reaches proprietary"].sort_values("count")["jurisdiction"].tolist()
-        gap_chart = alt.Chart(gap_df).mark_bar().encode(
-            y=alt.Y("jurisdiction:N", sort=j_order, title=None),
-            x=alt.X("count:Q", title="Instruments"),
-            color=alt.Color("type:N",
-                scale=alt.Scale(domain=["Reaches proprietary", "Does not reach"], range=["#22c55e", "#2a2a3a"]),
-                legend=alt.Legend(title=None, orient="top"),
-            ),
-            tooltip=["jurisdiction:N", "type:N", "count:Q"],
-        ).properties(height=400)
-        st.altair_chart(gap_chart, use_container_width=True)
+    # Jurisdiction x Strategy heatmap
+    rows = []
+    for j in data["jurisdictions"]:
+        for i in j["instruments"]:
+            rows.append({
+                "Jurisdiction": j["name"],
+                "Strategy": i["strategy"],
+                "Status": i["status"],
+            })
+    df = pd.DataFrame(rows)
+
+    if not df.empty:
+        count_df = df.groupby(["Jurisdiction", "Strategy"]).size().reset_index(name="count")
+        j_order = [j["name"] for j in data["jurisdictions"]]
+        s_order = [s for s in STRATEGY_ORDER if s in df["Strategy"].unique()]
+
+        chart = alt.Chart(count_df).mark_rect().encode(
+            x=alt.X("Strategy:N", sort=s_order, title=None,
+                    axis=alt.Axis(labelAngle=-45, labelFontSize=11)),
+            y=alt.Y("Jurisdiction:N", sort=j_order, title=None,
+                    axis=alt.Axis(labelFontSize=11)),
+            color=alt.Color("count:Q",
+                           scale=alt.Scale(scheme="blues", domain=[0, 12]),
+                           legend=alt.Legend(title="Instruments")),
+            tooltip=["Jurisdiction:N", "Strategy:N", "count:Q"],
+        ).properties(height=450).configure_axis(
+            grid=False,
+        ).configure_view(
+            strokeWidth=0,
+        )
+
+        st.altair_chart(chart, use_container_width=True)
+
+
+# ============================================================
+# VIEW 3: How did each jurisdiction get here? (Cards)
+# ============================================================
+
+def render_jurisdictions():
+    st.markdown("## How did each jurisdiction get here?")
+    st.markdown("<p style='color:#57534e; font-size:0.88rem;'>Jurisdiction cards. Key finding, instrument count, strategy mix.</p>", unsafe_allow_html=True)
 
     # Filters
-    st.markdown("")
-    f1, f2, f3, f4 = st.columns(4)
+    f1, f2, f3 = st.columns(3)
     with f1:
         filter_logic = st.multiselect("Design Logic", ["Unified", "Differentiated", "Accumulated"], default=[], placeholder="All")
     with f2:
-        filter_strategy = st.multiselect("Strategy", STRATEGY_ORDER, default=[], placeholder="All")
+        filter_region = st.multiselect("Region", sorted(set(j.get("region", "Other") for j in data["jurisdictions"])), default=[], placeholder="All")
     with f3:
-        filter_status = st.multiselect("Status", list(STATUS_COLORS.keys()), default=[], placeholder="All")
-    with f4:
-        regions = sorted(set(j.get("region", "Other") for j in data["jurisdictions"]))
-        filter_region = st.multiselect("Region", regions, default=[], placeholder="All")
-
-    group_by_region = st.checkbox("Group by region", value=False)
+        filter_core = st.selectbox("Reaches surveillance pricing", ["All", "Has instruments that reach", "None reach"], index=0)
 
     jurisdictions = data["jurisdictions"]
     if filter_logic:
-        jurisdictions = [j for j in jurisdictions if j["design_logic"] in filter_logic]
-    if filter_strategy:
-        jurisdictions = [j for j in jurisdictions if any(i["strategy"] in filter_strategy for i in j["instruments"])]
-    if filter_status:
-        jurisdictions = [j for j in jurisdictions if any(i["status"] in filter_status for i in j["instruments"])]
+        jurisdictions = [j for j in jurisdictions if j.get("design_logic") in filter_logic]
     if filter_region:
         jurisdictions = [j for j in jurisdictions if j.get("region") in filter_region]
+    if filter_core == "Has instruments that reach":
+        jurisdictions = [j for j in jurisdictions if j.get("reaches_core_count", 0) > 0]
+    elif filter_core == "None reach":
+        jurisdictions = [j for j in jurisdictions if j.get("reaches_core_count", 0) == 0]
 
-    st.caption(f"{len(jurisdictions)} jurisdictions shown")
-
-    # Card grid
     COLS = 3
-
-    def render_jurisdiction_card(j):
+    def render_card(j):
         with st.container(border=True):
-            st.markdown(
-                f"**{esc(j['name'])}** {design_logic_badge(j['design_logic'])}",
-                unsafe_allow_html=True,
-            )
-            st.markdown(f"*{esc(j['key_finding'])}*")
+            st.markdown(f"**{esc(j['name'])}** {design_badge(j.get('design_logic',''))}", unsafe_allow_html=True)
 
-            status_counts = Counter(i["status"] for i in j["instruments"])
-            parts = []
-            for s in ["Operative", "Enacted", "Proposed", "Active Investigation", "Failed", "Paused"]:
-                n = status_counts.get(s, 0)
-                if n > 0:
-                    parts.append(f"{status_dot(s)} {n} {s.lower()}")
-            st.markdown(
-                f"**{j['instrument_count']}** instruments: " + " &nbsp; ".join(parts),
-                unsafe_allow_html=True,
-            )
+            finding = j.get("key_finding", "")
+            if finding:
+                st.markdown(f"*{esc(finding)}*")
 
-            # Proprietary pricing fraction + political economy
-            reaches = sum(1 for i in j["instruments"] if i.get("reaches_proprietary_pricing"))
-            total = j["instrument_count"]
-            r_color = "#22c55e" if reaches > 0 else "#6b7280"
-            pe_counts = Counter(i.get("political_economy_outcome") for i in j["instruments"] if i.get("political_economy_outcome"))
-            pe_html = " &nbsp;".join(f'{pe_pill(k)} {v}' for k, v in pe_counts.items()) if pe_counts else ""
+            # Stats line
+            inst_count = j.get("instrument_count", 0)
+            op_count = j.get("operative_count", 0)
+            st.caption(f"{inst_count} instruments, {op_count} operative")
+
+            # Reaches core
+            rc = j.get("reaches_core_count", 0)
+            rc_color = "#16a34a" if rc > 0 else "#dc2626"
+            pe_counts = Counter(i.get("pe_outcome") for i in j.get("instruments", []) if i.get("pe_outcome"))
+            pe_html = " ".join(f'{pe_pill(k)}&nbsp;{v}' for k, v in pe_counts.items()) if pe_counts else ""
             st.markdown(
-                f'<span style="color:{r_color}; font-size:0.78rem;">{reaches}/{total} reach proprietary</span>'
-                + (f" &nbsp;&nbsp;{pe_html}" if pe_html else ""),
+                f'<span style="color:{rc_color}; font-size:0.78rem; font-weight:500;">{rc}/{inst_count} reach surveillance pricing</span>'
+                + (f" &nbsp;{pe_html}" if pe_html else ""),
                 unsafe_allow_html=True,
             )
 
-            strategies = sorted(set(i["strategy"] for i in j["instruments"]))
+            # Strategy chips
+            strategies = sorted(set(i["strategy"] for i in j.get("instruments", []) if i.get("strategy")))
             chips = " ".join(strategy_chip(s) for s in strategies)
             st.markdown(chips, unsafe_allow_html=True)
 
@@ -442,29 +534,99 @@ def render_grid():
                 st.session_state.jurisdiction_id = j["id"]
                 st.rerun()
 
-    if group_by_region:
-        region_groups = {}
-        for j in jurisdictions:
-            r = j.get("region", "Other")
-            region_groups.setdefault(r, []).append(j)
-        for region_name in ["North America", "Europe", "Asia-Pacific", "Southeast Asia", "Other"]:
-            if region_name not in region_groups:
-                continue
-            st.markdown(f"### {region_name}")
-            group = region_groups[region_name]
-            rows = [group[i:i + COLS] for i in range(0, len(group), COLS)]
-            for row in rows:
-                cols = st.columns(COLS)
-                for idx, j in enumerate(row):
-                    with cols[idx]:
-                        render_jurisdiction_card(j)
+    rows_data = [jurisdictions[i:i+COLS] for i in range(0, len(jurisdictions), COLS)]
+    for row in rows_data:
+        cols = st.columns(COLS)
+        for idx, j in enumerate(row):
+            with cols[idx]:
+                render_card(j)
+
+
+# ============================================================
+# VIEW 4: What keeps failing? (Political Economy)
+# ============================================================
+
+def render_political_economy():
+    st.markdown("## What keeps failing?")
+    st.markdown("<p style='color:#57534e; font-size:0.88rem;'>Political economy. Which instruments passed, stalled, were blocked, or are contested. Where industry opposition shapes what survives.</p>", unsafe_allow_html=True)
+
+    rows = []
+    for j in data["jurisdictions"]:
+        for inst in j["instruments"]:
+            pe = inst.get("pe_outcome")
+            if pe:
+                rows.append({
+                    "jurisdiction": j["name"],
+                    "strategy": inst["strategy"],
+                    "instrument": inst["name"],
+                    "outcome": pe,
+                    "status": inst["status"],
+                    "target_species": inst.get("target_species", ""),
+                    "reaches_core": inst.get("reaches_core", False),
+                })
+
+    if not rows:
+        st.info("No political economy data available yet.")
+        return
+
+    df = pd.DataFrame(rows)
+
+    m1, m2, m3 = st.columns(3)
+    m1.metric("Instruments with PE outcome", len(df))
+    m2.metric("Stalled or Blocked", len(df[df["outcome"].isin(["Stalled", "Blocked"])]))
+    m3.metric("Contested", len(df[df["outcome"] == "Contested"]))
+
+    pe_domain = [k for k in PE_COLORS.keys() if k in df["outcome"].values]
+    pe_range = [PE_COLORS[k] for k in pe_domain]
+
+    chart = alt.Chart(df).mark_bar().encode(
+        x=alt.X("strategy:N", sort=STRATEGY_ORDER, title=None),
+        y=alt.Y("count():Q", title="Instruments"),
+        color=alt.Color("outcome:N",
+            scale=alt.Scale(domain=pe_domain, range=pe_range),
+            legend=alt.Legend(title="Outcome", orient="top")),
+        tooltip=["strategy:N", "outcome:N", "count():Q"],
+    ).properties(height=300)
+
+    st.altair_chart(chart, use_container_width=True)
+
+    # Table
+    st.markdown("### Detail")
+    table_html = '<table class="inst-table"><thead><tr><th>Jurisdiction</th><th style="width:30%;">Instrument</th><th>Strategy</th><th>Outcome</th><th>Reaches SP</th></tr></thead><tbody>'
+    for _, r in df.iterrows():
+        core_icon = '<span style="color:#16a34a; font-weight:600;">&#10003;</span>' if r["reaches_core"] else '<span style="color:#d6d3d1;">-</span>'
+        table_html += f'<tr><td style="font-size:0.82rem;">{esc(r["jurisdiction"])}</td><td style="font-size:0.82rem;">{esc(r["instrument"][:60])}</td><td>{strategy_chip(r["strategy"])}</td><td>{pe_pill(r["outcome"])}</td><td style="text-align:center;">{core_icon}</td></tr>'
+    table_html += '</tbody></table>'
+    st.markdown(table_html, unsafe_allow_html=True)
+
+
+# ============================================================
+# VIEW 5: What does the pattern show? (Analysis)
+# ============================================================
+
+def render_analysis():
+    st.markdown("## What does the pattern show?")
+    st.markdown("<p style='color:#57534e; font-size:0.88rem;'>Four findings from reading across fifteen jurisdictions.</p>", unsafe_allow_html=True)
+
+    analysis_path = Path(__file__).parent / "analysis.md"
+    if analysis_path.exists():
+        text = analysis_path.read_text(encoding="utf-8")
+        text = re.sub(r'\[\[([^|\]]+)\|([^\]]+)\]\]', r'\2', text)
+        text = re.sub(r'\[\[([^\]]+)\]\]', r'\1', text)
+
+        # Split by ## headings
+        sections = re.split(r'^(## .+)$', text, flags=re.MULTILINE)
+        intro = sections[0].strip()
+        if intro:
+            st.markdown(intro)
+
+        for i in range(1, len(sections), 2):
+            heading = sections[i].replace("## ", "").strip()
+            body = sections[i+1].strip() if i+1 < len(sections) else ""
+            with st.expander(heading):
+                st.markdown(body)
     else:
-        rows = [jurisdictions[i:i + COLS] for i in range(0, len(jurisdictions), COLS)]
-        for row in rows:
-            cols = st.columns(COLS)
-            for idx, j in enumerate(row):
-                with cols[idx]:
-                    render_jurisdiction_card(j)
+        st.info("Analysis file not found.")
 
 
 # ============================================================
@@ -478,517 +640,88 @@ def render_detail(jurisdiction_id):
         return
 
     # Header
-    logic = jurisdiction["design_logic"]
     st.markdown(
-        f"# {esc(jurisdiction['name'])} {design_logic_badge(logic)}",
+        f"## {esc(jurisdiction['name'])} {design_badge(jurisdiction.get('design_logic',''))}",
         unsafe_allow_html=True,
     )
-    st.caption(jurisdiction["key_finding"])
 
-    c1, c2, c3 = st.columns(3)
-    c1.metric("Instruments", jurisdiction["instrument_count"])
-    reaches = sum(1 for i in jurisdiction["instruments"] if i.get("reaches_proprietary_pricing"))
-    c2.metric("Reaches Proprietary", f"{reaches}/{jurisdiction['instrument_count']}")
-    c3.markdown(f"**Design logic:** {esc(logic)}. {esc(jurisdiction['design_logic_detail'])}")
+    finding = jurisdiction.get("key_finding", "")
+    if finding:
+        st.markdown(f"*{esc(finding)}*")
+
+    # Metrics
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Instruments", jurisdiction.get("instrument_count", 0))
+    rc = jurisdiction.get("reaches_core_count", 0)
+    total = jurisdiction.get("instrument_count", 0)
+    c2.metric("Reaches surveillance pricing", f"{rc}/{total}")
+    c3.metric("Year range", f"{jurisdiction.get('year_first', '?')}-{jurisdiction.get('year_latest', '?')}")
+    c4.metric("Design logic", jurisdiction.get("design_logic", ""))
 
     # Instrument table
-    st.markdown("#### Instruments")
-    instruments = jurisdiction["instruments"]
+    st.markdown("### Instruments")
+    instruments = jurisdiction.get("instruments", [])
 
     table_html = '''<table class="inst-table">
     <thead><tr>
         <th style="width:24%;">Instrument</th>
         <th>Strategy</th>
         <th>Status</th>
-        <th>Target</th>
-        <th>Institution</th>
-        <th style="width:4%; text-align:center;">Prop.</th>
-        <th style="width:4%; text-align:center;">PRA</th>
-        <th>Political Economy</th>
+        <th><span class="has-tip" title="The specific pricing practice this instrument was designed to reach">Species</span></th>
+        <th style="text-align:center;"><span class="has-tip" title="Individual-level pricing set unilaterally using proprietary data">Reaches SP</span></th>
+        <th>PE Outcome</th>
     </tr></thead><tbody>'''
 
     for inst in instruments:
-        reaches_icon = "&#10003;" if inst.get("reaches_proprietary_pricing") else "—"
-        reaches_color = "#22c55e" if inst.get("reaches_proprietary_pricing") else "#3a3a4a"
-        pra_icon = "&#10003;" if inst.get("private_right_of_action") else "—"
-        pra_color = "#22c55e" if inst.get("private_right_of_action") else "#3a3a4a"
-        # Show institution divergence with arrow
-        formal = esc(inst.get("formal_institution", ""))
-        operative = esc(inst.get("operative_institution", ""))
-        diverges = inst.get("institution_divergence", False)
-        arrow_color = "#ef4444" if diverges else "#3a3a4a"
-        inst_cell = f'<span style="font-size:0.75rem; color:#9ca3af;">{formal}</span><br><span style="color:{arrow_color};">→</span> <span style="font-size:0.75rem;">{operative}</span>'
-        # Target visibility
-        vis = inst.get("target_visibility", "")
-        vis_color = {"Conspicuous": "#22c55e", "Inconspicuous": "#ef4444", "Mixed": "#eab308"}.get(vis, "#6b7280")
-        # Political economy
-        pe_out = inst.get("political_economy_outcome")
-        pe_detail = inst.get("political_economy_detail", "")
-        pe_cell = pe_pill(pe_out) if pe_out else ""
-        if pe_detail:
-            pe_cell += f'<div class="inst-summary">{esc(pe_detail)}</div>'
+        core_icon = '<span style="color:#16a34a; font-weight:600;">&#10003;</span>' if inst.get("reaches_core") else '<span style="color:#d6d3d1;">-</span>'
+        pe = pe_pill(inst["pe_outcome"]) if inst.get("pe_outcome") else ""
+        species = esc(inst.get("target_species", ""))
+
         table_html += f'''<tr>
-            <td>
-                <div class="inst-name">{esc(inst["name"])}</div>
-                <div class="inst-summary">{esc(inst["summary"])}</div>
-            </td>
+            <td><span class="inst-name">{esc(inst["name"])}</span></td>
             <td>{strategy_chip(inst["strategy"])}</td>
             <td>{status_pill(inst["status"])}</td>
-            <td style="font-size:0.78rem; color:{vis_color};">{esc(vis)}</td>
-            <td style="font-size:0.75rem;">{inst_cell}</td>
-            <td style="text-align:center; color:{reaches_color}; font-weight:600;">{reaches_icon}</td>
-            <td style="text-align:center; color:{pra_color}; font-weight:600;">{pra_icon}</td>
-            <td style="font-size:0.75rem;">{pe_cell}</td>
+            <td style="font-size:0.78rem;">{species}</td>
+            <td style="text-align:center;">{core_icon}</td>
+            <td>{pe}</td>
         </tr>'''
 
     table_html += '</tbody></table>'
     st.markdown(table_html, unsafe_allow_html=True)
 
-    # Timeline per instrument
-    with st.expander("Timelines"):
-        for inst in instruments:
-            st.markdown(f"**{inst['name']}**")
-            for event in inst.get("timeline", []):
-                st.markdown(f"- `{event['date']}` {event['event']}")
-            st.markdown("")
+    # Timeline
+    has_timeline = any(inst.get("timeline") for inst in instruments)
+    if has_timeline:
+        with st.expander("Timelines"):
+            for inst in instruments:
+                if inst.get("timeline"):
+                    st.markdown(f"**{inst['name']}**")
+                    for event in inst["timeline"]:
+                        st.markdown(f"- `{event['date']}` {event['event']}")
+                    st.markdown("")
 
-    with st.expander("Enforcement details"):
-        for inst in instruments:
-            st.markdown(f"**{inst['name']}**")
-            enforcement = inst.get("enforcement_mechanism", inst.get("enforcement", "—"))
-            st.markdown(f"- Enforcement: {enforcement}")
-            pra = inst.get("private_right_of_action")
-            if pra is not None:
-                st.markdown(f"- Private right of action: {'Yes' if pra else 'No'}")
-            pe = inst.get("political_economy_outcome")
-            if pe:
-                detail = inst.get("political_economy_detail", "")
-                st.markdown(f"- Political economy: {pe}" + (f". {detail}" if detail else ""))
-            st.markdown("")
-
-    # Full molecule, split into collapsible sections
+    # Full molecule profile (collapsible sections)
     st.markdown("---")
-    st.markdown("#### Full Jurisdiction Profile")
-    molecule = load_molecule(jurisdiction["molecule_file"])
+    molecule = load_molecule(jurisdiction.get("molecule_file", ""))
     if molecule:
+        # Remove title (already shown above)
+        molecule = re.sub(r'^# .+\n', '', molecule).strip()
+        # Remove ## Instruments section (already shown in table)
+        molecule = re.sub(r'^## Instruments\n.*?(?=\n## |\Z)', '', molecule, flags=re.DOTALL | re.MULTILINE).strip()
+
         # Split by ## headings into collapsible expanders
         sections = re.split(r'^(## .+)$', molecule, flags=re.MULTILINE)
-        # First chunk is intro (before any ##)
         intro = sections[0].strip()
         if intro:
             st.markdown(intro)
-        # Remaining pairs: heading, body
+
         for i in range(1, len(sections), 2):
             heading = sections[i].replace("## ", "").strip()
-            body = sections[i + 1].strip() if i + 1 < len(sections) else ""
+            body = sections[i+1].strip() if i+1 < len(sections) else ""
+            if heading.lower() in ("open questions", "library"):
+                continue
             with st.expander(heading):
                 st.markdown(body)
-    else:
-        st.warning(f"Molecule file not found: {jurisdiction['molecule_file']}")
-
-
-# ============================================================
-# TIMELINE VIEW
-# ============================================================
-
-def render_timeline():
-    st.title("Instrument Timeline")
-    st.caption("Every instrument plotted by date. Shows the 2024-2025 acceleration wave")
-
-    # Build dataframe from all instruments with timeline events
-    rows = []
-    for j in data["jurisdictions"]:
-        for inst in j["instruments"]:
-            for event in inst.get("timeline", []):
-                date_str = event["date"]
-                # Normalize to a plottable date
-                if len(date_str) == 4:  # YYYY
-                    date_str += "-06"
-                if len(date_str) == 7:  # YYYY-MM
-                    date_str += "-15"
-                rows.append({
-                    "date": date_str,
-                    "jurisdiction": j["name"],
-                    "region": j.get("region", "Other"),
-                    "instrument": inst["name"],
-                    "strategy": inst["strategy"],
-                    "status": inst["status"],
-                    "event": event["event"],
-                    "visibility": inst.get("target_visibility", ""),
-                })
-
-    if not rows:
-        st.warning("No timeline data available.")
-        return
-
-    df = pd.DataFrame(rows)
-    df["date"] = pd.to_datetime(df["date"], errors="coerce")
-    df = df.dropna(subset=["date"])
-
-    # Filters
-    f1, f2, f3 = st.columns(3)
-    with f1:
-        regions = sorted(df["region"].unique())
-        sel_regions = st.multiselect("Region", regions, default=[], placeholder="All", key="tl_region")
-    with f2:
-        sel_strategies = st.multiselect("Strategy", STRATEGY_ORDER, default=[], placeholder="All", key="tl_strategy")
-    with f3:
-        sel_status = st.multiselect("Status", list(STATUS_COLORS.keys()), default=[], placeholder="All", key="tl_status")
-
-    if sel_regions:
-        df = df[df["region"].isin(sel_regions)]
-    if sel_strategies:
-        df = df[df["strategy"].isin(sel_strategies)]
-    if sel_status:
-        df = df[df["status"].isin(sel_status)]
-
-    y_field = st.radio("Y-axis", ["Jurisdiction", "Strategy"], horizontal=True, key="tl_yaxis")
-    y_col = "jurisdiction" if y_field == "Jurisdiction" else "strategy"
-
-    # Status color scale
-    status_domain = list(STATUS_COLORS.keys())
-    status_range = list(STATUS_COLORS.values())
-
-    chart = alt.Chart(df).mark_circle(size=60, opacity=0.8).encode(
-        x=alt.X("date:T", title="Date", axis=alt.Axis(format="%Y")),
-        y=alt.Y(f"{y_col}:N", title=y_field, sort=None),
-        color=alt.Color("status:N",
-            scale=alt.Scale(domain=status_domain, range=status_range),
-            legend=alt.Legend(title="Status"),
-        ),
-        tooltip=[
-            alt.Tooltip("instrument:N", title="Instrument"),
-            alt.Tooltip("jurisdiction:N", title="Jurisdiction"),
-            alt.Tooltip("strategy:N", title="Strategy"),
-            alt.Tooltip("status:N", title="Status"),
-            alt.Tooltip("event:N", title="Event"),
-            alt.Tooltip("date:T", title="Date", format="%b %Y"),
-        ],
-    ).properties(
-        height=max(400, len(df[y_col].unique()) * 35),
-    ).interactive()
-
-    st.altair_chart(chart, use_container_width=True)
-    st.caption(f"{len(df)} events across {df['instrument'].nunique()} instruments")
-
-
-# ============================================================
-# INSTITUTION DIVERGENCE VIEW
-# ============================================================
-
-def render_divergence():
-    st.title("Institution Divergence")
-    st.caption("Formal vs operative institutions: where the law says one thing and reality does another")
-
-    # Count divergence
-    total_jurisdictions = len(data["jurisdictions"])
-    divergent_jurisdictions = 0
-    all_rows = []
-
-    for j in data["jurisdictions"]:
-        j_has_divergence = False
-        for inst in j["instruments"]:
-            formal = inst.get("formal_institution", "")
-            operative = inst.get("operative_institution", "")
-            diverges = inst.get("institution_divergence", False)
-            if diverges:
-                j_has_divergence = True
-            all_rows.append({
-                "jurisdiction": j["name"],
-                "region": j.get("region", "Other"),
-                "instrument": inst["name"],
-                "formal": formal,
-                "operative": operative,
-                "diverges": diverges,
-                "strategy": inst["strategy"],
-                "status": inst["status"],
-            })
-        if j_has_divergence:
-            divergent_jurisdictions += 1
-
-    m1, m2, m3 = st.columns(3)
-    m1.metric("Jurisdictions with Divergence", f"{divergent_jurisdictions}/{total_jurisdictions}")
-    divergent_count = sum(1 for r in all_rows if r["diverges"])
-    m2.metric("Divergent Instruments", divergent_count)
-    m3.metric("Total Instruments", len(all_rows))
-
-    # Filter
-    show_divergent_only = st.checkbox("Show only divergent instruments", value=True)
-    display_rows = [r for r in all_rows if r["diverges"]] if show_divergent_only else all_rows
-
-    # Render as HTML table grouped by jurisdiction
-    current_j = None
-    table_html = '''<table class="inst-table">
-    <thead><tr>
-        <th style="width:20%;">Jurisdiction</th>
-        <th style="width:25%;">Instrument</th>
-        <th style="width:22%;">Formal Institution</th>
-        <th style="width:3%; text-align:center;"></th>
-        <th style="width:22%;">Operative Institution</th>
-        <th style="width:8%; text-align:center;">Diverges</th>
-    </tr></thead><tbody>'''
-
-    for r in display_rows:
-        j_cell = f'<strong>{esc(r["jurisdiction"])}</strong>' if r["jurisdiction"] != current_j else ""
-        current_j = r["jurisdiction"]
-        div_icon = '<span style="color:#ef4444; font-weight:bold;">✗</span>' if r["diverges"] else '<span style="color:#22c55e;">✓</span>'
-        arrow_color = "#ef4444" if r["diverges"] else "#3a3a4a"
-        table_html += f'''<tr>
-            <td style="font-size:0.8rem;">{j_cell}</td>
-            <td style="font-size:0.8rem;">{esc(r["instrument"][:60])}</td>
-            <td style="font-size:0.78rem; color:#9ca3af;">{esc(r["formal"])}</td>
-            <td style="text-align:center; color:{arrow_color}; font-weight:bold;">→</td>
-            <td style="font-size:0.78rem;">{esc(r["operative"])}</td>
-            <td style="text-align:center;">{div_icon}</td>
-        </tr>'''
-
-    table_html += '</tbody></table>'
-    st.markdown(table_html, unsafe_allow_html=True)
-
-
-# ============================================================
-# STRATEGY × VISIBILITY MATRIX
-# ============================================================
-
-def render_matrix():
-    st.title("Strategy × Target Visibility")
-    st.caption("Where instruments cluster. Baldwin's strategies against whether the regulated practice is observable")
-
-    visibility_cols = ["Conspicuous", "Inconspicuous", "Mixed"]
-
-    # Build counts
-    matrix = {}
-    for strategy in STRATEGY_ORDER:
-        matrix[strategy] = {v: [] for v in visibility_cols}
-
-    for j in data["jurisdictions"]:
-        for inst in j["instruments"]:
-            s = inst["strategy"]
-            v = inst.get("target_visibility", "Mixed")
-            if s in matrix and v in visibility_cols:
-                matrix[s][v].append(inst)
-
-    # Render as an HTML grid
-    table_html = '''<table class="inst-table">
-    <thead><tr>
-        <th style="width:25%;">Strategy</th>'''
-    for v in visibility_cols:
-        table_html += f'<th style="text-align:center;">{esc(v)}</th>'
-    table_html += '<th style="text-align:center;">Total</th></tr></thead><tbody>'
-
-    for strategy in STRATEGY_ORDER:
-        row_total = sum(len(matrix[strategy][v]) for v in visibility_cols)
-        table_html += f'<tr><td><strong>{esc(strategy)}</strong></td>'
-        for v in visibility_cols:
-            instruments = matrix[strategy][v]
-            count = len(instruments)
-            if count == 0:
-                table_html += '<td style="text-align:center; color:#3a3a4a;">—</td>'
-            else:
-                # Color intensity by count
-                status_counts = Counter(inst["status"] for inst in instruments)
-                status_dots = " ".join(f'{status_dot(s)}{n}' for s, n in status_counts.items() if n > 0)
-                table_html += f'<td style="text-align:center;"><strong>{count}</strong><br><span style="font-size:0.7rem;">{status_dots}</span></td>'
-        table_html += f'<td style="text-align:center; color:#6b7280;">{row_total}</td></tr>'
-
-    # Column totals
-    table_html += '<tr style="border-top:2px solid #2a2a3a;"><td style="color:#6b7280;"><em>Total</em></td>'
-    for v in visibility_cols:
-        col_total = sum(len(matrix[s][v]) for s in STRATEGY_ORDER)
-        table_html += f'<td style="text-align:center; color:#6b7280;"><em>{col_total}</em></td>'
-    grand_total = sum(len(matrix[s][v]) for s in STRATEGY_ORDER for v in visibility_cols)
-    table_html += f'<td style="text-align:center; color:#6b7280;"><em>{grand_total}</em></td></tr>'
-
-    table_html += '</tbody></table>'
-    st.markdown(table_html, unsafe_allow_html=True)
-
-    # Detail expander per cell
-    st.markdown("#### Drill-down")
-    sel_strategy = st.selectbox("Strategy", STRATEGY_ORDER, key="mx_strategy")
-    sel_visibility = st.selectbox("Target Visibility", visibility_cols, key="mx_vis")
-    instruments = matrix.get(sel_strategy, {}).get(sel_visibility, [])
-    if instruments:
-        for inst in instruments:
-            st.markdown(f"- {status_pill(inst['status'])} **{inst['name']}**", unsafe_allow_html=True)
-    else:
-        st.caption("No instruments in this cell.")
-
-
-# ============================================================
-# POLITICAL ECONOMY VIEW
-# ============================================================
-
-def render_political_economy():
-    st.title("Political Economy")
-    st.caption("Legislative fate of instruments. Failed instruments are data")
-
-    # Build dataframe
-    rows = []
-    for j in data["jurisdictions"]:
-        for inst in j["instruments"]:
-            pe = inst.get("political_economy_outcome")
-            if pe:
-                rows.append({
-                    "jurisdiction": j["name"],
-                    "strategy": inst["strategy"],
-                    "instrument": inst["name"],
-                    "outcome": pe,
-                    "detail": inst.get("political_economy_detail", ""),
-                    "status": inst["status"],
-                })
-
-    if not rows:
-        st.warning("No political economy data available.")
-        return
-
-    df = pd.DataFrame(rows)
-
-    m1, m2, m3 = st.columns(3)
-    m1.metric("Instruments with PE outcome", len(df))
-    m2.metric("Stalled or Blocked", len(df[df["outcome"].isin(["Stalled", "Blocked"])]))
-    m3.metric("Passed", len(df[df["outcome"] == "Passed"]))
-
-    # Stacked bar: strategy × outcome
-    pe_domain = list(PE_COLORS.keys())
-    pe_range = list(PE_COLORS.values())
-
-    chart = alt.Chart(df).mark_bar().encode(
-        x=alt.X("strategy:N", sort=STRATEGY_ORDER, title=None),
-        y=alt.Y("count():Q", title="Instruments"),
-        color=alt.Color("outcome:N",
-            scale=alt.Scale(domain=pe_domain, range=pe_range),
-            legend=alt.Legend(title="Outcome", orient="top"),
-        ),
-        tooltip=[
-            alt.Tooltip("strategy:N", title="Strategy"),
-            alt.Tooltip("outcome:N", title="Outcome"),
-            alt.Tooltip("count():Q", title="Count"),
-        ],
-    ).properties(height=350)
-
-    st.altair_chart(chart, use_container_width=True)
-
-    # Detail table
-    st.markdown("#### Detail")
-    sel_outcome = st.multiselect("Filter outcome", pe_domain, default=[], placeholder="All", key="pe_outcome")
-    display_df = df[df["outcome"].isin(sel_outcome)] if sel_outcome else df
-
-    table_html = '''<table class="inst-table">
-    <thead><tr>
-        <th>Jurisdiction</th>
-        <th style="width:30%;">Instrument</th>
-        <th>Strategy</th>
-        <th>Outcome</th>
-        <th style="width:30%;">Detail</th>
-    </tr></thead><tbody>'''
-
-    for _, r in display_df.iterrows():
-        table_html += f'''<tr>
-            <td style="font-size:0.8rem;">{esc(r["jurisdiction"])}</td>
-            <td style="font-size:0.8rem;">{esc(r["instrument"][:60])}</td>
-            <td>{strategy_chip(r["strategy"])}</td>
-            <td>{pe_pill(r["outcome"])}</td>
-            <td style="font-size:0.75rem; color:#9ca3af;">{esc(r["detail"])}</td>
-        </tr>'''
-
-    table_html += '</tbody></table>'
-    st.markdown(table_html, unsafe_allow_html=True)
-
-
-# ============================================================
-# ANALYSIS VIEW
-# ============================================================
-
-def render_analysis(section_title=None, subsection_title=None):
-    sections = parse_analysis_sections()
-    if not sections:
-        st.warning("Analysis file not found.")
-        return
-
-    # If a specific subsection was requested, show just that
-    if subsection_title:
-        for sec in sections:
-            for sub in sec["subsections"]:
-                if sub["title"] == subsection_title:
-                    st.markdown(
-                        f'<span style="color:#6b7280; font-size:0.8rem;">'
-                        f'{esc(sec["title"].split("(")[0].strip())}</span>',
-                        unsafe_allow_html=True,
-                    )
-                    st.markdown(f"## {sub['title']}")
-                    st.markdown(sub["body"])
-
-                    # Prev/next navigation
-                    all_subs = [(sec, sub) for sec in sections for sub in sec["subsections"]]
-                    current_idx = next(
-                        (i for i, (s, su) in enumerate(all_subs) if su["title"] == subsection_title),
-                        None,
-                    )
-                    if current_idx is not None:
-                        nav_cols = st.columns(2)
-                        if current_idx > 0:
-                            prev_sec, prev_sub = all_subs[current_idx - 1]
-                            with nav_cols[0]:
-                                if st.button(f"← {prev_sub['title'][:40]}", key="prev_sub"):
-                                    st.session_state.page = "analysis_sub"
-                                    st.session_state.analysis_section = prev_sec["title"]
-                                    st.session_state.analysis_subsection = prev_sub["title"]
-                                    st.rerun()
-                        if current_idx < len(all_subs) - 1:
-                            next_sec, next_sub = all_subs[current_idx + 1]
-                            with nav_cols[1]:
-                                if st.button(f"{next_sub['title'][:40]} →", key="next_sub"):
-                                    st.session_state.page = "analysis_sub"
-                                    st.session_state.analysis_section = next_sec["title"]
-                                    st.session_state.analysis_subsection = next_sub["title"]
-                                    st.rerun()
-                    return
-
-    # If a specific H2 section was requested, show it with sub-tabs
-    if section_title:
-        sec = next((s for s in sections if s["title"] == section_title), None)
-        if sec:
-            st.markdown(f"## {sec['title']}")
-            if sec["intro"]:
-                st.markdown(sec["intro"])
-
-            if sec["subsections"]:
-                tab_names = [sub["title"] for sub in sec["subsections"]]
-                # Truncate tab names for display
-                short_names = []
-                for name in tab_names:
-                    # Extract just the key part
-                    clean = re.sub(r'^\d+\.\s*', '', name)  # strip leading numbers
-                    if len(clean) > 35:
-                        clean = clean[:32] + "..."
-                    short_names.append(clean)
-
-                tabs = st.tabs(short_names)
-                for tab, sub in zip(tabs, sec["subsections"]):
-                    with tab:
-                        st.markdown(f"### {sub['title']}")
-                        st.markdown(sub["body"])
-            return
-
-    # Default: show overview of all sections
-    st.title("Cross-Cutting Analysis")
-    st.caption("Patterns, findings, and theoretical framework emerging from 15 jurisdictions")
-
-    for sec in sections:
-        st.markdown(f"### {sec['title'].split('(')[0].strip()}")
-        if sec["intro"]:
-            st.caption(sec["intro"][:200] + "..." if len(sec["intro"]) > 200 else sec["intro"])
-        st.markdown(f"**{len(sec['subsections'])} sections**")
-        for sub in sec["subsections"]:
-            preview = sub["body"][:120].replace("\n", " ") + "..." if len(sub["body"]) > 120 else sub["body"].replace("\n", " ")
-            if st.button(f"{sub['title']}", key=f"aov_{sub['title'][:25]}"):
-                st.session_state.page = "analysis_sub"
-                st.session_state.analysis_section = sec["title"]
-                st.session_state.analysis_subsection = sub["title"]
-                st.rerun()
-            st.caption(preview)
-
-        st.markdown("---")
 
 
 # ============================================================
@@ -999,20 +732,15 @@ page = st.session_state.page
 
 if page == "detail" and st.session_state.jurisdiction_id:
     render_detail(st.session_state.jurisdiction_id)
-elif page == "timeline":
-    render_timeline()
-elif page == "divergence":
-    render_divergence()
-elif page == "matrix":
-    render_matrix()
+elif page == "species":
+    render_species()
+elif page == "landscape":
+    render_landscape()
+elif page == "jurisdictions":
+    render_jurisdictions()
 elif page == "political_economy":
     render_political_economy()
 elif page == "analysis":
-    render_analysis(section_title=st.session_state.get("analysis_section"))
-elif page == "analysis_sub":
-    render_analysis(
-        section_title=st.session_state.get("analysis_section"),
-        subsection_title=st.session_state.get("analysis_subsection"),
-    )
+    render_analysis()
 else:
-    render_grid()
+    render_species()

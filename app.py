@@ -16,7 +16,7 @@ st.set_page_config(
 
 # --- Landing + Auth ---
 
-LANDING_COPY = """How is the world trying to regulate surveillance pricing? In 2024, the FTC defined the practice: firms using your personal data to set the price they think you'll pay. This dataset maps over 150 instruments across fifteen jurisdictions to find out what reaches it. The answer: almost everything regulators have built reaches the visible forms of algorithmic pricing, coordination, drip pricing, surge pricing. Almost nothing reaches surveillance pricing itself."""
+LANDING_BODY = """In 2024, the FTC defined the practice: firms using your personal data to set the price they think you'll pay. This dataset maps over 150 instruments across fifteen jurisdictions to find out what reaches it. The answer: almost everything regulators have built reaches the visible forms of algorithmic pricing, coordination, drip pricing, surge pricing. Almost nothing reaches surveillance pricing itself."""
 
 def check_password():
     if "authenticated" not in st.session_state:
@@ -37,8 +37,9 @@ def check_password():
         [data-testid="stToolbar"] { display: none !important; }
     </style>
     """, unsafe_allow_html=True)
-    st.markdown("## Surveillance Pricing Tracker")
-    st.markdown(f"<p style='font-size:0.92rem; color:#57534e; line-height:1.7;'>{LANDING_COPY}</p>", unsafe_allow_html=True)
+    st.markdown("# Surveillance Pricing Tracker")
+    st.markdown("## How is the world trying to regulate surveillance pricing?")
+    st.markdown(f"<p style='font-size:0.92rem; color:#57534e; line-height:1.7;'>{LANDING_BODY}</p>", unsafe_allow_html=True)
     pwd = st.text_input("Password", type="password", key="pwd_input", label_visibility="collapsed", placeholder="Password")
     if pwd:
         if pwd == st.secrets.get("password", ""):
@@ -343,6 +344,7 @@ with st.sidebar:
         ("How did each jurisdiction get here?", "jurisdictions"),
         ("What keeps failing?", "political_economy"),
         ("What does the pattern show?", "analysis"),
+        ("How was this built?", "methodology"),
     ]
 
     for label, key in views:
@@ -631,6 +633,24 @@ def render_analysis():
 
 
 # ============================================================
+# VIEW 6: How was this built? (Methodology)
+# ============================================================
+
+def render_methodology():
+    st.markdown("## How was this built?")
+    st.markdown("<p style='color:#57534e; font-size:0.88rem;'>Methodology, scope, and boundaries.</p>", unsafe_allow_html=True)
+
+    with st.expander("What's in the dataset"):
+        st.markdown("Over 150 regulatory instruments across fifteen jurisdictions, identified through a three-pass process: legal databases and secondary literature to compile candidates, primary-source verification against the statute or enforcement filing itself, and a cross-check against recent enforcement records and practitioner analyses. Each instrument is coded along nine dimensions: regulatory strategy, sub-type, sector, status, enforcement mechanism, target species, whether it reaches surveillance pricing, and political economy outcome. The jurisdictions span North America (US Federal, New York, California, US States composite, Canada), Europe (EU, UK, Germany, Netherlands), and Asia-Pacific (China, South Korea, Singapore, Australia, India, Indonesia).")
+
+    with st.expander("How it's organized"):
+        st.markdown("The dataset uses a seven-position topology adapted from Baldwin, Cave, and Lodge's taxonomy of regulatory strategies (*Understanding Regulation*, 2d ed. 2012): Prohibition, Competition, Disclosure, Rights and Liabilities, Direct Action, Self-Regulation, and Incentive-Based. Each position describes a different relationship between the state, the firm, and the consumer. The topology maps strategies as positions, not as steps on a ladder. One-way escalation from disclosure to prohibition holds only for China. Every other jurisdiction moves laterally, gets blocked, or accumulates instruments without escalating.")
+
+    with st.expander("What's not included"):
+        st.markdown("Japan, Brazil, Israel, and the Global South are absent. Selection was based on the presence of active regulatory responses in 2024-2026 and primary-source accessibility. The paper names this boundary rather than claiming comprehensiveness. The dataset is weighted toward jurisdictions with English-language or translated primary sources, supplemented by jurisdiction-specific academic literature for China, South Korea, and Indonesia.")
+
+
+# ============================================================
 # DETAIL VIEW
 # ============================================================
 
@@ -743,5 +763,7 @@ elif page == "political_economy":
     render_political_economy()
 elif page == "analysis":
     render_analysis()
+elif page == "methodology":
+    render_methodology()
 else:
     render_species()

@@ -299,6 +299,49 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+# --- Tooltip copy (from Kim) ---
+
+STRATEGY_TIPS = {
+    "Prohibition": "The state bans the practice and attaches penalties.",
+    "Competition": "The state breaks coordination or constrains market power. Requires agreement or dominance.",
+    "Disclosure": "The state requires the firm to inform the consumer or regulator.",
+    "Rights & Liabilities": "The state confers a right on the individual to object, opt out, or receive an explanation.",
+    "Direct Action": "The state intervenes directly: price caps, software mandates, algorithmic audits.",
+    "Self-Regulation": "Industry designs its own voluntary governance. No independent enforcement.",
+    "Incentive-Based": "Financial incentives to shape firm behavior. Zero instances in the dataset.",
+}
+
+STATUS_TIPS = {
+    "Operative": "In force, with at least one enforcement action on algorithmic pricing.",
+    "Operative, unenforced": "In force, zero enforcement on algorithmic pricing in any jurisdiction.",
+    "Enacted": "Passed into law, not yet in force.",
+    "Proposed": "Bill introduced or regulation drafted, not enacted.",
+    "Failed": "Introduced and died (withdrawn, voted down, or inactive).",
+    "Paused": "Previously active, now suspended. Could resume.",
+    "Contested": "Operative, but under active legal challenge.",
+    "Settled": "Resolved through consent decree or settlement.",
+    "Study": "Formal investigation or consultation, no binding obligations.",
+}
+
+SPECIES_TIPS = {
+    "Surveillance Pricing": "Unilateral, proprietary, individual-level pricing using behavioral data. The practice the dataset tracks.",
+    "Core Species": "Unilateral, proprietary, individual-level pricing using behavioral data. The practice the dataset tracks.",
+    "Collusion": "Coordinated pricing through a shared algorithm or intermediary. Reachable by competition law.",
+    "Drip Pricing": "Mandatory fees revealed incrementally during checkout. Visible in the interface.",
+    "Surge Pricing": "Real-time price spikes in response to demand. Observable to multiple consumers.",
+    "Price Walking": "Raising prices for renewing customers relative to new ones. Sector-specific.",
+    "General": "Addresses algorithmic pricing broadly without targeting a specific species.",
+}
+
+PE_TIPS = {
+    "Passed": "Enacted. Industry opposition insufficient or absent.",
+    "Blocked": "Actively defeated by organized opposition.",
+    "Stalled": "Not advancing, not formally defeated. Sitting in committee or delayed indefinitely.",
+    "Withdrawn": "Sponsor voluntarily pulled the instrument.",
+    "Contested": "Under legal challenge after enactment.",
+    "Settled": "Resolved through consent decree or settlement agreement.",
+}
+
 # --- Helpers ---
 
 def esc(text):
@@ -307,17 +350,20 @@ def esc(text):
 def strategy_chip(name):
     color = STRATEGY_COLORS.get(name, "#78716c")
     bg = f"{color}25"
-    return f'<span class="chip" style="color:{color}; background:{bg}; border:1px solid {color}30;">{esc(name)}</span>'
+    tip = esc(STRATEGY_TIPS.get(name, ""))
+    return f'<span class="chip" title="{tip}" style="color:{color}; background:{bg}; border:1px solid {color}30;">{esc(name)}</span>'
 
 def status_pill(status):
     color = STATUS_COLORS.get(status, "#78716c")
     bg = f"{color}25"
-    return f'<span class="pill" style="color:{color}; background:{bg};">{esc(status)}</span>'
+    tip = esc(STATUS_TIPS.get(status, ""))
+    return f'<span class="pill" title="{tip}" style="color:{color}; background:{bg};">{esc(status)}</span>'
 
 def pe_pill(outcome):
     color = PE_COLORS.get(outcome, "#78716c")
     bg = f"{color}25"
-    return f'<span class="pill" style="color:{color}; background:{bg};">{esc(outcome)}</span>'
+    tip = esc(PE_TIPS.get(outcome, ""))
+    return f'<span class="pill" title="{tip}" style="color:{color}; background:{bg};">{esc(outcome)}</span>'
 
 def design_badge(logic):
     color = DESIGN_LOGIC_COLORS.get(logic, "#78716c")
@@ -371,6 +417,12 @@ def render_species():
     st.markdown("## Does it reach surveillance pricing?")
     st.markdown("<p style='color:#57534e; font-size:0.88rem;'>Each row is a species of algorithmic pricing. Each column is a regulatory strategy. The bottom row is surveillance pricing. Filter to see what reaches it.</p>", unsafe_allow_html=True)
 
+    # Scaffolding: "Reading the dataset"
+    with st.expander("Reading the dataset", expanded=False):
+        st.markdown("**The practice.** Surveillance pricing is when a firm uses your personal data to set the price it thinks you'll pay. The term comes from the FTC's 2024 study. It is one species within a broader genus of algorithmic pricing that includes collusion (firms coordinating through shared algorithms), drip pricing (fees added during checkout), surge pricing (demand-driven spikes), and price walking (raising prices on loyal customers). Each species has different structural characteristics. Each is reachable by different regulatory instruments. Surveillance pricing is the species that almost nothing reaches.")
+        st.markdown("**The framework.** This dataset organizes regulatory instruments by what they do, not where they sit. Seven strategies, adapted from Baldwin, Cave, and Lodge (2012): Prohibition, Competition, Disclosure, Rights and Liabilities, Direct Action, Self-Regulation, and Incentive-Based. Each column in the heatmap is one strategy. Each row is one species. The pattern shows where the instruments cluster and where they don't.")
+        st.markdown("**The key question.** \"Reaches surveillance pricing\" is the filter that reveals the gap. An instrument is marked Yes if its legal text covers unilateral personalized pricing using proprietary behavioral data. Many instruments formally cover the practice. Almost none produce enforcement. The Status column tells you the difference: \"Operative\" means enforced; \"Operative, unenforced\" means it exists in law and has never been applied. That distinction is the dataset's central finding.")
+
     # Build species x strategy matrix
     all_instruments = [(j, i) for j in data["jurisdictions"] for i in j["instruments"]]
     total = len(all_instruments)
@@ -418,7 +470,7 @@ def render_species():
     st.markdown("### Instruments that reach surveillance pricing")
     reaches_instruments = [(j, i) for j, i in all_instruments if i.get("reaches_core")]
     if reaches_instruments:
-        table_html = '<table class="inst-table"><thead><tr><th>Jurisdiction</th><th>Instrument</th><th>Strategy</th><th>Status</th><th>Species</th></tr></thead><tbody>'
+        table_html = '<table class="inst-table"><thead><tr><th>Jurisdiction</th><th>Instrument</th><th><span class="has-tip" title="Baldwin regulatory strategy">Strategy</span></th><th><span class="has-tip" title="Current state of the instrument">Status</span></th><th><span class="has-tip" title="The specific pricing practice this instrument was designed to reach">Species</span></th></tr></thead><tbody>'
         for j, i in reaches_instruments:
             table_html += f'<tr><td style="font-size:0.82rem;">{esc(j["name"])}</td><td><span class="inst-name">{esc(i["name"])}</span></td><td>{strategy_chip(i["strategy"])}</td><td>{status_pill(i["status"])}</td><td style="font-size:0.78rem;">{esc(display_species(i.get("target_species","")))}</td></tr>'
         table_html += '</tbody></table>'
@@ -600,7 +652,7 @@ def render_political_economy():
 
     # Table
     st.markdown("### Detail")
-    table_html = '<table class="inst-table"><thead><tr><th>Jurisdiction</th><th style="width:30%;">Instrument</th><th>Strategy</th><th>Outcome</th><th>Reaches SP</th></tr></thead><tbody>'
+    table_html = '<table class="inst-table"><thead><tr><th>Jurisdiction</th><th style="width:30%;">Instrument</th><th><span class="has-tip" title="Baldwin regulatory strategy">Strategy</span></th><th><span class="has-tip" title="Political economy fate">Outcome</span></th><th style="text-align:center;"><span class="has-tip" title="Individual-level pricing set unilaterally using proprietary data">Reaches SP</span></th></tr></thead><tbody>'
     for _, r in df.iterrows():
         core_icon = '<span style="color:#16a34a; font-weight:600;">&#10003;</span>' if r["reaches_core"] else '<span style="color:#d6d3d1;">-</span>'
         table_html += f'<tr><td style="font-size:0.82rem;">{esc(r["jurisdiction"])}</td><td style="font-size:0.82rem;">{esc(r["instrument"][:60])}</td><td>{strategy_chip(r["strategy"])}</td><td>{pe_pill(r["outcome"])}</td><td style="text-align:center;">{core_icon}</td></tr>'
